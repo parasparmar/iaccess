@@ -159,8 +159,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -193,6 +191,8 @@
     <Content Include="Views\Shared\leftmenu.cshtml" />
     <Content Include="Views\Shared\pageheader.cshtml" />
     <Content Include="Views\Shared\footer.cshtml" />
+    <Content Include="Views\Shared\headPlaceHolder.cshtml" />
+    <Content Include="Views\Shared\headmenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

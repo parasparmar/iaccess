@@ -1,0 +1,39 @@
+﻿
+<ul class="nav navbar-nav">
+    <!-- Tasks: style can be found in dropdown.less -->
+    <!-- User Account: style can be found in dropdown.less -->
+    <li class="dropdown user user-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <asp:Image ID="smallUserImage" runat="server" CssClass="user-image" AlternateText="User Image" />
+            <asp:Label ID="lblName" CssClass="hidden-xs" runat="server"></asp:Label>
+        </a>
+        <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+                <asp:Image ID="mediumUserImage" runat="server" CssClass="img-circle" AlternateText="User Image" />
+                <p>
+                    <asp:Literal ID="lblNameDesignation" runat="server"></asp:Literal>
+                    <small>
+                        Joined :
+                        <asp:Label ID="lblDOJ" runat="server"></asp:Label>
+                    </small>
+                </p>
+            </li>
+            <!-- Menu Body -->
+            <!-- Menu Footer-->
+            <li class="user-footer">
+                <%--<div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>--%>
+                <div>
+                    <%-- class="pull-right"--%>
+                    <a href="#" class="btn btn-default btn-flat form-control" id="signout">Sign out</a>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <!-- Control Sidebar Toggle Button -->
+    <li>
+        <%--<a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>--%>
+    </li>
+</ul>

@@ -20,11 +20,11 @@ namespace iAccess
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bower_components/bootstrap/dist/js/bootstrap.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Scripts/bower_components/bootstrap/dist/css/bootstrap.min.css",
                       "~/Content/site.css"));
         }
     }
