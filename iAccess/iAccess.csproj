@@ -152,6 +152,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\materialstylesheet.css" />
+    <Content Include="Content\reactstylesheet.css" />
+    <Content Include="Content\UXDMaster.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
