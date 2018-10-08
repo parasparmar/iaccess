@@ -6791,6 +6791,7 @@
     <Content Include="Sitel\css\bootstrap.css" />
     <Content Include="Sitel\css\bootstrap.min.css" />
     <Content Include="Sitel\css\customtables.css" />
+    <Content Include="Sitel\css\iAccessStyleSheet.css" />
     <Content Include="Sitel\css\materialstylesheet.css" />
     <Content Include="Sitel\css\reactstylesheet.css" />
     <Content Include="Sitel\css\UXDMaster.css" />
@@ -6799,10 +6800,10 @@
     <Content Include="Sitel\fonts\css.css" />
     <Content Include="Sitel\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Sitel\css\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sitel\fonts\GoogleFontCSS.css" />
     <Content Include="Sitel\img\excel.png" />
     <Content Include="Sitel\img\grace1.png" />
     <Content Include="Sitel\img\green.png" />

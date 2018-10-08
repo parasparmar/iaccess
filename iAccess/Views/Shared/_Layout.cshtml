@@ -1,12 +1,11 @@
 ﻿<!DOCTYPE html>
-
 <html>
-<head id="head" runat="server">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> @ViewBag.Title - iAccess </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title> @ViewBag.Title - iAccess </title>
     @Styles.Render("~/styles_bundle/")
     @Styles.Render("~/modernizr/")
 
@@ -15,7 +14,7 @@
 
 <body class="hold-transition skin-purple sidebar-mini sidebar-collapse">
     <!-- Site wrapper -->
-    <div class="wrapper" style="height: auto">
+    <div class="wrapper">
         @Html.Partial("_head_menu")
         <!-- =============================================== -->
         <!-- Left side column. contains the sidebar -->
@@ -24,7 +23,10 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            @Html.Partial("_page_heading")
+            <section class="content-header">
+                <!-- Content Header (Page header) -->
+                @Html.Partial("_page_heading")
+            </section>
             <!-- Main content -->
             <section class="content">
                 <!-- Default body -->
@@ -37,6 +39,7 @@
         @Html.Partial("_footer")
         <!-- Control Sidebar -->
         @Html.Partial("_control_sidebar")
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
     @Scripts.Render("~/scripts_bundle/")
