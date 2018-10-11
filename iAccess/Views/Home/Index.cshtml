@@ -3,7 +3,8 @@
 
     ViewBag.Title = "Home Page";
     Dev _db = new Dev();
-    var Model = _db.getEmployeeData("pparm001").ToList();
+    string ntID = PageExtensionMethods.getMyWindowsID();
+    var Model = _db.getEmployeeData(ntID).ToList();
 }
 
 <h1>

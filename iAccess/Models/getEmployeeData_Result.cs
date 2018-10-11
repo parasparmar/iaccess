@@ -40,7 +40,6 @@ namespace iAccess.Models
         public string ntName { get; set; }
         public Nullable<byte> ResType { get; set; }
         public Nullable<int> BusinessID { get; set; }
-        public int Employee_ID1 { get; set; }
         public Nullable<System.DateTime> Date_of_Birth { get; set; }
         public string Gender { get; set; }
         public string Email_Office { get; set; }
@@ -68,6 +67,7 @@ namespace iAccess.Models
         public string Updated_by { get; set; }
         public Nullable<System.DateTime> Update_Date { get; set; }
         public Nullable<int> DeptLinkId { get; set; }
+        public string FullName { get; set; }
         public string RepMgrName { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using iAccess.Models;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,17 +16,24 @@
 <body class="hold-transition skin-purple sidebar-mini sidebar-collapse">
     <!-- Site wrapper -->
     <div class="wrapper">
-        @Html.Partial("_head_menu")
+        @{
+            Dev my = new Dev();
+            string myNTID = PageExtensionMethods.getMyWindowsID().ToString();
+            myNTID = "gsing017";
+            ViewData.Model = my.getEmployeeData(myNTID).FirstOrDefault();
+            getEmployeeData_Result Model = ViewData.Model;
+        }
+        @Html.Partial("_head_menu", Model)
         <!-- =============================================== -->
         <!-- Left side column. contains the sidebar -->
-        @Html.Partial("_left_menu")
+        @Html.Partial("_left_menu", Model)
         <!-- =============================================== -->
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <!-- Content Header (Page header) -->
-                @Html.Partial("_page_heading")
+                @Html.Partial("_page_heading", Model)
             </section>
             <!-- Main content -->
             <section class="content">
@@ -38,7 +46,7 @@
         <!-- /.content-wrapper -->
         @Html.Partial("_footer")
         <!-- Control Sidebar -->
-        @Html.Partial("_control_sidebar")
+        @Html.Partial("_control_sidebar", Model)
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->

@@ -887,15 +887,6 @@ namespace iAccess.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GetDeptValues", functionIDParameter, departmentIDParameter, lOBIDParameter, skillSetIDParameter, subSkillSetIDParameter);
         }
     
-        public virtual ObjectResult<getEmployeeData_Result> getEmployeeData(string nT_ID)
-        {
-            var nT_IDParameter = nT_ID != null ?
-                new ObjectParameter("NT_ID", nT_ID) :
-                new ObjectParameter("NT_ID", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployeeData_Result>("getEmployeeData", nT_IDParameter);
-        }
-    
         public virtual ObjectResult<GetEmployeeLeaveRequestes_Result> GetEmployeeLeaveRequestes(Nullable<int> empCode, Nullable<int> who, string l1, string l2)
         {
             var empCodeParameter = empCode.HasValue ?
@@ -1594,6 +1585,15 @@ namespace iAccess.Models
                 new ObjectParameter("comments", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateDecline", approverIDParameter, empIDParameter, idParameter, commentsParameter, bit);
+        }
+    
+        public virtual ObjectResult<getEmployeeData_Result> getEmployeeData(string nT_ID)
+        {
+            var nT_IDParameter = nT_ID != null ?
+                new ObjectParameter("NT_ID", nT_ID) :
+                new ObjectParameter("NT_ID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getEmployeeData_Result>("getEmployeeData", nT_IDParameter);
         }
     }
 }

@@ -2494,9 +2494,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="SkillSetID" Mode="In" Type="Int32" />
             <Parameter Name="SubSkillSetID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getEmployeeData" ReturnType="Collection(DevModel.getEmployeeData_Result)">
-          <Parameter Name="NT_ID" Mode="In" Type="String" />
-          </FunctionImport>
           <FunctionImport Name="GetEmployeeLeaveRequestes" ReturnType="Collection(DevModel.GetEmployeeLeaveRequestes_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Who" Mode="In" Type="Int32" />
@@ -2701,6 +2698,9 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="comments" Mode="In" Type="String" />
             <Parameter Name="bit" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getEmployeeData" ReturnType="Collection(DevModel.getEmployeeData_Result)">
+            <Parameter Name="NT_ID" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="FillChart9box_Result">
@@ -2942,64 +2942,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
         <ComplexType Name="getDefaultLeaveType_Result">
           <Property Type="Int32" Name="LeaveId" Nullable="false" />
           <Property Type="String" Name="LeaveText" Nullable="false" MaxLength="15" />
-        </ComplexType>
-        <ComplexType Name="getEmployeeData_Result">
-          <Property Type="Int32" Name="Employee_ID" Nullable="false" />
-          <Property Type="String" Name="First_Name" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Middle_Name" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="DesignationID" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="LevelIDnumber" Nullable="true" />
-          <Property Type="String" Name="LevelID" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="DOJ" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="DOP" Nullable="true" Precision="23" />
-          <Property Type="DateTime" Name="DOR" Nullable="true" Precision="23" />
-          <Property Type="String" Name="DPT" Nullable="true" MaxLength="10" />
-          <Property Type="DateTime" Name="DOPS" Nullable="true" Precision="16" />
-          <Property Type="String" Name="EmpStatus" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="TrngStatus" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Job_Type" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="CountryID" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SiteID" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="FunctionId" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LOBID" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SkillSet" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="SubSkillSet" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="RepMgrCode" Nullable="true" />
-          <Property Type="Int32" Name="RevMgrCode" Nullable="true" />
-          <Property Type="String" Name="TeamID" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="ntName" Nullable="true" MaxLength="50" />
-          <Property Type="Byte" Name="ResType" Nullable="true" />
-          <Property Type="Int32" Name="BusinessID" Nullable="true" />
-          <Property Type="Int32" Name="Employee_ID1" Nullable="false" />
-          <Property Type="DateTime" Name="Date_of_Birth" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Email_Office" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Email_Personal" Nullable="true" MaxLength="255" />
-          <Property Type="Int64" Name="Contact_Number" Nullable="true" />
-          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="AnniversaryDate" Nullable="true" Precision="23" />
-          <Property Type="String" Name="Qualification" Nullable="true" />
-          <Property Type="Boolean" Name="Transport" Nullable="true" />
-          <Property Type="String" Name="Address1" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Address2" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Landmark" Nullable="true" MaxLength="255" />
-          <Property Type="Int32" Name="Location" Nullable="true" />
-          <Property Type="String" Name="SubLocation" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
-          <Property Type="Int32" Name="Pincode" Nullable="true" />
-          <Property Type="Int32" Name="Total_Work_Experience" Nullable="true" />
-          <Property Type="String" Name="Skill1" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Skill2" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Skill3" Nullable="true" MaxLength="255" />
-          <Property Type="Int64" Name="Alternate_Contact" Nullable="true" />
-          <Property Type="Int64" Name="EmergencyContactNo" Nullable="true" />
-          <Property Type="String" Name="EmergencyContactPerson" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="UserImage" Nullable="true" MaxLength="255" />
-          <Property Type="String" Name="Updated_by" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="Update_Date" Nullable="true" Precision="23" />
-          <Property Type="Int32" Name="DeptLinkId" Nullable="true" />
-          <Property Type="String" Name="RepMgrName" Nullable="true" MaxLength="511" />
         </ComplexType>
         <ComplexType Name="GetEmployeeLeaveRequestes_Result">
           <Property Type="Int32" Name="EMPCODE" Nullable="false" />
@@ -3340,6 +3282,64 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Type="Int32" Name="SubSkillSetID" Nullable="true" />
           <Property Type="String" Name="SubSkillSet" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="Active" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="getEmployeeData_Result">
+          <Property Type="Int32" Name="Employee_ID" Nullable="false" />
+          <Property Type="String" Name="First_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Middle_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Last_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="DesignationID" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="LevelIDnumber" Nullable="true" />
+          <Property Type="String" Name="LevelID" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="DOJ" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DOP" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DOR" Nullable="true" Precision="23" />
+          <Property Type="String" Name="DPT" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="DOPS" Nullable="true" Precision="16" />
+          <Property Type="String" Name="EmpStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="TrngStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Job_Type" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CountryID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SiteID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FunctionId" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LOBID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SkillSet" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SubSkillSet" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="RepMgrCode" Nullable="true" />
+          <Property Type="Int32" Name="RevMgrCode" Nullable="true" />
+          <Property Type="String" Name="TeamID" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="ntName" Nullable="true" MaxLength="50" />
+          <Property Type="Byte" Name="ResType" Nullable="true" />
+          <Property Type="Int32" Name="BusinessID" Nullable="true" />
+          <Property Type="DateTime" Name="Date_of_Birth" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email_Office" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Email_Personal" Nullable="true" MaxLength="255" />
+          <Property Type="Int64" Name="Contact_Number" Nullable="true" />
+          <Property Type="String" Name="MaritalStatus" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AnniversaryDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Qualification" Nullable="true" />
+          <Property Type="Boolean" Name="Transport" Nullable="true" />
+          <Property Type="String" Name="Address1" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Address2" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Landmark" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="Location" Nullable="true" />
+          <Property Type="String" Name="SubLocation" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="Pincode" Nullable="true" />
+          <Property Type="Int32" Name="Total_Work_Experience" Nullable="true" />
+          <Property Type="String" Name="Skill1" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Skill2" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Skill3" Nullable="true" MaxLength="255" />
+          <Property Type="Int64" Name="Alternate_Contact" Nullable="true" />
+          <Property Type="Int64" Name="EmergencyContactNo" Nullable="true" />
+          <Property Type="String" Name="EmergencyContactPerson" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="UserImage" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Updated_by" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Update_Date" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="DeptLinkId" Nullable="true" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="RepMgrName" Nullable="true" MaxLength="100" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -4356,68 +4356,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetDeptValues" FunctionName="DevModel.Store.GetDeptValues" />
-          <FunctionImportMapping FunctionImportName="getEmployeeData" FunctionName="DevModel.Store.getEmployeeData">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getEmployeeData_Result">
-                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
-                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
-                <ScalarProperty Name="LevelIDnumber" ColumnName="LevelIDnumber" />
-                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
-                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
-                <ScalarProperty Name="DOP" ColumnName="DOP" />
-                <ScalarProperty Name="DOR" ColumnName="DOR" />
-                <ScalarProperty Name="DPT" ColumnName="DPT" />
-                <ScalarProperty Name="DOPS" ColumnName="DOPS" />
-                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
-                <ScalarProperty Name="TrngStatus" ColumnName="TrngStatus" />
-                <ScalarProperty Name="Job_Type" ColumnName="Job_Type" />
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
-                <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
-                <ScalarProperty Name="LOBID" ColumnName="LOBID" />
-                <ScalarProperty Name="SkillSet" ColumnName="SkillSet" />
-                <ScalarProperty Name="SubSkillSet" ColumnName="SubSkillSet" />
-                <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
-                <ScalarProperty Name="RevMgrCode" ColumnName="RevMgrCode" />
-                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
-                <ScalarProperty Name="ntName" ColumnName="ntName" />
-                <ScalarProperty Name="ResType" ColumnName="ResType" />
-                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
-                <ScalarProperty Name="Employee_ID1" ColumnName="Employee_ID" />
-                <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Email_Office" ColumnName="Email_Office" />
-                <ScalarProperty Name="Email_Personal" ColumnName="Email_Personal" />
-                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
-                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-                <ScalarProperty Name="AnniversaryDate" ColumnName="AnniversaryDate" />
-                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-                <ScalarProperty Name="Transport" ColumnName="Transport" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="SubLocation" ColumnName="SubLocation" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
-                <ScalarProperty Name="Total_Work_Experience" ColumnName="Total_Work_Experience" />
-                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
-                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
-                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
-                <ScalarProperty Name="Alternate_Contact" ColumnName="Alternate_Contact" />
-                <ScalarProperty Name="EmergencyContactNo" ColumnName="EmergencyContactNo" />
-                <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
-                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
-                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
-                <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
-                <ScalarProperty Name="DeptLinkId" ColumnName="DeptLinkId" />
-                <ScalarProperty Name="RepMgrName" ColumnName="RepMgrName" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetEmployeeLeaveRequestes" FunctionName="DevModel.Store.GetEmployeeLeaveRequestes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DevModel.GetEmployeeLeaveRequestes_Result">
@@ -4867,6 +4805,68 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UpdateApproval" FunctionName="DevModel.Store.UpdateApproval" />
           <FunctionImportMapping FunctionImportName="UpdateDecline" FunctionName="DevModel.Store.UpdateDecline" />
+          <FunctionImportMapping FunctionImportName="getEmployeeData" FunctionName="DevModel.Store.getEmployeeData">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DevModel.getEmployeeData_Result">
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="DesignationID" ColumnName="DesignationID" />
+                <ScalarProperty Name="LevelIDnumber" ColumnName="LevelIDnumber" />
+                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="DOP" ColumnName="DOP" />
+                <ScalarProperty Name="DOR" ColumnName="DOR" />
+                <ScalarProperty Name="DPT" ColumnName="DPT" />
+                <ScalarProperty Name="DOPS" ColumnName="DOPS" />
+                <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
+                <ScalarProperty Name="TrngStatus" ColumnName="TrngStatus" />
+                <ScalarProperty Name="Job_Type" ColumnName="Job_Type" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+                <ScalarProperty Name="LOBID" ColumnName="LOBID" />
+                <ScalarProperty Name="SkillSet" ColumnName="SkillSet" />
+                <ScalarProperty Name="SubSkillSet" ColumnName="SubSkillSet" />
+                <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
+                <ScalarProperty Name="RevMgrCode" ColumnName="RevMgrCode" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="ntName" ColumnName="ntName" />
+                <ScalarProperty Name="ResType" ColumnName="ResType" />
+                <ScalarProperty Name="BusinessID" ColumnName="BusinessID" />
+                <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email_Office" ColumnName="Email_Office" />
+                <ScalarProperty Name="Email_Personal" ColumnName="Email_Personal" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="AnniversaryDate" ColumnName="AnniversaryDate" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Transport" ColumnName="Transport" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SubLocation" ColumnName="SubLocation" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Total_Work_Experience" ColumnName="Total_Work_Experience" />
+                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+                <ScalarProperty Name="Alternate_Contact" ColumnName="Alternate_Contact" />
+                <ScalarProperty Name="EmergencyContactNo" ColumnName="EmergencyContactNo" />
+                <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+                <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+                <ScalarProperty Name="DeptLinkId" ColumnName="DeptLinkId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="RepMgrName" ColumnName="RepMgrName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
