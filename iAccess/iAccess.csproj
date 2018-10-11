@@ -48,13 +48,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -115,9 +126,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.ApplicationInsights">
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
@@ -148,6 +156,324 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\buildBadges_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FillChart9box_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FillDesignation9Box_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fillEmployeeAccounts_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fillInterval_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fillMonth_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FillTeamList9box_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\fn_delimitedtotable_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAccountProdHrsChk_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetAgentDataforHiddenAgents_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getDefaultLeaveType_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getEmployeeData_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveRequestes2_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmployeeLeaveRequestes_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getEmployeeLeaveRoster_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getEmployeeMgrs_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetEmpNameByManagerID_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetFacilityProdHrsChk_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetIntervalTracker_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetIntradayList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getKPIWiseResponsibilities_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLeavedatesandLeavereason_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLeaveList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getLeaveRoster_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMarketProdHrsChk_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetMonthProdHrsChk_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetRepRevMgr_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getSiteEmployeeData_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GetWeeks_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NINEBOXgetCompetency_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NINEBOXgetEmpStats_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NineBoxTest_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdHrsChk2_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProdHrsChk_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RosterMst.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RosterMstLog.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RosterOptimization.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roster_GetAdminFormatRoster_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roster_GetEmployeeSpecificRoster_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roster_loadCancelledLeaves_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Roster_loadLeaves_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\skillbox9_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spGetServiceTimer_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SplitString_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_GetTableReportAutomationSupportFiles_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_skillbox9_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sp_UpdateServSche_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Swap_getSwapStatus_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Swap_GetSwapWithinSpecificTeam_2_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblCountry.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDepartment.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDepartmentLinkMst.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblDesignation.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEmpStatu.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblEnableDisable.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblFunction.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblGender.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblIntervalTracker.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblJob_Type.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLeaveType.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLevel.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLOB.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLocation.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMappingMst.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMaritalStatu.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMaster.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMasterApprover.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMaster_BU.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMaster_Log.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMovementState.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMovementType.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblPincode.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblProfile.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblQry.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblQualification.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblRstWeek.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblShiftCode.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSite.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSkill.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSkillSet.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSubSkillSet.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSwap.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblSwapMst.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblTrainingStatu.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbltrans_Movement.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_datewise_leave.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_leave_request.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_leave_request_Log.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tbl_Master_Approver.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TeamList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Test_Plz_Delete_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transfer_ActionsList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transfer_DepartmentList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transfer_getTransfereeUsingMovementID_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transfer_TeamList_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMP.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WFMP.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WFMP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WFMP.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\xGetdateBetween_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\xGetMonthsGlidePath_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\xGetWeekDates_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\xWeekStart_Result.cs">
+      <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -6721,6 +7047,16 @@
     <Content Include="AdminLTE\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="AdminLTE\plugins\timepicker\bootstrap-timepicker.min.js" />
     <Content Include="AdminLTE\starter.html" />
+    <Content Include="Models\WFMP.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WFMP.Context.cs</LastGenOutput>
+      <DependentUpon>WFMP.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\WFMP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WFMP.edmx</DependentUpon>
+      <LastGenOutput>WFMP.cs</LastGenOutput>
+    </Content>
     <Content Include="Sitel\cdn\cdn.datatables.net\1.10.15\css\dataTables.jqueryui.min.css" />
     <Content Include="Sitel\cdn\cdn.datatables.net\1.10.15\js\dataTables.jqueryui.min.js" />
     <Content Include="Sitel\cdn\cdn.datatables.net\1.10.15\js\jquery.dataTables.min.js" />
@@ -7614,6 +7950,13 @@
     <Content Include="AdminLTE\README.md" />
     <Content Include="AdminLTE\Web.config" />
     <Content Include="AdminLTE\yarn.lock" />
+    <EntityDeploy Include="Models\WFMP.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WFMP.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WFMP.edmx.diagram">
+      <DependentUpon>WFMP.edmx</DependentUpon>
+    </Content>
     <None Include="Sitel\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Sitel\js\jquery-1.10.2.js" />
     <Content Include="Sitel\js\jquery-1.10.2.min.js" />
@@ -7655,7 +7998,6 @@
     <Folder Include="AdminLTE\build\less\css\" />
     <Folder Include="AdminLTE\build\less\skins\css\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Sitel\mails\" />
     <Folder Include="Sitel\metric_downloads\" />
     <Folder Include="Sitel\roster_downloads\" />
@@ -7678,6 +8020,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

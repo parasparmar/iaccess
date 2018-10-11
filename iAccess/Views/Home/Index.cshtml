@@ -1,5 +1,13 @@
-﻿@{
+﻿@using iAccess.Models
+@{
+
     ViewBag.Title = "Home Page";
+    Dev _db = new Dev();
+    var Model = _db.getEmployeeData("pparm001").ToList();
 }
 
+<h1>
+   
+    @Model[0].Employee_ID.ToString() &nbsp; @Model[0].First_Name
 
+</h1>
