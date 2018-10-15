@@ -1,14 +1,6 @@
 ﻿@using iAccess.Models
 @{
 
-    ViewBag.Title = "Home Page";
-    Dev _db = new Dev();
-    string ntID = PageExtensionMethods.getMyWindowsID();
-    var Model = _db.getEmployeeData(ntID).ToList();
+    ViewBag.Title = "Home Page";    
 }
 
-<h1>
-   
-    @Model[0].Employee_ID.ToString() &nbsp; @Model[0].First_Name
-
-</h1>

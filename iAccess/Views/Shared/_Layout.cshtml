@@ -1,4 +1,7 @@
 ﻿@using iAccess.Models;
+@{
+    getEmployeeData_Result Model = ViewData.Model;
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +19,7 @@
 <body class="hold-transition skin-purple sidebar-mini sidebar-collapse">
     <!-- Site wrapper -->
     <div class="wrapper">
-        @{
-            Dev my = new Dev();
-            string myNTID = PageExtensionMethods.getMyWindowsID().ToString();
-            myNTID = "gsing017";
-            ViewData.Model = my.getEmployeeData(myNTID).FirstOrDefault();
-            getEmployeeData_Result Model = ViewData.Model;
-        }
+
         @Html.Partial("_head_menu", Model)
         <!-- =============================================== -->
         <!-- Left side column. contains the sidebar -->
@@ -54,6 +51,7 @@
     <script>
         $(document).ready(function () {
             $('.sidebar-menu').tree();
+            $('[class*=select2]').select2();
         });
     </script>
 </body>

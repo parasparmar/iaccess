@@ -1586,7 +1586,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <ComplexType Name="fn_delimitedtotable_Result">
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="v" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
@@ -2214,7 +2214,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TrngStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Dev" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="RosterMsts" EntityType="Self.RosterMst" />
           <EntitySet Name="tbl_Master_Approver" EntityType="Self.tbl_Master_Approver" />
           <EntitySet Name="tblEnableDisables" EntityType="Self.tblEnableDisable" />
@@ -2258,29 +2258,29 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <EntitySet Name="tblSwaps" EntityType="Self.tblSwap" />
           <EntitySet Name="tblSwapMsts" EntityType="Self.tblSwapMst" />
           <EntitySet Name="tblTrainingStatus" EntityType="Self.tblTrainingStatu" />
-          <FunctionImport Name="fn_delimitedtotable" IsComposable="true" ReturnType="Collection(DevModel.fn_delimitedtotable_Result)">
+          <FunctionImport Name="fn_delimitedtotable" IsComposable="true" ReturnType="Collection(DBModel.fn_delimitedtotable_Result)">
           <Parameter Name="DelimitedString" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="getKPIWiseResponsibilities" IsComposable="true" ReturnType="Collection(DevModel.getKPIWiseResponsibilities_Result)" />
-          <FunctionImport Name="SplitString" IsComposable="true" ReturnType="Collection(DevModel.SplitString_Result)">
+          <FunctionImport Name="getKPIWiseResponsibilities" IsComposable="true" ReturnType="Collection(DBModel.getKPIWiseResponsibilities_Result)" />
+          <FunctionImport Name="SplitString" IsComposable="true" ReturnType="Collection(DBModel.SplitString_Result)">
             <Parameter Name="Input" Mode="In" Type="String" />
             <Parameter Name="Character" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Test_Plz_Delete" IsComposable="true" ReturnType="Collection(DevModel.Test_Plz_Delete_Result)" />
-          <FunctionImport Name="xGetdateBetween" IsComposable="true" ReturnType="Collection(DevModel.xGetdateBetween_Result)">
+          <FunctionImport Name="Test_Plz_Delete" IsComposable="true" ReturnType="Collection(DBModel.Test_Plz_Delete_Result)" />
+          <FunctionImport Name="xGetdateBetween" IsComposable="true" ReturnType="Collection(DBModel.xGetdateBetween_Result)">
             <Parameter Name="Increment" Mode="In" Type="String" />
             <Parameter Name="StartDate" Mode="In" Type="DateTime" />
             <Parameter Name="EndDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="xGetMonthsGlidePath" IsComposable="true" ReturnType="Collection(DevModel.xGetMonthsGlidePath_Result)">
+          <FunctionImport Name="xGetMonthsGlidePath" IsComposable="true" ReturnType="Collection(DBModel.xGetMonthsGlidePath_Result)">
           <Parameter Name="startDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="xGetWeekDates" IsComposable="true" ReturnType="Collection(DevModel.xGetWeekDates_Result)">
+          <FunctionImport Name="xGetWeekDates" IsComposable="true" ReturnType="Collection(DBModel.xGetWeekDates_Result)">
             <Parameter Name="xDate" Mode="In" Type="DateTime" />
             <Parameter Name="xSD" Mode="In" Type="Boolean" />
             <Parameter Name="Increment" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="xWeekStart" IsComposable="true" ReturnType="Collection(DevModel.xWeekStart_Result)">
+          <FunctionImport Name="xWeekStart" IsComposable="true" ReturnType="Collection(DBModel.xWeekStart_Result)">
             <Parameter Name="startDate" Mode="In" Type="DateTime" />
             <Parameter Name="endDate" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -2289,60 +2289,60 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImport Name="CRMDataImport">
           <Parameter Name="FileName" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="FillChart9box" ReturnType="Collection(DevModel.FillChart9box_Result)">
+          <FunctionImport Name="FillChart9box" ReturnType="Collection(DBModel.FillChart9box_Result)">
             <Parameter Name="EMPCODE" Mode="In" Type="Int32" />
             <Parameter Name="Period" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="FillDesignation9Box" ReturnType="Collection(DevModel.FillDesignation9Box_Result)">
+          <FunctionImport Name="FillDesignation9Box" ReturnType="Collection(DBModel.FillDesignation9Box_Result)">
           <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="FillTeamList9box" ReturnType="Collection(DevModel.FillTeamList9box_Result)">
+          <FunctionImport Name="FillTeamList9box" ReturnType="Collection(DBModel.FillTeamList9box_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Period" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetAccountProdHrsChk" ReturnType="Collection(DevModel.GetAccountProdHrsChk_Result)">
+          <FunctionImport Name="GetAccountProdHrsChk" ReturnType="Collection(DBModel.GetAccountProdHrsChk_Result)">
             <Parameter Name="MONTH" Mode="In" Type="DateTime" />
             <Parameter Name="MARKET" Mode="In" Type="String" />
             <Parameter Name="Facility" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetAgentDataforHiddenAgents" ReturnType="Collection(DevModel.GetAgentDataforHiddenAgents_Result)">
+          <FunctionImport Name="GetAgentDataforHiddenAgents" ReturnType="Collection(DBModel.GetAgentDataforHiddenAgents_Result)">
           <Parameter Name="xDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="GetFacilityProdHrsChk" ReturnType="Collection(DevModel.GetFacilityProdHrsChk_Result)">
+          <FunctionImport Name="GetFacilityProdHrsChk" ReturnType="Collection(DBModel.GetFacilityProdHrsChk_Result)">
             <Parameter Name="MONTH" Mode="In" Type="DateTime" />
             <Parameter Name="MARKET" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetHiringPlanData">
           <Parameter Name="xYear" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetIntradayList" ReturnType="Collection(DevModel.GetIntradayList_Result)">
+          <FunctionImport Name="GetIntradayList" ReturnType="Collection(DBModel.GetIntradayList_Result)">
           <Parameter Name="xServer" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetMarketProdHrsChk" ReturnType="Collection(DevModel.GetMarketProdHrsChk_Result)">
+          <FunctionImport Name="GetMarketProdHrsChk" ReturnType="Collection(DBModel.GetMarketProdHrsChk_Result)">
           <Parameter Name="MONTH" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="GetMonthProdHrsChk" ReturnType="Collection(DevModel.GetMonthProdHrsChk_Result)" />
+          <FunctionImport Name="GetMonthProdHrsChk" ReturnType="Collection(DBModel.GetMonthProdHrsChk_Result)" />
           <FunctionImport Name="NINEBOXfillDdlPeriod" ReturnType="Collection(String)" />
-          <FunctionImport Name="NINEBOXgetCompetency" ReturnType="Collection(DevModel.NINEBOXgetCompetency_Result)">
+          <FunctionImport Name="NINEBOXgetCompetency" ReturnType="Collection(DBModel.NINEBOXgetCompetency_Result)">
             <Parameter Name="Empcode" Mode="In" Type="Int32" />
             <Parameter Name="Period" Mode="In" Type="String" />
             <Parameter Name="Type" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="NINEBOXgetEmpStats" ReturnType="Collection(DevModel.NINEBOXgetEmpStats_Result)">
+          <FunctionImport Name="NINEBOXgetEmpStats" ReturnType="Collection(DBModel.NINEBOXgetEmpStats_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Period" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="NineBoxTest" ReturnType="Collection(DevModel.NineBoxTest_Result)">
+          <FunctionImport Name="NineBoxTest" ReturnType="Collection(DBModel.NineBoxTest_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Period" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="ProdHrsChk" ReturnType="Collection(DevModel.ProdHrsChk_Result)">
+          <FunctionImport Name="ProdHrsChk" ReturnType="Collection(DBModel.ProdHrsChk_Result)">
             <Parameter Name="XMONTH" Mode="In" Type="DateTime" />
             <Parameter Name="MARKET" Mode="In" Type="String" />
             <Parameter Name="FACILITY" Mode="In" Type="String" />
             <Parameter Name="ACCOUNT" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="ProdHrsChk2" ReturnType="Collection(DevModel.ProdHrsChk2_Result)">
+          <FunctionImport Name="ProdHrsChk2" ReturnType="Collection(DBModel.ProdHrsChk2_Result)">
             <Parameter Name="XMONTH" Mode="In" Type="DateTime" />
             <Parameter Name="MARKET" Mode="In" Type="String" />
             <Parameter Name="FACILITY" Mode="In" Type="String" />
@@ -2396,7 +2396,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="LOBID" Mode="In" Type="String" />
             <Parameter Name="FACILITYID" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="skillbox9" ReturnType="Collection(DevModel.skillbox9_Result)">
+          <FunctionImport Name="skillbox9" ReturnType="Collection(DBModel.skillbox9_Result)">
             <Parameter Name="Empcode" Mode="In" Type="Int32" />
             <Parameter Name="Skill" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2416,14 +2416,14 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_GetTableReportAutomationSupportFiles" ReturnType="Collection(DevModel.sp_GetTableReportAutomationSupportFiles_Result)">
+          <FunctionImport Name="sp_GetTableReportAutomationSupportFiles" ReturnType="Collection(DBModel.sp_GetTableReportAutomationSupportFiles_Result)">
           <Parameter Name="TransID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DevModel.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DevModel.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBModel.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -2432,16 +2432,16 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="sp_skillbox9" ReturnType="Collection(DevModel.sp_skillbox9_Result)">
+          <FunctionImport Name="sp_skillbox9" ReturnType="Collection(DBModel.sp_skillbox9_Result)">
             <Parameter Name="Empcode" Mode="In" Type="Int32" />
             <Parameter Name="Skill" Mode="In" Type="Byte" />
           </FunctionImport>
-          <FunctionImport Name="Sp_UpdateServSche" ReturnType="Collection(DevModel.Sp_UpdateServSche_Result)">
+          <FunctionImport Name="Sp_UpdateServSche" ReturnType="Collection(DBModel.Sp_UpdateServSche_Result)">
             <Parameter Name="ISRUNNING" Mode="In" Type="Boolean" />
             <Parameter Name="ServiceID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="spGetServiceTimer" ReturnType="Collection(DevModel.spGetServiceTimer_Result)">
+          <FunctionImport Name="spGetServiceTimer" ReturnType="Collection(DBModel.spGetServiceTimer_Result)">
           <Parameter Name="xServiceID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UpdateProdHrsChk">
@@ -2456,7 +2456,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="Comments" Mode="In" Type="String" />
             <Parameter Name="UpdatedBy" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="buildBadges" ReturnType="Collection(DevModel.buildBadges_Result)">
+          <FunctionImport Name="buildBadges" ReturnType="Collection(DBModel.buildBadges_Result)">
           <Parameter Name="ECN" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="cancelLeaveRequest">
@@ -2467,10 +2467,10 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImport Name="fillAccountLOB" ReturnType="Collection(String)">
           <Parameter Name="Account" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="fillEmployeeAccounts" ReturnType="Collection(DevModel.fillEmployeeAccounts_Result)">
+          <FunctionImport Name="fillEmployeeAccounts" ReturnType="Collection(DBModel.fillEmployeeAccounts_Result)">
           <Parameter Name="EmpCode" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="fillInterval" ReturnType="Collection(DevModel.fillInterval_Result)" />
+          <FunctionImport Name="fillInterval" ReturnType="Collection(DBModel.fillInterval_Result)" />
           <FunctionImport Name="fillKPI" ReturnType="Collection(String)" />
           <FunctionImport Name="fillModal" ReturnType="Collection(Int32)">
             <Parameter Name="LeaveId" Mode="In" Type="Int32" />
@@ -2482,11 +2482,11 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
             <Parameter Name="ApproverId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="fillMonth" ReturnType="Collection(DevModel.fillMonth_Result)" />
+          <FunctionImport Name="fillMonth" ReturnType="Collection(DBModel.fillMonth_Result)" />
           <FunctionImport Name="fillSites" ReturnType="Collection(String)">
           <Parameter Name="AccountID" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="getDefaultLeaveType" ReturnType="Collection(DevModel.getDefaultLeaveType_Result)" />
+          <FunctionImport Name="getDefaultLeaveType" ReturnType="Collection(DBModel.getDefaultLeaveType_Result)" />
           <FunctionImport Name="GetDeptValues">
             <Parameter Name="FunctionID" Mode="In" Type="Int32" />
             <Parameter Name="DepartmentID" Mode="In" Type="Int32" />
@@ -2494,45 +2494,45 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="SkillSetID" Mode="In" Type="Int32" />
             <Parameter Name="SubSkillSetID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetEmployeeLeaveRequestes" ReturnType="Collection(DevModel.GetEmployeeLeaveRequestes_Result)">
+          <FunctionImport Name="GetEmployeeLeaveRequestes" ReturnType="Collection(DBModel.GetEmployeeLeaveRequestes_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Who" Mode="In" Type="Int32" />
             <Parameter Name="L1" Mode="In" Type="String" />
             <Parameter Name="L2" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="GetEmployeeLeaveRequestes2" ReturnType="Collection(DevModel.GetEmployeeLeaveRequestes2_Result)">
+          <FunctionImport Name="GetEmployeeLeaveRequestes2" ReturnType="Collection(DBModel.GetEmployeeLeaveRequestes2_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Who" Mode="In" Type="Int32" />
             <Parameter Name="L1" Mode="In" Type="String" />
             <Parameter Name="L2" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="getEmployeeLeaveRoster" ReturnType="Collection(DevModel.getEmployeeLeaveRoster_Result)">
+          <FunctionImport Name="getEmployeeLeaveRoster" ReturnType="Collection(DBModel.getEmployeeLeaveRoster_Result)">
           <Parameter Name="LeaveID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getEmployeeMgrs" ReturnType="Collection(DevModel.getEmployeeMgrs_Result)">
+          <FunctionImport Name="getEmployeeMgrs" ReturnType="Collection(DBModel.getEmployeeMgrs_Result)">
           <Parameter Name="EmpCd" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetEmpNameByManagerID" ReturnType="Collection(DevModel.GetEmpNameByManagerID_Result)">
+          <FunctionImport Name="GetEmpNameByManagerID" ReturnType="Collection(DBModel.GetEmpNameByManagerID_Result)">
           <Parameter Name="EMPCODE" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GetIntervalTracker" ReturnType="Collection(DevModel.GetIntervalTracker_Result)">
+          <FunctionImport Name="GetIntervalTracker" ReturnType="Collection(DBModel.GetIntervalTracker_Result)">
           <Parameter Name="EmpCode" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getLeavedatesandLeavereason" ReturnType="Collection(DevModel.getLeavedatesandLeavereason_Result)">
+          <FunctionImport Name="getLeavedatesandLeavereason" ReturnType="Collection(DBModel.getLeavedatesandLeavereason_Result)">
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getLeaveList" ReturnType="Collection(DevModel.getLeaveList_Result)">
+          <FunctionImport Name="getLeaveList" ReturnType="Collection(DBModel.getLeaveList_Result)">
             <Parameter Name="StartDate" Mode="In" Type="DateTime" />
             <Parameter Name="EndDate" Mode="In" Type="DateTime" />
             <Parameter Name="desig" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getLeaveRoster" ReturnType="Collection(DevModel.getLeaveRoster_Result)">
+          <FunctionImport Name="getLeaveRoster" ReturnType="Collection(DBModel.getLeaveRoster_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="getMinDateforLeaveRequest" ReturnType="Collection(DateTime)" />
-          <FunctionImport Name="GetRepRevMgr" ReturnType="Collection(DevModel.GetRepRevMgr_Result)">
+          <FunctionImport Name="GetRepRevMgr" ReturnType="Collection(DBModel.GetRepRevMgr_Result)">
           <Parameter Name="EmpCode" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GetRosterAdmin">
@@ -2545,8 +2545,8 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
             <Parameter Name="WeekID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="getSiteEmployeeData" ReturnType="Collection(DevModel.getSiteEmployeeData_Result)" />
-          <FunctionImport Name="GetWeeks" ReturnType="Collection(DevModel.GetWeeks_Result)">
+          <FunctionImport Name="getSiteEmployeeData" ReturnType="Collection(DBModel.getSiteEmployeeData_Result)" />
+          <FunctionImport Name="GetWeeks" ReturnType="Collection(DBModel.GetWeeks_Result)">
           <Parameter Name="Year" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="InsertIntervalTracker">
@@ -2611,24 +2611,24 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="Updated_by" Mode="In" Type="String" />
             <Parameter Name="Update_Date" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Roster_GetAdminFormatRoster" ReturnType="Collection(DevModel.Roster_GetAdminFormatRoster_Result)">
+          <FunctionImport Name="Roster_GetAdminFormatRoster" ReturnType="Collection(DBModel.Roster_GetAdminFormatRoster_Result)">
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Roster_GetEmployeeSpecificRoster" ReturnType="Collection(DevModel.Roster_GetEmployeeSpecificRoster_Result)">
+          <FunctionImport Name="Roster_GetEmployeeSpecificRoster" ReturnType="Collection(DBModel.Roster_GetEmployeeSpecificRoster_Result)">
             <Parameter Name="EmpID" Mode="In" Type="Int32" />
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Roster_loadCancelledLeaves" ReturnType="Collection(DevModel.Roster_loadCancelledLeaves_Result)">
+          <FunctionImport Name="Roster_loadCancelledLeaves" ReturnType="Collection(DBModel.Roster_loadCancelledLeaves_Result)">
             <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
             <Parameter Name="WeekId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Roster_loadLeaves" ReturnType="Collection(DevModel.Roster_loadLeaves_Result)">
+          <FunctionImport Name="Roster_loadLeaves" ReturnType="Collection(DBModel.Roster_loadLeaves_Result)">
             <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
             <Parameter Name="WeekId" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Swap_getSwapStatus" ReturnType="Collection(DevModel.Swap_getSwapStatus_Result)">
+          <FunctionImport Name="Swap_getSwapStatus" ReturnType="Collection(DBModel.Swap_getSwapStatus_Result)">
             <Parameter Name="EmpCode" Mode="In" Type="Int32" />
             <Parameter Name="Role" Mode="In" Type="String" />
           </FunctionImport>
@@ -2637,7 +2637,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="Swap_GetSwapWithinSpecificTeam_2" ReturnType="Collection(DevModel.Swap_GetSwapWithinSpecificTeam_2_Result)">
+          <FunctionImport Name="Swap_GetSwapWithinSpecificTeam_2" ReturnType="Collection(DBModel.Swap_GetSwapWithinSpecificTeam_2_Result)">
             <Parameter Name="EmpID" Mode="In" Type="Int32" />
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
             <Parameter Name="ToDate" Mode="In" Type="DateTime" />
@@ -2664,10 +2664,10 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="ActionByRepMgr" Mode="In" Type="Boolean" />
             <Parameter Name="ActionByRepMgrOn" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="TeamList" ReturnType="Collection(DevModel.TeamList_Result)">
+          <FunctionImport Name="TeamList" ReturnType="Collection(DBModel.TeamList_Result)">
           <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Transfer_ActionsList" ReturnType="Collection(DevModel.Transfer_ActionsList_Result)">
+          <FunctionImport Name="Transfer_ActionsList" ReturnType="Collection(DBModel.Transfer_ActionsList_Result)">
           <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Transfer_ApproveAndCommitToMaster">
@@ -2677,13 +2677,13 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="EffectiveDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="Transfer_ApproveAndCommitToMaster_JOB" />
-          <FunctionImport Name="Transfer_DepartmentList" ReturnType="Collection(DevModel.Transfer_DepartmentList_Result)">
+          <FunctionImport Name="Transfer_DepartmentList" ReturnType="Collection(DBModel.Transfer_DepartmentList_Result)">
           <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Transfer_getTransfereeUsingMovementID" ReturnType="Collection(DevModel.Transfer_getTransfereeUsingMovementID_Result)">
+          <FunctionImport Name="Transfer_getTransfereeUsingMovementID" ReturnType="Collection(DBModel.Transfer_getTransfereeUsingMovementID_Result)">
           <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="Transfer_TeamList" ReturnType="Collection(DevModel.Transfer_TeamList_Result)">
+          <FunctionImport Name="Transfer_TeamList" ReturnType="Collection(DBModel.Transfer_TeamList_Result)">
           <Parameter Name="RepMgrCode" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="UpdateApproval">
@@ -2699,7 +2699,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="comments" Mode="In" Type="String" />
             <Parameter Name="bit" Mode="InOut" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="getEmployeeData" ReturnType="Collection(DevModel.getEmployeeData_Result)">
+          <FunctionImport Name="getEmployeeData" ReturnType="Collection(DBModel.getEmployeeData_Result)">
             <Parameter Name="NT_ID" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
@@ -3346,9 +3346,9 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DevModelStoreContainer" CdmEntityContainer="Dev">
+        <EntityContainerMapping StorageEntityContainer="DevModelStoreContainer" CdmEntityContainer="DB">
           <EntitySetMapping Name="RosterMsts">
-            <EntityTypeMapping TypeName="DevModel.RosterMst">
+            <EntityTypeMapping TypeName="DBModel.RosterMst">
               <MappingFragment StoreEntitySet="RosterMst">
                 <ScalarProperty Name="RosterID" ColumnName="RosterID" />
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
@@ -3363,7 +3363,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_Master_Approver">
-            <EntityTypeMapping TypeName="DevModel.tbl_Master_Approver">
+            <EntityTypeMapping TypeName="DBModel.tbl_Master_Approver">
               <MappingFragment StoreEntitySet="tbl_Master_Approver">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
@@ -3373,7 +3373,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblEnableDisables">
-            <EntityTypeMapping TypeName="DevModel.tblEnableDisable">
+            <EntityTypeMapping TypeName="DBModel.tblEnableDisable">
               <MappingFragment StoreEntitySet="tblEnableDisable">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="MinLevel" ColumnName="MinLevel" />
@@ -3387,7 +3387,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblLeaveTypes">
-            <EntityTypeMapping TypeName="DevModel.tblLeaveType">
+            <EntityTypeMapping TypeName="DBModel.tblLeaveType">
               <MappingFragment StoreEntitySet="tblLeaveType">
                 <ScalarProperty Name="LeaveID" ColumnName="LeaveID" />
                 <ScalarProperty Name="LeaveText" ColumnName="LeaveText" />
@@ -3397,7 +3397,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMasters">
-            <EntityTypeMapping TypeName="DevModel.tblMaster">
+            <EntityTypeMapping TypeName="DBModel.tblMaster">
               <MappingFragment StoreEntitySet="tblMaster">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
@@ -3427,7 +3427,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMasterApprovers">
-            <EntityTypeMapping TypeName="DevModel.tblMasterApprover">
+            <EntityTypeMapping TypeName="DBModel.tblMasterApprover">
               <MappingFragment StoreEntitySet="tblMasterApprover">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
@@ -3437,7 +3437,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblRstWeeks">
-            <EntityTypeMapping TypeName="DevModel.tblRstWeek">
+            <EntityTypeMapping TypeName="DBModel.tblRstWeek">
               <MappingFragment StoreEntitySet="tblRstWeeks">
                 <ScalarProperty Name="WeekId" ColumnName="WeekId" />
                 <ScalarProperty Name="rYear" ColumnName="rYear" />
@@ -3448,7 +3448,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblShiftCodes">
-            <EntityTypeMapping TypeName="DevModel.tblShiftCode">
+            <EntityTypeMapping TypeName="DBModel.tblShiftCode">
               <MappingFragment StoreEntitySet="tblShiftCode">
                 <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
                 <ScalarProperty Name="ShiftCode" ColumnName="ShiftCode" />
@@ -3461,7 +3461,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSkillSets">
-            <EntityTypeMapping TypeName="DevModel.tblSkillSet">
+            <EntityTypeMapping TypeName="DBModel.tblSkillSet">
               <MappingFragment StoreEntitySet="tblSkillSet">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
@@ -3472,7 +3472,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbltrans_Movement">
-            <EntityTypeMapping TypeName="DevModel.tbltrans_Movement">
+            <EntityTypeMapping TypeName="DBModel.tbltrans_Movement">
               <MappingFragment StoreEntitySet="tbltrans_Movement">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FromDptLinkMstId" ColumnName="FromDptLinkMstId" />
@@ -3491,7 +3491,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RosterMstLogs">
-            <EntityTypeMapping TypeName="DevModel.RosterMstLog">
+            <EntityTypeMapping TypeName="DBModel.RosterMstLog">
               <MappingFragment StoreEntitySet="RosterMstLog">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="RosterID" ColumnName="RosterID" />
@@ -3508,7 +3508,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RosterOptimizations">
-            <EntityTypeMapping TypeName="DevModel.RosterOptimization">
+            <EntityTypeMapping TypeName="DBModel.RosterOptimization">
               <MappingFragment StoreEntitySet="RosterOptimization">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
@@ -3517,7 +3517,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_datewise_leave">
-            <EntityTypeMapping TypeName="DevModel.tbl_datewise_leave">
+            <EntityTypeMapping TypeName="DBModel.tbl_datewise_leave">
               <MappingFragment StoreEntitySet="tbl_datewise_leave">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
@@ -3528,7 +3528,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_leave_request">
-            <EntityTypeMapping TypeName="DevModel.tbl_leave_request">
+            <EntityTypeMapping TypeName="DBModel.tbl_leave_request">
               <MappingFragment StoreEntitySet="tbl_leave_request">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ecn" ColumnName="ecn" />
@@ -3550,7 +3550,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tbl_leave_request_Log">
-            <EntityTypeMapping TypeName="DevModel.tbl_leave_request_Log">
+            <EntityTypeMapping TypeName="DBModel.tbl_leave_request_Log">
               <MappingFragment StoreEntitySet="tbl_leave_request_Log">
                 <ScalarProperty Name="Transid" ColumnName="Transid" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -3568,7 +3568,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblCountries">
-            <EntityTypeMapping TypeName="DevModel.tblCountry">
+            <EntityTypeMapping TypeName="DBModel.tblCountry">
               <MappingFragment StoreEntitySet="tblCountry">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="Country" ColumnName="Country" />
@@ -3581,7 +3581,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDepartments">
-            <EntityTypeMapping TypeName="DevModel.tblDepartment">
+            <EntityTypeMapping TypeName="DBModel.tblDepartment">
               <MappingFragment StoreEntitySet="tblDepartment">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="Account" ColumnName="Account" />
@@ -3590,7 +3590,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDepartmentLinkMsts">
-            <EntityTypeMapping TypeName="DevModel.tblDepartmentLinkMst">
+            <EntityTypeMapping TypeName="DBModel.tblDepartmentLinkMst">
               <MappingFragment StoreEntitySet="tblDepartmentLinkMst">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
@@ -3603,7 +3603,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblDesignations">
-            <EntityTypeMapping TypeName="DevModel.tblDesignation">
+            <EntityTypeMapping TypeName="DBModel.tblDesignation">
               <MappingFragment StoreEntitySet="tblDesignation">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -3615,7 +3615,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblEmpStatus">
-            <EntityTypeMapping TypeName="DevModel.tblEmpStatu">
+            <EntityTypeMapping TypeName="DBModel.tblEmpStatu">
               <MappingFragment StoreEntitySet="tblEmpStatus">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="EmpStatus" ColumnName="EmpStatus" />
@@ -3623,7 +3623,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblFunctions">
-            <EntityTypeMapping TypeName="DevModel.tblFunction">
+            <EntityTypeMapping TypeName="DBModel.tblFunction">
               <MappingFragment StoreEntitySet="tblFunction">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="Function" ColumnName="Function" />
@@ -3632,7 +3632,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblGenders">
-            <EntityTypeMapping TypeName="DevModel.tblGender">
+            <EntityTypeMapping TypeName="DBModel.tblGender">
               <MappingFragment StoreEntitySet="tblGender">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
@@ -3640,7 +3640,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblIntervalTrackers">
-            <EntityTypeMapping TypeName="DevModel.tblIntervalTracker">
+            <EntityTypeMapping TypeName="DBModel.tblIntervalTracker">
               <MappingFragment StoreEntitySet="tblIntervalTracker">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
@@ -3659,7 +3659,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblJob_Type">
-            <EntityTypeMapping TypeName="DevModel.tblJob_Type">
+            <EntityTypeMapping TypeName="DBModel.tblJob_Type">
               <MappingFragment StoreEntitySet="tblJob_Type">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
@@ -3667,7 +3667,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblLevels">
-            <EntityTypeMapping TypeName="DevModel.tblLevel">
+            <EntityTypeMapping TypeName="DBModel.tblLevel">
               <MappingFragment StoreEntitySet="tblLevel">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="LevelID" ColumnName="LevelID" />
@@ -3677,7 +3677,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblLOBs">
-            <EntityTypeMapping TypeName="DevModel.tblLOB">
+            <EntityTypeMapping TypeName="DBModel.tblLOB">
               <MappingFragment StoreEntitySet="tblLOB">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="LOB" ColumnName="LOB" />
@@ -3686,7 +3686,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblLocations">
-            <EntityTypeMapping TypeName="DevModel.tblLocation">
+            <EntityTypeMapping TypeName="DBModel.tblLocation">
               <MappingFragment StoreEntitySet="tblLocation">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
@@ -3695,7 +3695,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMappingMsts">
-            <EntityTypeMapping TypeName="DevModel.tblMappingMst">
+            <EntityTypeMapping TypeName="DBModel.tblMappingMst">
               <MappingFragment StoreEntitySet="tblMappingMst">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="CountryID" ColumnName="CountryID" />
@@ -3706,7 +3706,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMaritalStatus">
-            <EntityTypeMapping TypeName="DevModel.tblMaritalStatu">
+            <EntityTypeMapping TypeName="DBModel.tblMaritalStatu">
               <MappingFragment StoreEntitySet="tblMaritalStatus">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
@@ -3714,7 +3714,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMaster_BU">
-            <EntityTypeMapping TypeName="DevModel.tblMaster_BU">
+            <EntityTypeMapping TypeName="DBModel.tblMaster_BU">
               <MappingFragment StoreEntitySet="tblMaster_BU">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
@@ -3744,7 +3744,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMaster_Log">
-            <EntityTypeMapping TypeName="DevModel.tblMaster_Log">
+            <EntityTypeMapping TypeName="DBModel.tblMaster_Log">
               <MappingFragment StoreEntitySet="tblMaster_Log">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
@@ -3776,7 +3776,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMovementStates">
-            <EntityTypeMapping TypeName="DevModel.tblMovementState">
+            <EntityTypeMapping TypeName="DBModel.tblMovementState">
               <MappingFragment StoreEntitySet="tblMovementState">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="State" ColumnName="State" />
@@ -3784,7 +3784,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblMovementTypes">
-            <EntityTypeMapping TypeName="DevModel.tblMovementType">
+            <EntityTypeMapping TypeName="DBModel.tblMovementType">
               <MappingFragment StoreEntitySet="tblMovementTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
@@ -3792,7 +3792,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblPincodes">
-            <EntityTypeMapping TypeName="DevModel.tblPincode">
+            <EntityTypeMapping TypeName="DBModel.tblPincode">
               <MappingFragment StoreEntitySet="tblPincode">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Pincode" ColumnName="Pincode" />
@@ -3802,7 +3802,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblProfiles">
-            <EntityTypeMapping TypeName="DevModel.tblProfile">
+            <EntityTypeMapping TypeName="DBModel.tblProfile">
               <MappingFragment StoreEntitySet="tblProfile">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
@@ -3834,7 +3834,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblQries">
-            <EntityTypeMapping TypeName="DevModel.tblQry">
+            <EntityTypeMapping TypeName="DBModel.tblQry">
               <MappingFragment StoreEntitySet="tblQry">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="Qry" ColumnName="Qry" />
@@ -3843,7 +3843,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblQualifications">
-            <EntityTypeMapping TypeName="DevModel.tblQualification">
+            <EntityTypeMapping TypeName="DBModel.tblQualification">
               <MappingFragment StoreEntitySet="tblQualification">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Qualification" ColumnName="Qualification" />
@@ -3851,7 +3851,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSites">
-            <EntityTypeMapping TypeName="DevModel.tblSite">
+            <EntityTypeMapping TypeName="DBModel.tblSite">
               <MappingFragment StoreEntitySet="tblSite">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
@@ -3861,7 +3861,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSkills">
-            <EntityTypeMapping TypeName="DevModel.tblSkill">
+            <EntityTypeMapping TypeName="DBModel.tblSkill">
               <MappingFragment StoreEntitySet="tblSkills">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Skill" ColumnName="Skill" />
@@ -3869,7 +3869,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSubSkillSets">
-            <EntityTypeMapping TypeName="DevModel.tblSubSkillSet">
+            <EntityTypeMapping TypeName="DBModel.tblSubSkillSet">
               <MappingFragment StoreEntitySet="tblSubSkillSet">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="SubSkillSet" ColumnName="SubSkillSet" />
@@ -3878,7 +3878,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSwaps">
-            <EntityTypeMapping TypeName="DevModel.tblSwap">
+            <EntityTypeMapping TypeName="DBModel.tblSwap">
               <MappingFragment StoreEntitySet="tblSwap">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SwapID" ColumnName="SwapID" />
@@ -3892,7 +3892,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblSwapMsts">
-            <EntityTypeMapping TypeName="DevModel.tblSwapMst">
+            <EntityTypeMapping TypeName="DBModel.tblSwapMst">
               <MappingFragment StoreEntitySet="tblSwapMst">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Requestor" ColumnName="Requestor" />
@@ -3907,7 +3907,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblTrainingStatus">
-            <EntityTypeMapping TypeName="DevModel.tblTrainingStatu">
+            <EntityTypeMapping TypeName="DBModel.tblTrainingStatu">
               <MappingFragment StoreEntitySet="tblTrainingStatus">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="TrngStatus" ColumnName="TrngStatus" />
@@ -3917,7 +3917,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </EntitySetMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.fn_delimitedtotable" FunctionImportName="fn_delimitedtotable">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.fn_delimitedtotable_Result">
+              <ComplexTypeMapping TypeName="DBModel.fn_delimitedtotable_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="v" ColumnName="v" />
               </ComplexTypeMapping>
@@ -3925,7 +3925,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.getKPIWiseResponsibilities" FunctionImportName="getKPIWiseResponsibilities">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getKPIWiseResponsibilities_Result">
+              <ComplexTypeMapping TypeName="DBModel.getKPIWiseResponsibilities_Result">
                 <ScalarProperty Name="primarykpi" ColumnName="primarykpi" />
                 <ScalarProperty Name="skillset" ColumnName="skillset" />
                 <ScalarProperty Name="account" ColumnName="account" />
@@ -3944,42 +3944,42 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.SplitString" FunctionImportName="SplitString">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.SplitString_Result">
+              <ComplexTypeMapping TypeName="DBModel.SplitString_Result">
                 <ScalarProperty Name="Item" ColumnName="Item" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.Test_Plz_Delete" FunctionImportName="Test_Plz_Delete">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Test_Plz_Delete_Result">
+              <ComplexTypeMapping TypeName="DBModel.Test_Plz_Delete_Result">
                 <ScalarProperty Name="Zero" ColumnName="Zero" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.xGetdateBetween" FunctionImportName="xGetdateBetween">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.xGetdateBetween_Result">
+              <ComplexTypeMapping TypeName="DBModel.xGetdateBetween_Result">
                 <ScalarProperty Name="xDate" ColumnName="xDate" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.xGetMonthsGlidePath" FunctionImportName="xGetMonthsGlidePath">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.xGetMonthsGlidePath_Result">
+              <ComplexTypeMapping TypeName="DBModel.xGetMonthsGlidePath_Result">
                 <ScalarProperty Name="xMonths" ColumnName="xMonths" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.xGetWeekDates" FunctionImportName="xGetWeekDates">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.xGetWeekDates_Result">
+              <ComplexTypeMapping TypeName="DBModel.xGetWeekDates_Result">
                 <ScalarProperty Name="xDate" ColumnName="xDate" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionName="DevModel.Store.xWeekStart" FunctionImportName="xWeekStart">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.xWeekStart_Result">
+              <ComplexTypeMapping TypeName="DBModel.xWeekStart_Result">
                 <ScalarProperty Name="WeekNo" ColumnName="WeekNo" />
                 <ScalarProperty Name="weekStart" ColumnName="weekStart" />
                 <ScalarProperty Name="weekEnd" ColumnName="weekEnd" />
@@ -3991,7 +3991,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="CRMDataImport" FunctionName="DevModel.Store.CRMDataImport" />
           <FunctionImportMapping FunctionImportName="FillChart9box" FunctionName="DevModel.Store.FillChart9box">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.FillChart9box_Result">
+              <ComplexTypeMapping TypeName="DBModel.FillChart9box_Result">
                 <ScalarProperty Name="empcode" ColumnName="empcode" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="repmgrcode" ColumnName="repmgrcode" />
@@ -4005,7 +4005,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="FillDesignation9Box" FunctionName="DevModel.Store.FillDesignation9Box">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.FillDesignation9Box_Result">
+              <ComplexTypeMapping TypeName="DBModel.FillDesignation9Box_Result">
                 <ScalarProperty Name="DESIGNATIONID" ColumnName="DESIGNATIONID" />
                 <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
               </ComplexTypeMapping>
@@ -4013,7 +4013,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="FillTeamList9box" FunctionName="DevModel.Store.FillTeamList9box">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.FillTeamList9box_Result">
+              <ComplexTypeMapping TypeName="DBModel.FillTeamList9box_Result">
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Period" ColumnName="Period" />
@@ -4023,7 +4023,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetAccountProdHrsChk" FunctionName="DevModel.Store.GetAccountProdHrsChk">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetAccountProdHrsChk_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetAccountProdHrsChk_Result">
                 <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
                 <ScalarProperty Name="xOrd" ColumnName="xOrd" />
               </ComplexTypeMapping>
@@ -4031,7 +4031,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetAgentDataforHiddenAgents" FunctionName="DevModel.Store.GetAgentDataforHiddenAgents">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetAgentDataforHiddenAgents_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetAgentDataforHiddenAgents_Result">
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Login_ID" ColumnName="Login ID" />
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee ID" />
@@ -4073,7 +4073,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetFacilityProdHrsChk" FunctionName="DevModel.Store.GetFacilityProdHrsChk">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetFacilityProdHrsChk_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetFacilityProdHrsChk_Result">
                 <ScalarProperty Name="FACILITY" ColumnName="FACILITY" />
                 <ScalarProperty Name="xOrd" ColumnName="xOrd" />
               </ComplexTypeMapping>
@@ -4082,7 +4082,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="GetHiringPlanData" FunctionName="DevModel.Store.GetHiringPlanData" />
           <FunctionImportMapping FunctionImportName="GetIntradayList" FunctionName="DevModel.Store.GetIntradayList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetIntradayList_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetIntradayList_Result">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="FOLDERPATH" ColumnName="FOLDERPATH" />
                 <ScalarProperty Name="FILENAME" ColumnName="FILENAME" />
@@ -4098,7 +4098,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetMarketProdHrsChk" FunctionName="DevModel.Store.GetMarketProdHrsChk">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetMarketProdHrsChk_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetMarketProdHrsChk_Result">
                 <ScalarProperty Name="Market" ColumnName="Market" />
                 <ScalarProperty Name="xOrd" ColumnName="xOrd" />
               </ComplexTypeMapping>
@@ -4106,7 +4106,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetMonthProdHrsChk" FunctionName="DevModel.Store.GetMonthProdHrsChk">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetMonthProdHrsChk_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetMonthProdHrsChk_Result">
                 <ScalarProperty Name="MONTH" ColumnName="MONTH" />
                 <ScalarProperty Name="xMonth" ColumnName="xMonth" />
               </ComplexTypeMapping>
@@ -4115,7 +4115,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="NINEBOXfillDdlPeriod" FunctionName="DevModel.Store.NINEBOXfillDdlPeriod" />
           <FunctionImportMapping FunctionImportName="NINEBOXgetCompetency" FunctionName="DevModel.Store.NINEBOXgetCompetency">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.NINEBOXgetCompetency_Result">
+              <ComplexTypeMapping TypeName="DBModel.NINEBOXgetCompetency_Result">
                 <ScalarProperty Name="COMPETENCY" ColumnName="COMPETENCY" />
                 <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
                 <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
@@ -4126,7 +4126,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="NINEBOXgetEmpStats" FunctionName="DevModel.Store.NINEBOXgetEmpStats">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.NINEBOXgetEmpStats_Result">
+              <ComplexTypeMapping TypeName="DBModel.NINEBOXgetEmpStats_Result">
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
@@ -4148,7 +4148,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="NineBoxTest" FunctionName="DevModel.Store.NineBoxTest">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.NineBoxTest_Result">
+              <ComplexTypeMapping TypeName="DBModel.NineBoxTest_Result">
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Period" ColumnName="Period" />
@@ -4164,7 +4164,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ProdHrsChk" FunctionName="DevModel.Store.ProdHrsChk">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.ProdHrsChk_Result">
+              <ComplexTypeMapping TypeName="DBModel.ProdHrsChk_Result">
                 <ScalarProperty Name="C_" ColumnName="-" />
                 <ScalarProperty Name="BOOST" ColumnName="BOOST" />
                 <ScalarProperty Name="KRONOS" ColumnName="KRONOS" />
@@ -4174,7 +4174,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="ProdHrsChk2" FunctionName="DevModel.Store.ProdHrsChk2">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.ProdHrsChk2_Result">
+              <ComplexTypeMapping TypeName="DBModel.ProdHrsChk2_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -4214,7 +4214,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="SHRINKAGE_GETHIRINGPLANDATA2" FunctionName="DevModel.Store.SHRINKAGE_GETHIRINGPLANDATA2" />
           <FunctionImportMapping FunctionImportName="skillbox9" FunctionName="DevModel.Store.skillbox9">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.skillbox9_Result">
+              <ComplexTypeMapping TypeName="DBModel.skillbox9_Result">
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
@@ -4230,7 +4230,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DevModel.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_GetTableReportAutomationSupportFiles" FunctionName="DevModel.Store.sp_GetTableReportAutomationSupportFiles">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.sp_GetTableReportAutomationSupportFiles_Result">
+              <ComplexTypeMapping TypeName="DBModel.sp_GetTableReportAutomationSupportFiles_Result">
                 <ScalarProperty Name="TRANSID" ColumnName="TRANSID" />
                 <ScalarProperty Name="FROMFILE" ColumnName="FROMFILE" />
                 <ScalarProperty Name="TOFILE" ColumnName="TOFILE" />
@@ -4241,7 +4241,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DevModel.Store.sp_helpdiagramdefinition">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.sp_helpdiagramdefinition_Result">
+              <ComplexTypeMapping TypeName="DBModel.sp_helpdiagramdefinition_Result">
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
               </ComplexTypeMapping>
@@ -4249,7 +4249,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DevModel.Store.sp_helpdiagrams">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.sp_helpdiagrams_Result">
+              <ComplexTypeMapping TypeName="DBModel.sp_helpdiagrams_Result">
                 <ScalarProperty Name="Database" ColumnName="Database" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -4261,7 +4261,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DevModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_skillbox9" FunctionName="DevModel.Store.sp_skillbox9">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.sp_skillbox9_Result">
+              <ComplexTypeMapping TypeName="DBModel.sp_skillbox9_Result">
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
@@ -4270,7 +4270,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Sp_UpdateServSche" FunctionName="DevModel.Store.Sp_UpdateServSche">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Sp_UpdateServSche_Result">
+              <ComplexTypeMapping TypeName="DBModel.Sp_UpdateServSche_Result">
                 <ScalarProperty Name="ERRORNUMBER" ColumnName="ERRORNUMBER" />
                 <ScalarProperty Name="ERRORSEVERITY" ColumnName="ERRORSEVERITY" />
                 <ScalarProperty Name="ERRORSTATE" ColumnName="ERRORSTATE" />
@@ -4283,7 +4283,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DevModel.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="spGetServiceTimer" FunctionName="DevModel.Store.spGetServiceTimer">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.spGetServiceTimer_Result">
+              <ComplexTypeMapping TypeName="DBModel.spGetServiceTimer_Result">
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
                 <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
                 <ScalarProperty Name="ScheduledTime" ColumnName="ScheduledTime" />
@@ -4297,7 +4297,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="UpdateTblABC" FunctionName="DevModel.Store.UpdateTblABC" />
           <FunctionImportMapping FunctionImportName="buildBadges" FunctionName="DevModel.Store.buildBadges">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.buildBadges_Result">
+              <ComplexTypeMapping TypeName="DBModel.buildBadges_Result">
                 <ScalarProperty Name="From_Date" ColumnName="From_Date" />
                 <ScalarProperty Name="To_Date" ColumnName="To_Date" />
                 <ScalarProperty Name="leave_reason" ColumnName="leave_reason" />
@@ -4321,7 +4321,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="fillAccountLOB" FunctionName="DevModel.Store.fillAccountLOB" />
           <FunctionImportMapping FunctionImportName="fillEmployeeAccounts" FunctionName="DevModel.Store.fillEmployeeAccounts">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.fillEmployeeAccounts_Result">
+              <ComplexTypeMapping TypeName="DBModel.fillEmployeeAccounts_Result">
                 <ScalarProperty Name="Account" ColumnName="Account" />
                 <ScalarProperty Name="PrimaryClientID" ColumnName="PrimaryClientID" />
               </ComplexTypeMapping>
@@ -4329,7 +4329,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="fillInterval" FunctionName="DevModel.Store.fillInterval">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.fillInterval_Result">
+              <ComplexTypeMapping TypeName="DBModel.fillInterval_Result">
                 <ScalarProperty Name="TimePeriod" ColumnName="TimePeriod" />
                 <ScalarProperty Name="Interval" ColumnName="Interval" />
               </ComplexTypeMapping>
@@ -4340,7 +4340,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="fillModal2" FunctionName="DevModel.Store.fillModal2" />
           <FunctionImportMapping FunctionImportName="fillMonth" FunctionName="DevModel.Store.fillMonth">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.fillMonth_Result">
+              <ComplexTypeMapping TypeName="DBModel.fillMonth_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TextDescription" ColumnName="TextDescription" />
               </ComplexTypeMapping>
@@ -4349,7 +4349,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="fillSites" FunctionName="DevModel.Store.fillSites" />
           <FunctionImportMapping FunctionImportName="getDefaultLeaveType" FunctionName="DevModel.Store.getDefaultLeaveType">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getDefaultLeaveType_Result">
+              <ComplexTypeMapping TypeName="DBModel.getDefaultLeaveType_Result">
                 <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
                 <ScalarProperty Name="LeaveText" ColumnName="LeaveText" />
               </ComplexTypeMapping>
@@ -4358,7 +4358,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="GetDeptValues" FunctionName="DevModel.Store.GetDeptValues" />
           <FunctionImportMapping FunctionImportName="GetEmployeeLeaveRequestes" FunctionName="DevModel.Store.GetEmployeeLeaveRequestes">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetEmployeeLeaveRequestes_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetEmployeeLeaveRequestes_Result">
                 <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="FROM_DATE" ColumnName="FROM DATE" />
@@ -4381,7 +4381,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetEmployeeLeaveRequestes2" FunctionName="DevModel.Store.GetEmployeeLeaveRequestes2">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetEmployeeLeaveRequestes2_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetEmployeeLeaveRequestes2_Result">
                 <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="FROM_DATE" ColumnName="FROM DATE" />
@@ -4404,7 +4404,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getEmployeeLeaveRoster" FunctionName="DevModel.Store.getEmployeeLeaveRoster">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getEmployeeLeaveRoster_Result">
+              <ComplexTypeMapping TypeName="DBModel.getEmployeeLeaveRoster_Result">
                 <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
                 <ScalarProperty Name="LeaveDay" ColumnName="LeaveDay" />
                 <ScalarProperty Name="LeaveText" ColumnName="LeaveText" />
@@ -4414,7 +4414,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getEmployeeMgrs" FunctionName="DevModel.Store.getEmployeeMgrs">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getEmployeeMgrs_Result">
+              <ComplexTypeMapping TypeName="DBModel.getEmployeeMgrs_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
                 <ScalarProperty Name="RevMgrCode" ColumnName="RevMgrCode" />
@@ -4423,7 +4423,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetEmpNameByManagerID" FunctionName="DevModel.Store.GetEmpNameByManagerID">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetEmpNameByManagerID_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetEmpNameByManagerID_Result">
                 <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="xOrd" ColumnName="xOrd" />
@@ -4432,7 +4432,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetIntervalTracker" FunctionName="DevModel.Store.GetIntervalTracker">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetIntervalTracker_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetIntervalTracker_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Interval" ColumnName="Interval" />
@@ -4453,7 +4453,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getLeavedatesandLeavereason" FunctionName="DevModel.Store.getLeavedatesandLeavereason">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getLeavedatesandLeavereason_Result">
+              <ComplexTypeMapping TypeName="DBModel.getLeavedatesandLeavereason_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="from_date" ColumnName="from_date" />
                 <ScalarProperty Name="to_date" ColumnName="to_date" />
@@ -4465,7 +4465,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getLeaveList" FunctionName="DevModel.Store.getLeaveList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getLeaveList_Result">
+              <ComplexTypeMapping TypeName="DBModel.getLeaveList_Result">
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -4479,7 +4479,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="getLeaveRoster" FunctionName="DevModel.Store.getLeaveRoster">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getLeaveRoster_Result">
+              <ComplexTypeMapping TypeName="DBModel.getLeaveRoster_Result">
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Day" ColumnName="Day" />
                 <ScalarProperty Name="Leave" ColumnName="Leave" />
@@ -4491,7 +4491,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="getMinDateforLeaveRequest" FunctionName="DevModel.Store.getMinDateforLeaveRequest" />
           <FunctionImportMapping FunctionImportName="GetRepRevMgr" FunctionName="DevModel.Store.GetRepRevMgr">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetRepRevMgr_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetRepRevMgr_Result">
                 <ScalarProperty Name="MgrID" ColumnName="MgrID" />
                 <ScalarProperty Name="MgrName" ColumnName="MgrName" />
                 <ScalarProperty Name="xOrd" ColumnName="xOrd" />
@@ -4502,7 +4502,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="GetRosterInformation" FunctionName="DevModel.Store.GetRosterInformation" />
           <FunctionImportMapping FunctionImportName="getSiteEmployeeData" FunctionName="DevModel.Store.getSiteEmployeeData">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getSiteEmployeeData_Result">
+              <ComplexTypeMapping TypeName="DBModel.getSiteEmployeeData_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
@@ -4564,7 +4564,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="GetWeeks" FunctionName="DevModel.Store.GetWeeks">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.GetWeeks_Result">
+              <ComplexTypeMapping TypeName="DBModel.GetWeeks_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="Weeks" ColumnName="Weeks" />
@@ -4583,7 +4583,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="Profile_UpdateEmployeeData" FunctionName="DevModel.Store.Profile_UpdateEmployeeData" />
           <FunctionImportMapping FunctionImportName="Roster_GetAdminFormatRoster" FunctionName="DevModel.Store.Roster_GetAdminFormatRoster">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Roster_GetAdminFormatRoster_Result">
+              <ComplexTypeMapping TypeName="DBModel.Roster_GetAdminFormatRoster_Result">
                 <ScalarProperty Name="ECN" ColumnName="ECN" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="DPT" ColumnName="DPT" />
@@ -4603,7 +4603,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Roster_GetEmployeeSpecificRoster" FunctionName="DevModel.Store.Roster_GetEmployeeSpecificRoster">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Roster_GetEmployeeSpecificRoster_Result">
+              <ComplexTypeMapping TypeName="DBModel.Roster_GetEmployeeSpecificRoster_Result">
                 <ScalarProperty Name="ECN" ColumnName="ECN" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
                 <ScalarProperty Name="TL_ECN" ColumnName="TL_ECN" />
@@ -4622,7 +4622,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Roster_loadCancelledLeaves" FunctionName="DevModel.Store.Roster_loadCancelledLeaves">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Roster_loadCancelledLeaves_Result">
+              <ComplexTypeMapping TypeName="DBModel.Roster_loadCancelledLeaves_Result">
                 <ScalarProperty Name="ECN" ColumnName="ECN" />
                 <ScalarProperty Name="WEEKID" ColumnName="WEEKID" />
                 <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
@@ -4636,7 +4636,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Roster_loadLeaves" FunctionName="DevModel.Store.Roster_loadLeaves">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Roster_loadLeaves_Result">
+              <ComplexTypeMapping TypeName="DBModel.Roster_loadLeaves_Result">
                 <ScalarProperty Name="ECN" ColumnName="ECN" />
                 <ScalarProperty Name="WEEKID" ColumnName="WEEKID" />
                 <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
@@ -4650,7 +4650,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Swap_getSwapStatus" FunctionName="DevModel.Store.Swap_getSwapStatus">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Swap_getSwapStatus_Result">
+              <ComplexTypeMapping TypeName="DBModel.Swap_getSwapStatus_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="EmpCode1" ColumnName="EmpCode1" />
@@ -4675,7 +4675,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="Swap_GetSwapWithinSpecificTeam" FunctionName="DevModel.Store.Swap_GetSwapWithinSpecificTeam" />
           <FunctionImportMapping FunctionImportName="Swap_GetSwapWithinSpecificTeam_2" FunctionName="DevModel.Store.Swap_GetSwapWithinSpecificTeam_2">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Swap_GetSwapWithinSpecificTeam_2_Result">
+              <ComplexTypeMapping TypeName="DBModel.Swap_GetSwapWithinSpecificTeam_2_Result">
                 <ScalarProperty Name="xSort" ColumnName="xSort" />
                 <ScalarProperty Name="ECN" ColumnName="ECN" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -4691,7 +4691,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="Swap_Update2DB" FunctionName="DevModel.Store.Swap_Update2DB" />
           <FunctionImportMapping FunctionImportName="TeamList" FunctionName="DevModel.Store.TeamList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.TeamList_Result">
+              <ComplexTypeMapping TypeName="DBModel.TeamList_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Designation" ColumnName="Designation" />
@@ -4702,7 +4702,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Transfer_ActionsList" FunctionName="DevModel.Store.Transfer_ActionsList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Transfer_ActionsList_Result">
+              <ComplexTypeMapping TypeName="DBModel.Transfer_ActionsList_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FromDptLinkMstId" ColumnName="FromDptLinkMstId" />
                 <ScalarProperty Name="ToDptLinkMstId" ColumnName="ToDptLinkMstId" />
@@ -4732,7 +4732,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="Transfer_ApproveAndCommitToMaster_JOB" FunctionName="DevModel.Store.Transfer_ApproveAndCommitToMaster_JOB" />
           <FunctionImportMapping FunctionImportName="Transfer_DepartmentList" FunctionName="DevModel.Store.Transfer_DepartmentList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Transfer_DepartmentList_Result">
+              <ComplexTypeMapping TypeName="DBModel.Transfer_DepartmentList_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
@@ -4755,7 +4755,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Transfer_getTransfereeUsingMovementID" FunctionName="DevModel.Store.Transfer_getTransfereeUsingMovementID">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Transfer_getTransfereeUsingMovementID_Result">
+              <ComplexTypeMapping TypeName="DBModel.Transfer_getTransfereeUsingMovementID_Result">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FromDptLinkMstId" ColumnName="FromDptLinkMstId" />
                 <ScalarProperty Name="ToDptLinkMstId" ColumnName="ToDptLinkMstId" />
@@ -4782,7 +4782,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Transfer_TeamList" FunctionName="DevModel.Store.Transfer_TeamList">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.Transfer_TeamList_Result">
+              <ComplexTypeMapping TypeName="DBModel.Transfer_TeamList_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
@@ -4807,7 +4807,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <FunctionImportMapping FunctionImportName="UpdateDecline" FunctionName="DevModel.Store.UpdateDecline" />
           <FunctionImportMapping FunctionImportName="getEmployeeData" FunctionName="DevModel.Store.getEmployeeData">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DevModel.getEmployeeData_Result">
+              <ComplexTypeMapping TypeName="DBModel.getEmployeeData_Result">
                 <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />

@@ -174,6 +174,7 @@
     <Compile Include="Models\buildBadges_Result.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DB.cs" />
     <Compile Include="Models\FillChart9box_Result.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
@@ -7071,6 +7072,7 @@
       <DependentUpon>WFMP.edmx</DependentUpon>
       <LastGenOutput>WFMP.cs</LastGenOutput>
     </Content>
+    <Content Include="favicon.ico" />
     <Content Include="MSN.ICO" />
     <Content Include="Sitel\cdn\cdn.datatables.net\1.10.15\css\dataTables.jqueryui.min.css" />
     <Content Include="Sitel\cdn\cdn.datatables.net\1.10.15\js\dataTables.jqueryui.min.js" />
@@ -7146,7 +7148,6 @@
     <Content Include="Sitel\css\materialstylesheet.css" />
     <Content Include="Sitel\css\reactstylesheet.css" />
     <Content Include="Sitel\css\UXDMaster.css" />
-    <Content Include="favicon.ico" />
     <Content Include="Sitel\fonts\Apache License.txt" />
     <Content Include="Sitel\fonts\css.css" />
     <Content Include="Sitel\fonts\glyphicons-halflings-regular.svg" />

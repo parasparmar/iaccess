@@ -15,10 +15,9 @@ namespace iAccess.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Dev : DbContext
+    public partial class DB : DbContext
     {
-        public Dev()
-            : base("name=Dev")
+        public DB(): base("name=DB")
         {
         }
     
@@ -71,23 +70,23 @@ namespace iAccess.Models
         public virtual DbSet<tblSwapMst> tblSwapMsts { get; set; }
         public virtual DbSet<tblTrainingStatu> tblTrainingStatus { get; set; }
     
-        [DbFunction("Dev", "fn_delimitedtotable")]
+        [DbFunction("DB", "fn_delimitedtotable")]
         public virtual IQueryable<fn_delimitedtotable_Result> fn_delimitedtotable(string delimitedString)
         {
             var delimitedStringParameter = delimitedString != null ?
                 new ObjectParameter("DelimitedString", delimitedString) :
                 new ObjectParameter("DelimitedString", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fn_delimitedtotable_Result>("[Dev].[fn_delimitedtotable](@DelimitedString)", delimitedStringParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<fn_delimitedtotable_Result>("[DB].[fn_delimitedtotable](@DelimitedString)", delimitedStringParameter);
         }
     
-        [DbFunction("Dev", "getKPIWiseResponsibilities")]
+        [DbFunction("DB", "getKPIWiseResponsibilities")]
         public virtual IQueryable<getKPIWiseResponsibilities_Result> getKPIWiseResponsibilities()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getKPIWiseResponsibilities_Result>("[Dev].[getKPIWiseResponsibilities]()");
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<getKPIWiseResponsibilities_Result>("[DB].[getKPIWiseResponsibilities]()");
         }
     
-        [DbFunction("Dev", "SplitString")]
+        [DbFunction("DB", "SplitString")]
         public virtual IQueryable<SplitString_Result> SplitString(string input, string character)
         {
             var inputParameter = input != null ?
@@ -98,16 +97,16 @@ namespace iAccess.Models
                 new ObjectParameter("Character", character) :
                 new ObjectParameter("Character", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SplitString_Result>("[Dev].[SplitString](@Input, @Character)", inputParameter, characterParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<SplitString_Result>("[DB].[SplitString](@Input, @Character)", inputParameter, characterParameter);
         }
     
-        [DbFunction("Dev", "Test_Plz_Delete")]
+        [DbFunction("DB", "Test_Plz_Delete")]
         public virtual IQueryable<Test_Plz_Delete_Result> Test_Plz_Delete()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Test_Plz_Delete_Result>("[Dev].[Test_Plz_Delete]()");
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Test_Plz_Delete_Result>("[DB].[Test_Plz_Delete]()");
         }
     
-        [DbFunction("Dev", "xGetdateBetween")]
+        [DbFunction("DB", "xGetdateBetween")]
         public virtual IQueryable<xGetdateBetween_Result> xGetdateBetween(string increment, Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
             var incrementParameter = increment != null ?
@@ -122,20 +121,20 @@ namespace iAccess.Models
                 new ObjectParameter("EndDate", endDate) :
                 new ObjectParameter("EndDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetdateBetween_Result>("[Dev].[xGetdateBetween](@Increment, @StartDate, @EndDate)", incrementParameter, startDateParameter, endDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetdateBetween_Result>("[DB].[xGetdateBetween](@Increment, @StartDate, @EndDate)", incrementParameter, startDateParameter, endDateParameter);
         }
     
-        [DbFunction("Dev", "xGetMonthsGlidePath")]
+        [DbFunction("DB", "xGetMonthsGlidePath")]
         public virtual IQueryable<xGetMonthsGlidePath_Result> xGetMonthsGlidePath(Nullable<System.DateTime> startDate)
         {
             var startDateParameter = startDate.HasValue ?
                 new ObjectParameter("startDate", startDate) :
                 new ObjectParameter("startDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetMonthsGlidePath_Result>("[Dev].[xGetMonthsGlidePath](@startDate)", startDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetMonthsGlidePath_Result>("[DB].[xGetMonthsGlidePath](@startDate)", startDateParameter);
         }
     
-        [DbFunction("Dev", "xGetWeekDates")]
+        [DbFunction("DB", "xGetWeekDates")]
         public virtual IQueryable<xGetWeekDates_Result> xGetWeekDates(Nullable<System.DateTime> xDate, Nullable<bool> xSD, string increment)
         {
             var xDateParameter = xDate.HasValue ?
@@ -150,10 +149,10 @@ namespace iAccess.Models
                 new ObjectParameter("Increment", increment) :
                 new ObjectParameter("Increment", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetWeekDates_Result>("[Dev].[xGetWeekDates](@xDate, @xSD, @Increment)", xDateParameter, xSDParameter, incrementParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xGetWeekDates_Result>("[DB].[xGetWeekDates](@xDate, @xSD, @Increment)", xDateParameter, xSDParameter, incrementParameter);
         }
     
-        [DbFunction("Dev", "xWeekStart")]
+        [DbFunction("DB", "xWeekStart")]
         public virtual IQueryable<xWeekStart_Result> xWeekStart(Nullable<System.DateTime> startDate, Nullable<System.DateTime> endDate)
         {
             var startDateParameter = startDate.HasValue ?
@@ -164,7 +163,7 @@ namespace iAccess.Models
                 new ObjectParameter("endDate", endDate) :
                 new ObjectParameter("endDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xWeekStart_Result>("[Dev].[xWeekStart](@startDate, @endDate)", startDateParameter, endDateParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<xWeekStart_Result>("[DB].[xWeekStart](@startDate, @endDate)", startDateParameter, endDateParameter);
         }
     
         public virtual int CompareProcedure()
