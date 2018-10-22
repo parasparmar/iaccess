@@ -18,5 +18,7 @@ namespace iAccess.Models
         public Nullable<int> Pincode { get; set; }
         public string PostOffice { get; set; }
         public Nullable<bool> Active { get; set; }
+    
+        public virtual tblProfile tblProfile { get; set; }
     }
 }

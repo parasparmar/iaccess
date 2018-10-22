@@ -30,7 +30,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <!-- Content Header (Page header) -->
-                @Html.Partial("_page_heading", Model)
+                @RenderSection("_page_headingView", false)
             </section>
             <!-- Main content -->
             <section class="content">
@@ -41,6 +41,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+
         @Html.Partial("_footer")
         <!-- Control Sidebar -->
         @Html.Partial("_control_sidebar", Model)
@@ -52,8 +53,12 @@
         $(document).ready(function () {
             $('.sidebar-menu').tree();
             $('[class*=select2]').select2();
+            $('[class*=autoPostBack]').change(function () {
+                $(this).closest('form').submit();
+            });
         });
     </script>
+    @RenderSection("_footerScripts", false)
 </body>
 </html>
 

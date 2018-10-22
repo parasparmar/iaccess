@@ -20,5 +20,8 @@ namespace iAccess.Models
         public int LevelID { get; set; }
         public bool Active { get; set; }
         public Nullable<int> SkillsetID { get; set; }
+    
+        public virtual tblMaster tblMaster { get; set; }
+        public virtual tblSkillSet tblSkillSet { get; set; }
     }
 }

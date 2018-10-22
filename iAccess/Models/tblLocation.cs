@@ -17,5 +17,7 @@ namespace iAccess.Models
         public int Id { get; set; }
         public string Location { get; set; }
         public Nullable<bool> Active { get; set; }
+    
+        public virtual tblProfile tblProfile { get; set; }
     }
 }

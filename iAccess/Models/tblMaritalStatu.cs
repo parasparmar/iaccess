@@ -16,5 +16,7 @@ namespace iAccess.Models
     {
         public int Id { get; set; }
         public string MaritalStatus { get; set; }
+    
+        public virtual tblProfile tblProfile { get; set; }
     }
 }

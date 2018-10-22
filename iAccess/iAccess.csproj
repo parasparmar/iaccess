@@ -379,12 +379,6 @@
     <Compile Include="Models\tblMasterApprover.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblMaster_BU.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMaster_Log.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblMovementState.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
@@ -395,9 +389,6 @@
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblProfile.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblQry.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblQualification.cs">
@@ -419,12 +410,6 @@
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblSubSkillSet.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblSwap.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblSwapMst.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblTrainingStatu.cs">
@@ -7998,7 +7983,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_left_menu.cshtml" />
-    <Content Include="Views\Shared\_page_heading.cshtml" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Shared\_head_menu.cshtml" />
@@ -8007,6 +7991,7 @@
     <Content Include="tsconfig.json" />
     <Content Include="Views\Shared\_control_sidebar.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Profile\_page_headingView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\build\bootstrap-less\css\" />

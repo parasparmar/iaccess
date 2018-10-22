@@ -17,5 +17,7 @@ namespace iAccess.Models
         public int TransID { get; set; }
         public string LOB { get; set; }
         public bool Active { get; set; }
+    
+        public virtual tblDepartmentLinkMst tblDepartmentLinkMst { get; set; }
     }
 }

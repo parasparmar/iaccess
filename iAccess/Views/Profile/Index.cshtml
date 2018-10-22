@@ -2,411 +2,413 @@
 @{
     ViewBag.Title = "Profile";
     getEmployeeData_Result Model = ViewData.Model as getEmployeeData_Result;
+    DB my = new DB();
+
+
+
 }
 
 
-<div class="row">
-    <div class="col-md-4">
-        <!-- Profile Image -->
-        <div class="box box-primary">
-            <div class="box-body box-profile">
-                <img ID="imgbtnUserImage" class="profile-user-img img-responsive img-circle cursor" style="height:auto" />
-                <h3 class="profile-username text-center">                    
-                    <label ID="lblName"></label>
-                </h3>
-                <p class="text-muted text-center">
-                    Employee :
-                    <b>
-                        <a class="pull-none">
-                            <label ID="lblEmployee_ID"></label>
-                        </a>
-                    </b>
-                </p>
-                <p class="text-muted text-center">
-                    Windows ID :
-                    <b>
-                        <a class="pull-none">
-                            <label ID="lblNTID"></label>
-                        </a>
-                    </b>
-                </p>
-                <ul class="list-group list-group-unbordered">
-                    <li class="list-group-item">
-                        <b>Designation</b><a class="pull-right"><label ID="lblDesignation"></label></a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Department</b><a class="pull-right"><label ID="lblDepartment"></label></a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Date of Joining</b><a class="pull-right"><label ID="lblDOJ"></label></a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Email id</b> <a class="pull-right">
-                            <label ID="lblEmailID"></label>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Contact Number</b> <a class="pull-right">
-                            <label ID="lblContactNumber"></label>
-                        </a>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Site</b>
-                        <a class="pull-right">
-                            <label ID="lblSite"></label>
-                        </a>
 
-                    </li>
-                </ul>
-
-                <%--<a href="#" class="btn btn-primary btn-block"><b>Request Rectification</b></a>--%>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-        <!-- Employee Information Box -->
-        <div class="box box-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Employee Information</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <ul class="list-group list-group-unbordered">
-                    <li class="list-group-item">
-                        <strong>Reporting Manager</strong>
-                        <a class="pull-right">
-                            <label ID="lblSupervisor"></label>
-                        </a>
-                    </li>
-
-                    <li class="list-group-item">
-                        <strong>Employee Role</strong>
-                        <a class="pull-right">
-                            <label ID="lblEmployee_Role"></label>
-                        </a>
-
-                    </li>
-                    <li class="list-group-item">
-                        <strong>Employee Type</strong>
-                        <a class="pull-right">
-                            <label ID="lblEmployee_Type"></label>
-                        </a>
-
-                    </li>
-                    <li class="list-group-item">
-                        <strong>Employee Status</strong>
-                        <a class="pull-right">
-                            <label ID="lblEmployee_Status"></label>
-                        </a>
-
-                    </li>
-                    <%--
-                    <li class="list-group-item">
-                        <strong>Updated by</strong>
-                        <a class="pull-right">
-                            <label ID="lblUpdated_by"></label>
-                        </a>
-
-                    </li>--%>
-                </ul>
-                <%-- <a href="#" class="btn btn-primary btn-block"><b>Request Rectification</b></a>--%>
-            </div>
-            <!-- /.box-body -->
-        </div>
-        <!-- /.box -->
-
-
-    </div>
-    <div class="col-md-8">
-        <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#personal" data-toggle="tab">Personal</a></li>
-                <li><a href="#transport" data-toggle="tab">Transport</a></li>
-                <li><a href="#work_experience" data-toggle="tab">Work Experience</a></li>
-                <li><a href="#profile_image" data-toggle="tab">Profile Image</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="personal">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbGender" class="col-sm-2 control-label">Gender</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-genderless"></i></span>
-                                    <select ItemType="text" class="form-control select" ID="tbGender" placeholder="Gender" type="text"></select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbDate_of_Birth" class="col-sm-2 control-label">Date of Birth</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
-                                    <input type="text" ID="tbDate_of_Birth" class="form-control datepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbQualification" class="col-sm-2 control-label">Highest Qualification</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-university"></i></span>
-                                    <select ItemType="text" class="form-control  select2" ID="tbQualification" Style="width: 100%"></select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbMarital_Status" class="col-sm-2 control-label">Marital Status</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-                                    <select ItemType="text" class="form-control select" ID="tbMaritalStatus"></select>
-                                </div>
-                            </div>
-
-                            <label for="inputSkills" class="col-sm-2 control-label">Anniversary Date</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                                    <input type="text" ID="tbAnniversaryDate" class="form-control datepicker" />
-                                </div>
-
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="tbContact_Number" class="col-sm-2 control-label">Contact Number</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
-                                    <input type="text" ID="tbContact_Number" class="form-control" />
-                                </div>
-                                <label ID="RegularExpressionValidator1" ControlToValidate="tbContact_Number" ErrorMessage="Invalid Number Format" ForeColor="Red" ValidationExpression="[0-9]{10}"></label>
-
-                            </div>
-
-                            <label for="tbAlternate_Contact" class="col-sm-2 control-label">Alternate Number</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-                                    <input type="text" ID="tbAlternate_Contact" class="form-control" />
-                                </div>
-                                <label ID="RegularExpressionValidator2" ControlToValidate="tbAlternate_Contact" ErrorMessage="Invalid Number Format" ForeColor="Red" ValidationExpression="[0-9]{10}"></label>
-                            </div>
-                        </div>
-
-                        <%--<label>Emergency Contact Person Details</label>--%>
-
-                        <div class="form-group">
-                            <label for="tbEmergencyContactPerson" class="col-sm-2 control-label">Emergency Contact Name</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                    <input type="text" ID="tbEmergencyContactPerson" class="form-control" />
-                                </div>
-                                <label ID="RegularExpressionValidator4" ControlToValidate="tbEmergencyContactPerson" ErrorMessage="Only alphabets are allowed" ForeColor="Red" ValidationExpression="^[a-zA-Z ]+$"></label>
-
-                            </div>
-
-                            <label for="tbEmergencyContactNumber" class="col-sm-2 control-label">Emergency Contact Number</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="text" ID="tbEmergencyContactNo" class="form-control" />
-                                </div>
-                                <label ID="RegularExpressionValidator3" ControlToValidate="tbEmergencyContactNo" ErrorMessage="Invalid Number Format" ForeColor="Red" ValidationExpression="[0-9]{10}|0"></label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tbEmail_id" class="col-sm-2 control-label">Email id (Personal)</label>
-                            <div class="col-sm-10">
-
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                    <input type="text" ID="tbEmail_id" class="form-control" type="email" placeholder="Email" />
-                                </div>
-                                <label ID="regexEmailValid" ForeColor="Red" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="tbEmail_id" ErrorMessage="Invalid Email Format"></label>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.tab-pane Edit Personal Data-->
-                <div class="tab-pane" id="transport">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbTransport_User" class="col-sm-2 control-label">Transport User</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-automobile"></i></span>
-                                    <select ItemType="text" class="form-control select" ID="tbTransport_User">
-                                        <asp:ListItem Text="Yes" Value="1"></asp:ListItem>
-                                        <asp:ListItem Text="No" Value="0"></asp:ListItem>
-                                        <asp:ListItem Text="Not Specified" Value="0"></asp:ListItem>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbAddress_Line_1" class="col-sm-2 control-label">Address Line 1</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                    <input type="text" ID="tbAddress_Line_1" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbAddress_Line_2" class="col-sm-2 control-label">Address Line 2</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                    <input type="text" ID="tbAddress_Line_2" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbAddress_Landmark" class="col-sm-2 control-label">Address Landmark</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                    <input type="text" ID="tbAddress_Landmark" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ddlAddress_Location" class="col-sm-2 control-label">Location</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                    <select ID="ddlAddress_Location" class="form-control select2" Style="width: 100%">
-                                        <asp:ListItem Value="0" Text=""></asp:ListItem>
-                                    </select>
-                                </div>
-                            </div>
-                            <label for="ddlAddress_SubLocation" class="col-sm-2 control-label">Sub Location</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                    <select ID="ddlAddress_SubLocation" class="form-control select2" Style="width: 100%">
-                                        <asp:ListItem Text="Please Select" Value=""></asp:ListItem>
-                                        <asp:ListItem Text="West" Value="West"></asp:ListItem>
-                                        <asp:ListItem Text="East" Value="East"></asp:ListItem>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="tbAddress_City" class="col-sm-2 control-label">Address City</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                    <input type="text" ID="tbAddress_City" class="form-control" />
-                                </div>
-                            </div>
-                            <label for="ddlAddress_Pincode" class="col-sm-2 control-label">Pincode</label>
-                            <div class="col-sm-4">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                    <select ID="ddlAddress_Pincode" class="form-control select2" Style="width: 100%">
-                                        <asp:ListItem Value="0" Text=""></asp:ListItem>
-                                    </select>
-                                </div>
-                                <asp:RequiredFieldValidator ID="reqval" ControlToValidate="ddlAddress_Pincode" ErrorMessage="" ForeColor="Red"></asp:RequiredFieldValidator>
-                                <p id="pAddress_Pincode" class="link-muted">
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.tab-pane Transport -->
-                <div class="tab-pane" id="work_experience">
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbTotal_Work_Experience" class="col-sm-2 control-label">Total Work Experience</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
-
-                                    <input type="text" ID="tbTotal_Work_Experience" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbSkill_Set_1" class="col-sm-2 control-label">Primary Skill Set</label>
-                            <div class="col-sm-10">
-
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-rocket"></i></span>
-                                    <select id="tbSkill_Set_1" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbSkill_Set_2" class="col-sm-2 control-label">Secondary Skill Set</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-fighter-jet"></i></span>
-                                    <select id="tbSkill_Set_2" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbSkill_Set_3" class="col-sm-2 control-label">Tertiary Skill Set</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-bicycle"></i></span>
-                                    <select id="tbSkill_Set_3" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.tab-pane -->
-                <div class="tab-pane" id="profile_image">
-
-                    <div class="form-horizontal">
-                        <div class="form-group">
-                            <label for="tbSkill_Set_3" class="col-sm-2 control-label">Change Profile Image</label>
-                            <div class="col-sm-10">
-                                <div class="input-group">
-                                    <asp:FileUpload ID="fileUploadNewProfileImage" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.tab-pane Edit Profile Image-->
-            </div>
-            <!-- /.tab-content -->
-            <div class="box-footer">
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <asp:Button ID="btnSubmit" class="btn btn-danger" Text="Submit" OnClick="btnSubmit_Click" />
-                        <label class=" control-label pull-right">
-                            last updated on &nbsp
-                            <a class="pull-right">
-                                <label ID="lblUpdate_Date"></label>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Profile Image -->
+            <div class="box box-primary">
+                <div class="box-body box-profile">
+                    <img src="/sitel/user_images/@Model.UserImage" ID="mediumUserImage" class="profile-user-img img-responsive img-circle cursor" AlternateText="User Image" style="height:auto">
+                    <h3 class="profile-username text-center">
+                        @Html.Label(Model.FullName)
+                    </h3>
+                    <p class="text-muted text-center">
+                        Employee :
+                        <b>
+                            <a class="pull-none">
+                                @Html.Label(@Model.Employee_ID.ToString())
                             </a>
-                        </label>
+                        </b>
+                    </p>
+                    <p class="text-muted text-center">
+                        Windows ID :
+                        <b>
+                            <a class="pull-none">
+                                @Html.Label(@Model.ntName)
+                            </a>
+                        </b>
+                    </p>
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Designation</b><a class="pull-right">@Html.Label(@Model.DesignationID)</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Department</b><a class="pull-right">@Html.Label(@Model.DPT)</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Date of Joining</b><a class="pull-right">@Html.Label(@Model.DOJ.ToDateTime().ToString("dd-MMM-yyyy"))</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Email id</b> <a class="pull-right">
+                                <label>@Model.Email_Office.ToString()</label>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Contact Number</b> <a class="pull-right">
+                                @Html.Label(@Model.Contact_Number.ToString())
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Site</b>
+                            <a class="pull-right">
+                                <label id="lblSite">@Model.SiteID</label>
+                            </a>
 
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-                <!--Submit Button-->
+                <!-- /.box-body -->
             </div>
-        </div>
-        <!-- /.nav-tabs-custom -->
-    </div>
-    <!-- /.box -->
+            <!-- /.box -->
+            <!-- Employee Information Box -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Employee Information</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <strong>Reporting Manager</strong>
+                            <a class="pull-right">
+                                <label id="lblSupervisor">@Model.RepMgrName</label>
+                            </a>
+                        </li>
 
-</div>
-<!-- /.col -->
+                        <li class="list-group-item">
+                            <strong>Employee Role</strong>
+                            <a class="pull-right">
+                                <label id="lblEmployee_Role">@Model.LevelID</label>
+                            </a>
+
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Employee Type</strong>
+                            <a class="pull-right">
+                                <label id="lblEmployee_Type">@Model.Job_Type</label>
+                            </a>
+
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Employee Status</strong>
+                            <a class="pull-right">
+                                <label id="lblEmployee_Status">@Model.EmpStatus</label>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-8">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#personal" data-toggle="tab">Personal</a></li>
+                    <li><a href="#transport" data-toggle="tab">Transport</a></li>
+                    <li><a href="#work_experience" data-toggle="tab">Work Experience</a></li>
+                    <li><a href="#profile_image" data-toggle="tab">Profile Image</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="personal">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbGender" class="col-sm-2 control-label">Gender</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-genderless"></i></span>
+                                        @{
+                                            var genders = my.tblGenders.Distinct().ToList<tblGender>();
+                                            string selected = genders.Where(m => m.Gender == Model.Gender).FirstOrDefault().Id.ToString();
+                                            SelectList g = new SelectList(genders, "Id", "Gender", selected);
+                                            object htmlAttributes = new { @class = "form-control select2", @id = "tbGender", };
+                                        }
+                                        @Html.DropDownList("Gender", g, htmlAttributes)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbDate_of_Birth" class="col-sm-2 control-label">Date of Birth</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
+                                        <input type="text" id="tbDate_of_Birth" class="form-control datepicker" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbQualification" class="col-sm-2 control-label">Highest Qualification</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-university"></i></span>
+
+                                        @{
+                                            var qualification = my.tblQualifications.Distinct().ToList<tblQualification>();
+                                            selected = qualification.Where(m => m.Qualification == Model.Qualification).FirstOrDefault().Id.ToString();
+                                            SelectList q = new SelectList(qualification, "Id", "Qualification", selected);
+                                            htmlAttributes = new { @class = "form-control select2", @id = "tbQualification", };
+                                        }                                        
+                                        @Html.DropDownList("Qualification",q, htmlAttributes)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbMarital_Status" class="col-sm-2 control-label">Marital Status</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
+
+
+                                        <select class="form-control select2" id="tbMaritalStatus"></select>
+                                    </div>
+                                </div>
+                                <label for="inputSkills" class="col-sm-2 control-label">Anniversary Date</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
+                                        <input type="text" id="tbAnniversaryDate" class="form-control datepicker" />
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="tbContact_Number" class="col-sm-2 control-label">Contact Number</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
+                                        <input type="text" id="tbContact_Number" class="form-control" />
+                                    </div>
+                                </div>
+                                <label for="tbAlternate_Contact" class="col-sm-2 control-label">Alternate Number</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                                        <input type="text" id="tbAlternate_Contact" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbEmergencyContactPerson" class="col-sm-2 control-label">Emergency Contact Name</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" id="tbEmergencyContactPerson" class="form-control" />
+                                    </div>
+                                </div>
+                                <label for="tbEmergencyContactNumber" class="col-sm-2 control-label">Emergency Contact Number</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                        <input type="text" id="tbEmergencyContactNo" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbEmail_id" class="col-sm-2 control-label">Email id (Personal)</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input type="text" id="tbEmail_id" class="form-control" type="email" placeholder="Email" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane Edit Personal Data-->
+                    <div class="tab-pane" id="transport">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbTransport_User" class="col-sm-2 control-label">Transport User</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-automobile"></i></span>
+                                        <select class="form-control select" id="tbTransport_User">
+                                            <option Text="Yes" value="1"></option>
+                                            <option Text="No" value="0"></option>
+                                            <option Text="Not Specified" value="0"></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbAddress_Line_1" class="col-sm-2 control-label">Address Line 1</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
+                                        <input type="text" id="tbAddress_Line_1" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbAddress_Line_2" class="col-sm-2 control-label">Address Line 2</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
+                                        <input type="text" id="tbAddress_Line_2" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbAddress_Landmark" class="col-sm-2 control-label">Address Landmark</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
+                                        <input type="text" id="tbAddress_Landmark" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ddlAddress_Location" class="col-sm-2 control-label">Location</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                        <select id="ddlAddress_Location" class="form-control select2" Style="width: 100%">
+                                            <option value="0" Text=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label for="ddlAddress_SubLocation" class="col-sm-2 control-label">Sub Location</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                        <select id="ddlAddress_SubLocation" class="form-control select2" Style="width: 100%">
+                                            <option value="">Please Select</option>
+                                            <option value="West">West</option>
+                                            <option value="East">East</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tbAddress_City" class="col-sm-2 control-label">Address City</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                        <input type="text" id="tbAddress_City" class="form-control" />
+                                    </div>
+                                </div>
+                                <label for="ddlAddress_Pincode" class="col-sm-2 control-label">Pincode</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                                        <select id="ddlAddress_Pincode" class="form-control select2" Style="width: 100%">
+                                            <option value="0" Text=""></option>
+                                        </select>
+                                    </div>
+                                    <asp:RequiredFieldValidator id="reqval" ControlToValidate="ddlAddress_Pincode" ErrorMessage="" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <p id="pAddress_Pincode" class="link-muted">
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.tab-pane Transport -->
+                    <div class="tab-pane" id="work_experience">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbTotal_Work_Experience" class="col-sm-2 control-label">Total Work Experience</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
+
+                                        <input type="text" id="tbTotal_Work_Experience" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbSkill_Set_1" class="col-sm-2 control-label">Primary Skill Set</label>
+                                <div class="col-sm-10">
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-rocket"></i></span>
+                                        <select id="tbSkill_Set_1" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbSkill_Set_2" class="col-sm-2 control-label">Secondary Skill Set</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fighter-jet"></i></span>
+                                        <select id="tbSkill_Set_2" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbSkill_Set_3" class="col-sm-2 control-label">Tertiary Skill Set</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-bicycle"></i></span>
+                                        <select id="tbSkill_Set_3" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="profile_image">
+
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="tbSkill_Set_3" class="col-sm-2 control-label">Change Profile Image</label>
+                                <div class="col-sm-10">
+                                    <div class="input-group">
+                                        <asp:FileUpload id="fileUploadNewProfileImage" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane Edit Profile Image-->
+                </div>
+                <!-- /.tab-content -->
+                <div class="box-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button id="btnSubmit" class="btn btn-danger" OnClick="btnSubmit_Click">Submit</button>
+                            <label class="control-label pull-right">
+                                last updated on &nbsp
+                                <a class="pull-right">
+                                    <label id="lblUpdate_Date">@Model.Update_Date.ToDateTime().ToString("dd-MMM-yyyy HH:mm:ss")</label>
+                                </a>
+                            </label>
+
+                        </div>
+                    </div>
+                    <!--Submit Button-->
+                </div>
+            </div>
+            <!-- /.nav-tabs-custom -->
+        </div>
+        <!-- /.box -->
+
+    </div>
+    <!-- /.col -->
+}
+
+@section _footerScripts{
+    <link href="~/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="~/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        $('.datepicker').datepicker();
+    </script>
+
+}

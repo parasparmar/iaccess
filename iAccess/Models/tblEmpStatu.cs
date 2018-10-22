@@ -16,5 +16,7 @@ namespace iAccess.Models
     {
         public int Id { get; set; }
         public string EmpStatus { get; set; }
+    
+        public virtual tblMaster tblMaster { get; set; }
     }
 }

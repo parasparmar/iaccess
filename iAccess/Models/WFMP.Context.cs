@@ -17,7 +17,8 @@ namespace iAccess.Models
     
     public partial class DB : DbContext
     {
-        public DB(): base("name=DB")
+        public DB()
+            : base("name=DB")
         {
         }
     
@@ -55,19 +56,14 @@ namespace iAccess.Models
         public virtual DbSet<tblLocation> tblLocations { get; set; }
         public virtual DbSet<tblMappingMst> tblMappingMsts { get; set; }
         public virtual DbSet<tblMaritalStatu> tblMaritalStatus { get; set; }
-        public virtual DbSet<tblMaster_BU> tblMaster_BU { get; set; }
-        public virtual DbSet<tblMaster_Log> tblMaster_Log { get; set; }
         public virtual DbSet<tblMovementState> tblMovementStates { get; set; }
         public virtual DbSet<tblMovementType> tblMovementTypes { get; set; }
         public virtual DbSet<tblPincode> tblPincodes { get; set; }
         public virtual DbSet<tblProfile> tblProfiles { get; set; }
-        public virtual DbSet<tblQry> tblQries { get; set; }
         public virtual DbSet<tblQualification> tblQualifications { get; set; }
         public virtual DbSet<tblSite> tblSites { get; set; }
         public virtual DbSet<tblSkill> tblSkills { get; set; }
         public virtual DbSet<tblSubSkillSet> tblSubSkillSets { get; set; }
-        public virtual DbSet<tblSwap> tblSwaps { get; set; }
-        public virtual DbSet<tblSwapMst> tblSwapMsts { get; set; }
         public virtual DbSet<tblTrainingStatu> tblTrainingStatus { get; set; }
     
         [DbFunction("DB", "fn_delimitedtotable")]
