@@ -14,16 +14,6 @@ namespace iAccess.Models
     
     public partial class tblDepartmentLinkMst
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblDepartmentLinkMst()
-        {
-            this.tblSkillSets = new HashSet<tblSkillSet>();
-            this.tblFunctions = new HashSet<tblFunction>();
-            this.tblDepartments = new HashSet<tblDepartment>();
-            this.tblLOBs = new HashSet<tblLOB>();
-            this.tblSubSkillSets = new HashSet<tblSubSkillSet>();
-        }
-    
         public int TransID { get; set; }
         public int FunctionID { get; set; }
         public int DepartmentID { get; set; }
@@ -31,17 +21,5 @@ namespace iAccess.Models
         public int SkillSetID { get; set; }
         public int SubSkillSetID { get; set; }
         public bool Active { get; set; }
-    
-        public virtual tblMaster tblMaster { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSkillSet> tblSkillSets { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblFunction> tblFunctions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDepartment> tblDepartments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblLOB> tblLOBs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSubSkillSet> tblSubSkillSets { get; set; }
     }
 }

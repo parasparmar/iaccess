@@ -14,19 +14,6 @@ namespace iAccess.Models
     
     public partial class tblMaster
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblMaster()
-        {
-            this.tblDepartmentLinkMsts = new HashSet<tblDepartmentLinkMst>();
-            this.tblEmpStatus = new HashSet<tblEmpStatu>();
-            this.tblDesignations = new HashSet<tblDesignation>();
-            this.tblCountries = new HashSet<tblCountry>();
-            this.tblJob_Type = new HashSet<tblJob_Type>();
-            this.tblTrainingStatus = new HashSet<tblTrainingStatu>();
-            this.tblLevels = new HashSet<tblLevel>();
-            this.tblSites = new HashSet<tblSite>();
-        }
-    
         public int Employee_ID { get; set; }
         public string First_Name { get; set; }
         public string Middle_Name { get; set; }
@@ -51,23 +38,5 @@ namespace iAccess.Models
         public Nullable<int> BusinessID { get; set; }
         public string Email_Office { get; set; }
         public Nullable<bool> IsReportingManager { get; set; }
-    
-        public virtual tblProfile tblProfiles { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDepartmentLinkMst> tblDepartmentLinkMsts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblEmpStatu> tblEmpStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDesignation> tblDesignations { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblCountry> tblCountries { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblJob_Type> tblJob_Type { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblTrainingStatu> tblTrainingStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblLevel> tblLevels { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSite> tblSites { get; set; }
     }
 }

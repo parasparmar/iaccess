@@ -18,7 +18,5 @@ namespace iAccess.Models
         public Nullable<int> LevelID { get; set; }
         public string Level { get; set; }
         public bool Active { get; set; }
-    
-        public virtual tblMaster tblMaster { get; set; }
     }
 }

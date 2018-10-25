@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3defb5a2b6ce46d4a294703933e4b8db" Name="Diagram1" ZoomLevel="83">
+      <Diagram DiagramId="3defb5a2b6ce46d4a294703933e4b8db" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="DBModel.RosterMst" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tbl_Master_Approver" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblEnableDisable" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="false" />
@@ -26,12 +26,11 @@
         <EntityTypeShape EntityType="DBModel.tblDesignation" Width="1.5" PointX="2.875" PointY="10.5" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblEmpStatu" Width="1.5" PointX="2.875" PointY="11" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblFunction" Width="1.5" PointX="5.75" PointY="14.625" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblGender" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="DBModel.tblGender" Width="1.5" PointX="8.125" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DBModel.tblIntervalTracker" Width="1.5" PointX="9.75" PointY="2.75" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblJob_Type" Width="1.5" PointX="2.875" PointY="11.5" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblLevel" Width="1.5" PointX="2.875" PointY="9.5" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblLOB" Width="1.5" PointX="5.75" PointY="14.125" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblLocation" Width="1.5" PointX="5.75" PointY="4.375" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblMappingMst" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblMaritalStatu" Width="1.5" PointX="5.75" PointY="6" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblMovementState" Width="1.5" PointX="7.75" PointY="3.25" IsExpanded="false" />
@@ -43,27 +42,7 @@
         <EntityTypeShape EntityType="DBModel.tblSkill" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblSubSkillSet" Width="1.5" PointX="5.75" PointY="13" IsExpanded="false" />
         <EntityTypeShape EntityType="DBModel.tblTrainingStatu" Width="1.5" PointX="2.875" PointY="10" IsExpanded="false" />
-        <AssociationConnector Association="DBModel.tblMastertblProfile" />
-        <AssociationConnector Association="DBModel.tblMastertblDepartmentLinkMst" />
-        <AssociationConnector Association="DBModel.tblMastertblEmpStatu" />
-        <AssociationConnector Association="DBModel.tblDepartmentLinkMsttblSkillSet" />
-        <AssociationConnector Association="DBModel.tblDepartmentLinkMsttblFunction" />
-        <AssociationConnector Association="DBModel.tblDepartmentLinkMsttblDepartment" />
-        <AssociationConnector Association="DBModel.tblMastertblDesignation" />
-        <AssociationConnector Association="DBModel.tblSkillSettblDesignation" />
-        <AssociationConnector Association="DBModel.tblDepartmentLinkMsttblLOB" />
-        <AssociationConnector Association="DBModel.tblDepartmentLinkMsttblSubSkillSet" />
-        <AssociationConnector Association="DBModel.tblProfiletblGender" />
-        <AssociationConnector Association="DBModel.tblProfiletblMaritalStatu" />
-        <AssociationConnector Association="DBModel.tblMastertblCountry" />
-        <AssociationConnector Association="DBModel.tblProfiletblQualification" />
-        <AssociationConnector Association="DBModel.tblMastertblJob_Type" />
-        <AssociationConnector Association="DBModel.tblProfiletblPincode" />
-        <AssociationConnector Association="DBModel.tblMastertblTrainingStatu" />
-        <AssociationConnector Association="DBModel.tblProfiletblSkill" />
-        <AssociationConnector Association="DBModel.tblProfiletblLocation" />
-        <AssociationConnector Association="DBModel.tblMastertblLevel" />
-        <AssociationConnector Association="DBModel.tblMastertblSite" />
+        <EntityTypeShape EntityType="DBModel.tblLocation" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

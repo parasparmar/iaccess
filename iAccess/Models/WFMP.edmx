@@ -365,10 +365,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMaritalStatus' does not have a 
           <Property Name="Email_Office" Type="varchar" MaxLength="255" />
           <Property Name="IsReportingManager" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMaster_BU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMaster_Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblMasterApprover">
           <Key>
             <PropertyRef Name="Id" />
@@ -440,8 +436,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblProfile' does not have a primar
           <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
           <Property Name="Update_Date" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblQry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblQualification' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblQualification">
@@ -517,10 +511,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblSubSkillSet' does not have a pr
           <Property Name="SubSkillSet" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblSwap' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblSwapMst' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblTrainingStatus">
@@ -1501,15 +1491,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="BusinessID" Type="Int32" />
           <Property Name="Email_Office" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="IsReportingManager" Type="Boolean" />
-          <NavigationProperty Name="tblProfiles" Relationship="DBModel.tblMastertblProfile" FromRole="tblMaster" ToRole="tblProfile" />
-          <NavigationProperty Name="tblDepartmentLinkMsts" Relationship="DBModel.tblMastertblDepartmentLinkMst" FromRole="tblMaster" ToRole="tblDepartmentLinkMst" />
-          <NavigationProperty Name="tblEmpStatus" Relationship="DBModel.tblMastertblEmpStatu" FromRole="tblMaster" ToRole="tblEmpStatu" />
-          <NavigationProperty Name="tblDesignations" Relationship="DBModel.tblMastertblDesignation" FromRole="tblMaster" ToRole="tblDesignation" />
-          <NavigationProperty Name="tblCountries" Relationship="DBModel.tblMastertblCountry" FromRole="tblMaster" ToRole="tblCountry" />
-          <NavigationProperty Name="tblJob_Type" Relationship="DBModel.tblMastertblJob_Type" FromRole="tblMaster" ToRole="tblJob_Type" />
-          <NavigationProperty Name="tblTrainingStatus" Relationship="DBModel.tblMastertblTrainingStatu" FromRole="tblMaster" ToRole="tblTrainingStatu" />
-          <NavigationProperty Name="tblLevels" Relationship="DBModel.tblMastertblLevel" FromRole="tblMaster" ToRole="tblLevel" />
-          <NavigationProperty Name="tblSites" Relationship="DBModel.tblMastertblSite" FromRole="tblMaster" ToRole="tblSite" />
         </EntityType>
         <EntityType Name="tblMasterApprover">
           <Key>
@@ -1551,8 +1532,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="SkillSet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="SkillSetID" Type="Int32" />
-          <NavigationProperty Name="tblDepartmentLinkMst" Relationship="DBModel.tblDepartmentLinkMsttblSkillSet" FromRole="tblSkillSet" ToRole="tblDepartmentLinkMst" />
-          <NavigationProperty Name="tblDesignations" Relationship="DBModel.tblSkillSettblDesignation" FromRole="tblSkillSet" ToRole="tblDesignation" />
         </EntityType>
         <EntityType Name="tbltrans_Movement">
           <Key>
@@ -1678,7 +1657,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Primary_Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Market" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblCountry" FromRole="tblCountry" ToRole="tblMaster" />
         </EntityType>
         <EntityType Name="tblDepartment">
           <Key>
@@ -1689,7 +1667,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblDepartmentLinkMst" Relationship="DBModel.tblDepartmentLinkMsttblDepartment" FromRole="tblDepartment" ToRole="tblDepartmentLinkMst" />
         </EntityType>
         <EntityType Name="tblDepartmentLinkMst">
           <Key>
@@ -1708,12 +1685,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="SkillSetID" Type="Int32" Nullable="false" />
           <Property Name="SubSkillSetID" Type="Int32" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblDepartmentLinkMst" FromRole="tblDepartmentLinkMst" ToRole="tblMaster" />
-          <NavigationProperty Name="tblSkillSets" Relationship="DBModel.tblDepartmentLinkMsttblSkillSet" FromRole="tblDepartmentLinkMst" ToRole="tblSkillSet" />
-          <NavigationProperty Name="tblFunctions" Relationship="DBModel.tblDepartmentLinkMsttblFunction" FromRole="tblDepartmentLinkMst" ToRole="tblFunction" />
-          <NavigationProperty Name="tblDepartments" Relationship="DBModel.tblDepartmentLinkMsttblDepartment" FromRole="tblDepartmentLinkMst" ToRole="tblDepartment" />
-          <NavigationProperty Name="tblLOBs" Relationship="DBModel.tblDepartmentLinkMsttblLOB" FromRole="tblDepartmentLinkMst" ToRole="tblLOB" />
-          <NavigationProperty Name="tblSubSkillSets" Relationship="DBModel.tblDepartmentLinkMsttblSubSkillSet" FromRole="tblDepartmentLinkMst" ToRole="tblSubSkillSet" />
         </EntityType>
         <EntityType Name="tblDesignation">
           <Key>
@@ -1728,8 +1699,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="LevelID" Type="Int32" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="SkillsetID" Type="Int32" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblDesignation" FromRole="tblDesignation" ToRole="tblMaster" />
-          <NavigationProperty Name="tblSkillSet" Relationship="DBModel.tblSkillSettblDesignation" FromRole="tblDesignation" ToRole="tblSkillSet" />
         </EntityType>
         <EntityType Name="tblEmpStatu">
           <Key>
@@ -1737,7 +1706,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmpStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblEmpStatu" FromRole="tblEmpStatu" ToRole="tblMaster" />
         </EntityType>
         <EntityType Name="tblFunction">
           <Key>
@@ -1748,7 +1716,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Function" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblDepartmentLinkMst" Relationship="DBModel.tblDepartmentLinkMsttblFunction" FromRole="tblFunction" ToRole="tblDepartmentLinkMst" />
         </EntityType>
         <EntityType Name="tblGender">
           <Key>
@@ -1756,7 +1723,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblGender" FromRole="tblGender" ToRole="tblProfile" />
         </EntityType>
         <EntityType Name="tblIntervalTracker">
           <Key>
@@ -1782,7 +1748,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblJob_Type" FromRole="tblJob_Type" ToRole="tblMaster" />
         </EntityType>
         <EntityType Name="tblLevel">
           <Key>
@@ -1794,7 +1759,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="LevelID" Type="Int32" />
           <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblLevel" FromRole="tblLevel" ToRole="tblMaster" />
         </EntityType>
         <EntityType Name="tblLOB">
           <Key>
@@ -1805,16 +1769,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblDepartmentLinkMst" Relationship="DBModel.tblDepartmentLinkMsttblLOB" FromRole="tblLOB" ToRole="tblDepartmentLinkMst" />
-        </EntityType>
-        <EntityType Name="tblLocation">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Active" Type="Boolean" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblLocation" FromRole="tblLocation" ToRole="tblProfile" />
         </EntityType>
         <EntityType Name="tblMappingMst">
           <Key>
@@ -1836,7 +1790,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblMaritalStatu" FromRole="tblMaritalStatu" ToRole="tblProfile" />
         </EntityType>
         <EntityType Name="tblMovementState">
           <Key>
@@ -1860,7 +1813,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Pincode" Type="Int32" />
           <Property Name="PostOffice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblPincode" FromRole="tblPincode" ToRole="tblProfile" />
         </EntityType>
         <EntityType Name="tblProfile">
           <Key>
@@ -1892,13 +1844,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="UserImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Update_Date" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblProfile" FromRole="tblProfile" ToRole="tblMaster" />
-          <NavigationProperty Name="tblGenders" Relationship="DBModel.tblProfiletblGender" FromRole="tblProfile" ToRole="tblGender" />
-          <NavigationProperty Name="tblMaritalStatus" Relationship="DBModel.tblProfiletblMaritalStatu" FromRole="tblProfile" ToRole="tblMaritalStatu" />
-          <NavigationProperty Name="tblQualifications" Relationship="DBModel.tblProfiletblQualification" FromRole="tblProfile" ToRole="tblQualification" />
-          <NavigationProperty Name="tblPincodes" Relationship="DBModel.tblProfiletblPincode" FromRole="tblProfile" ToRole="tblPincode" />
-          <NavigationProperty Name="tblSkills" Relationship="DBModel.tblProfiletblSkill" FromRole="tblProfile" ToRole="tblSkill" />
-          <NavigationProperty Name="tblLocations" Relationship="DBModel.tblProfiletblLocation" FromRole="tblProfile" ToRole="tblLocation" />
         </EntityType>
         <EntityType Name="tblQualification">
           <Key>
@@ -1906,7 +1851,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblQualification" FromRole="tblQualification" ToRole="tblProfile" />
         </EntityType>
         <EntityType Name="tblSite">
           <Key>
@@ -1918,7 +1862,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Site" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblSite" FromRole="tblSite" ToRole="tblMaster" />
         </EntityType>
         <EntityType Name="tblSkill">
           <Key>
@@ -1926,7 +1869,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Skill" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblProfile" Relationship="DBModel.tblProfiletblSkill" FromRole="tblSkill" ToRole="tblProfile" />
           </EntityType>
         <EntityType Name="tblSubSkillSet">
           <Key>
@@ -1937,7 +1879,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SubSkillSet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblDepartmentLinkMst" Relationship="DBModel.tblDepartmentLinkMsttblSubSkillSet" FromRole="tblSubSkillSet" ToRole="tblDepartmentLinkMst" />
         </EntityType>
         <EntityType Name="tblTrainingStatu">
           <Key>
@@ -1948,7 +1889,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TrngStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tblMaster" Relationship="DBModel.tblMastertblTrainingStatu" FromRole="tblTrainingStatu" ToRole="tblMaster" />
         </EntityType>
         <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="RosterMsts" EntityType="Self.RosterMst" />
@@ -1977,7 +1917,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <EntitySet Name="tblJob_Type" EntityType="Self.tblJob_Type" />
           <EntitySet Name="tblLevels" EntityType="Self.tblLevel" />
           <EntitySet Name="tblLOBs" EntityType="Self.tblLOB" />
-          <EntitySet Name="tblLocations" EntityType="Self.tblLocation" />
           <EntitySet Name="tblMappingMsts" EntityType="Self.tblMappingMst" />
           <EntitySet Name="tblMaritalStatus" EntityType="Self.tblMaritalStatu" />
           <EntitySet Name="tblMovementStates" EntityType="Self.tblMovementState" />
@@ -2431,92 +2370,9 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             <Parameter Name="bit" Mode="InOut" Type="String" />
           </FunctionImport>
           <FunctionImport Name="getEmployeeData" ReturnType="Collection(DBModel.getEmployeeData_Result)">
-            <Parameter Name="NT_ID" Mode="In" Type="String" />
+          <Parameter Name="NT_ID" Mode="In" Type="String" />
           </FunctionImport>
-          <AssociationSet Name="tblMastertblProfile" Association="DBModel.tblMastertblProfile">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblDepartmentLinkMst" Association="DBModel.tblMastertblDepartmentLinkMst">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblEmpStatu" Association="DBModel.tblMastertblEmpStatu">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblEmpStatu" EntitySet="tblEmpStatus" />
-          </AssociationSet>
-          <AssociationSet Name="tblDepartmentLinkMsttblSkillSet" Association="DBModel.tblDepartmentLinkMsttblSkillSet">
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-            <End Role="tblSkillSet" EntitySet="tblSkillSets" />
-          </AssociationSet>
-          <AssociationSet Name="tblDepartmentLinkMsttblFunction" Association="DBModel.tblDepartmentLinkMsttblFunction">
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-            <End Role="tblFunction" EntitySet="tblFunctions" />
-          </AssociationSet>
-          <AssociationSet Name="tblDepartmentLinkMsttblDepartment" Association="DBModel.tblDepartmentLinkMsttblDepartment">
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-            <End Role="tblDepartment" EntitySet="tblDepartments" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblDesignation" Association="DBModel.tblMastertblDesignation">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblDesignation" EntitySet="tblDesignations" />
-          </AssociationSet>
-          <AssociationSet Name="tblSkillSettblDesignation" Association="DBModel.tblSkillSettblDesignation">
-            <End Role="tblSkillSet" EntitySet="tblSkillSets" />
-            <End Role="tblDesignation" EntitySet="tblDesignations" />
-          </AssociationSet>
-          <AssociationSet Name="tblDepartmentLinkMsttblLOB" Association="DBModel.tblDepartmentLinkMsttblLOB">
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-            <End Role="tblLOB" EntitySet="tblLOBs" />
-          </AssociationSet>
-          <AssociationSet Name="tblDepartmentLinkMsttblSubSkillSet" Association="DBModel.tblDepartmentLinkMsttblSubSkillSet">
-            <End Role="tblDepartmentLinkMst" EntitySet="tblDepartmentLinkMsts" />
-            <End Role="tblSubSkillSet" EntitySet="tblSubSkillSets" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblGender" Association="DBModel.tblProfiletblGender">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblGender" EntitySet="tblGenders" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblMaritalStatu" Association="DBModel.tblProfiletblMaritalStatu">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblMaritalStatu" EntitySet="tblMaritalStatus" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblCountry" Association="DBModel.tblMastertblCountry">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblCountry" EntitySet="tblCountries" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblQualification" Association="DBModel.tblProfiletblQualification">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblQualification" EntitySet="tblQualifications" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblJob_Type" Association="DBModel.tblMastertblJob_Type">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblJob_Type" EntitySet="tblJob_Type" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblPincode" Association="DBModel.tblProfiletblPincode">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblPincode" EntitySet="tblPincodes" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblTrainingStatu" Association="DBModel.tblMastertblTrainingStatu">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblTrainingStatu" EntitySet="tblTrainingStatus" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblSkill" Association="DBModel.tblProfiletblSkill">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblSkill" EntitySet="tblSkills" />
-          </AssociationSet>
-          <AssociationSet Name="tblProfiletblLocation" Association="DBModel.tblProfiletblLocation">
-            <End Role="tblProfile" EntitySet="tblProfiles" />
-            <End Role="tblLocation" EntitySet="tblLocations" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblLevel" Association="DBModel.tblMastertblLevel">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblLevel" EntitySet="tblLevels" />
-          </AssociationSet>
-          <AssociationSet Name="tblMastertblSite" Association="DBModel.tblMastertblSite">
-            <End Role="tblMaster" EntitySet="tblMasters" />
-            <End Role="tblSite" EntitySet="tblSites" />
-          </AssociationSet>
+          <EntitySet Name="tblLocations" EntityType="DBModel.tblLocation" />
         </EntityContainer>
         <ComplexType Name="FillChart9box_Result">
           <Property Type="Int32" Name="empcode" Nullable="true" />
@@ -3156,90 +3012,14 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Type="String" Name="FullName" Nullable="true" MaxLength="100" />
           <Property Type="String" Name="RepMgrName" Nullable="true" MaxLength="100" />
         </ComplexType>
-        <Association Name="tblMastertblProfile">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-        </Association>
-        <Association Name="tblMastertblDepartmentLinkMst">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblEmpStatu">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblEmpStatu" Role="tblEmpStatu" Multiplicity="*" />
-        </Association>
-        <Association Name="tblDepartmentLinkMsttblSkillSet">
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="1" />
-          <End Type="DBModel.tblSkillSet" Role="tblSkillSet" Multiplicity="*" />
-        </Association>
-        <Association Name="tblDepartmentLinkMsttblFunction">
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="1" />
-          <End Type="DBModel.tblFunction" Role="tblFunction" Multiplicity="*" />
-        </Association>
-        <Association Name="tblDepartmentLinkMsttblDepartment">
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="1" />
-          <End Type="DBModel.tblDepartment" Role="tblDepartment" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblDesignation">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblDesignation" Role="tblDesignation" Multiplicity="*" />
-        </Association>
-        <Association Name="tblSkillSettblDesignation">
-          <End Type="DBModel.tblSkillSet" Role="tblSkillSet" Multiplicity="1" />
-          <End Type="DBModel.tblDesignation" Role="tblDesignation" Multiplicity="*" />
-        </Association>
-        <Association Name="tblDepartmentLinkMsttblLOB">
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="1" />
-          <End Type="DBModel.tblLOB" Role="tblLOB" Multiplicity="*" />
-        </Association>
-        <Association Name="tblDepartmentLinkMsttblSubSkillSet">
-          <End Type="DBModel.tblDepartmentLinkMst" Role="tblDepartmentLinkMst" Multiplicity="1" />
-          <End Type="DBModel.tblSubSkillSet" Role="tblSubSkillSet" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblGender">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblGender" Role="tblGender" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblMaritalStatu">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblMaritalStatu" Role="tblMaritalStatu" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblCountry">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblCountry" Role="tblCountry" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblQualification">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblQualification" Role="tblQualification" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblJob_Type">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblJob_Type" Role="tblJob_Type" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblPincode">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblPincode" Role="tblPincode" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblTrainingStatu">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblTrainingStatu" Role="tblTrainingStatu" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblSkill">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblSkill" Role="tblSkill" Multiplicity="*" />
-        </Association>
-        <Association Name="tblProfiletblLocation">
-          <End Type="DBModel.tblProfile" Role="tblProfile" Multiplicity="1" />
-          <End Type="DBModel.tblLocation" Role="tblLocation" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblLevel">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblLevel" Role="tblLevel" Multiplicity="*" />
-        </Association>
-        <Association Name="tblMastertblSite">
-          <End Type="DBModel.tblMaster" Role="tblMaster" Multiplicity="1" />
-          <End Type="DBModel.tblSite" Role="tblSite" Multiplicity="*" />
-        </Association>
+        <EntityType Name="tblLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3580,15 +3360,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
               <MappingFragment StoreEntitySet="tblLOB">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="LOB" ColumnName="LOB" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblLocations">
-            <EntityTypeMapping TypeName="DBModel.tblLocation">
-              <MappingFragment StoreEntitySet="tblLocation">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -4666,6 +4437,15 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="tblLocations">
+            <EntityTypeMapping TypeName="DBModel.tblLocation">
+              <MappingFragment StoreEntitySet="tblLocation">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

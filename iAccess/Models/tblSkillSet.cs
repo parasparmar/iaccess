@@ -14,20 +14,10 @@ namespace iAccess.Models
     
     public partial class tblSkillSet
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblSkillSet()
-        {
-            this.tblDesignations = new HashSet<tblDesignation>();
-        }
-    
         public int ID { get; set; }
         public int TransID { get; set; }
         public string SkillSet { get; set; }
         public bool Active { get; set; }
         public Nullable<int> SkillSetID { get; set; }
-    
-        public virtual tblDepartmentLinkMst tblDepartmentLinkMst { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblDesignation> tblDesignations { get; set; }
     }
 }

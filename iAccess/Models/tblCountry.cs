@@ -21,7 +21,5 @@ namespace iAccess.Models
         public string Primary_Language { get; set; }
         public string Market { get; set; }
         public bool Active { get; set; }
-    
-        public virtual tblMaster tblMaster { get; set; }
     }
 }

@@ -53,7 +53,6 @@ namespace iAccess.Models
         public virtual DbSet<tblJob_Type> tblJob_Type { get; set; }
         public virtual DbSet<tblLevel> tblLevels { get; set; }
         public virtual DbSet<tblLOB> tblLOBs { get; set; }
-        public virtual DbSet<tblLocation> tblLocations { get; set; }
         public virtual DbSet<tblMappingMst> tblMappingMsts { get; set; }
         public virtual DbSet<tblMaritalStatu> tblMaritalStatus { get; set; }
         public virtual DbSet<tblMovementState> tblMovementStates { get; set; }
@@ -65,6 +64,7 @@ namespace iAccess.Models
         public virtual DbSet<tblSkill> tblSkills { get; set; }
         public virtual DbSet<tblSubSkillSet> tblSubSkillSets { get; set; }
         public virtual DbSet<tblTrainingStatu> tblTrainingStatus { get; set; }
+        public virtual DbSet<tblLocation> tblLocations { get; set; }
     
         [DbFunction("DB", "fn_delimitedtotable")]
         public virtual IQueryable<fn_delimitedtotable_Result> fn_delimitedtotable(string delimitedString)

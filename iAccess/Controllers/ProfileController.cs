@@ -13,12 +13,16 @@ namespace iAccess.Controllers
         // GET: Profile
         public ActionResult Index()
         {
-            DB my = new DB();
-            string myNTID = PageExtensionMethods.getMyWindowsID().ToString();
-            myNTID = "ktriv003";
-            getEmployeeData_Result Model = my.getEmployeeData(myNTID).FirstOrDefault();
-            ViewData.Model = Model;
-            return View(Model);
+            if (Session["Me"] != null)
+            {
+                getEmployeeData_Result Model = Session["Me"] as getEmployeeData_Result;
+                ViewData.Model = Model;
+                return View(Model);
+            }
+            else
+            {
+                return RedirectToAction("Home", "Index");
+            }            
         }
 
         [HttpPost]

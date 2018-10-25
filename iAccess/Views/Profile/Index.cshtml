@@ -4,8 +4,6 @@
     getEmployeeData_Result Model = ViewData.Model as getEmployeeData_Result;
     DB my = new DB();
 
-
-
 }
 
 
@@ -127,13 +125,8 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-genderless"></i></span>
-                                        @{
-                                            var genders = my.tblGenders.Distinct().ToList<tblGender>();
-                                            string selected = genders.Where(m => m.Gender == Model.Gender).FirstOrDefault().Id.ToString();
-                                            SelectList g = new SelectList(genders, "Id", "Gender", selected);
-                                            object htmlAttributes = new { @class = "form-control select2", @id = "tbGender", };
-                                        }
-                                        @Html.DropDownList("Gender", g, htmlAttributes)
+                                        @{var i = new SelectList(my.tblQualifications.AsEnumerable(), "Id", "Qualification", Model.Qualification);}
+                                        @Html.DropDownList("Qualification", i, new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -152,13 +145,13 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-university"></i></span>
 
-                                        @{
-                                            var qualification = my.tblQualifications.Distinct().ToList<tblQualification>();
-                                            selected = qualification.Where(m => m.Qualification == Model.Qualification).FirstOrDefault().Id.ToString();
-                                            SelectList q = new SelectList(qualification, "Id", "Qualification", selected);
-                                            htmlAttributes = new { @class = "form-control select2", @id = "tbQualification", };
-                                        }                                        
-                                        @Html.DropDownList("Qualification",q, htmlAttributes)
+                                        @*@{
+                                                var qualification = my.tblQualifications.Distinct().ToList<tblQualification>();
+                                                selected = qualification.Where(m => m.Qualification == Model.Qualification).FirstOrDefault().Id.ToString();
+                                                SelectList q = new SelectList(qualification, "Id", "Qualification", selected);
+                                                htmlAttributes = new { @class = "form-control select2", @id = "tbQualification", };
+                                            }
+                                            @Html.DropDownList("Qualification",q, htmlAttributes)*@
                                     </div>
                                 </div>
                             </div>

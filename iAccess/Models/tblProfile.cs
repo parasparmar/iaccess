@@ -14,17 +14,6 @@ namespace iAccess.Models
     
     public partial class tblProfile
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblProfile()
-        {
-            this.tblGenders = new HashSet<tblGender>();
-            this.tblMaritalStatus = new HashSet<tblMaritalStatu>();
-            this.tblQualifications = new HashSet<tblQualification>();
-            this.tblPincodes = new HashSet<tblPincode>();
-            this.tblSkills = new HashSet<tblSkill>();
-            this.tblLocations = new HashSet<tblLocation>();
-        }
-    
         public int Employee_ID { get; set; }
         public Nullable<System.DateTime> Date_of_Birth { get; set; }
         public Nullable<int> Gender { get; set; }
@@ -51,19 +40,5 @@ namespace iAccess.Models
         public string UserImage { get; set; }
         public string Updated_by { get; set; }
         public Nullable<System.DateTime> Update_Date { get; set; }
-    
-        public virtual tblMaster tblMaster { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblGender> tblGenders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblMaritalStatu> tblMaritalStatus { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblQualification> tblQualifications { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblPincode> tblPincodes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblSkill> tblSkills { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblLocation> tblLocations { get; set; }
     }
 }

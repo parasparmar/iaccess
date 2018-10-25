@@ -16,14 +16,25 @@ namespace iAccess.Controllers
         }
 
         public ActionResult Index()
-        {            
+        {
+            
+            
             DB my = new DB();
-            string myNTID = PageExtensionMethods.getMyWindowsID().ToString();
+            string myNTID = PageExtensionMethods.getMyWindowsID().ToString();            
             myNTID = "ktriv003";
             getEmployeeData_Result Model = my.getEmployeeData(myNTID).FirstOrDefault();
+            Session["Me"] = Model;
             ViewData.Model = Model;
-
-            return View(Model);
+            if (Request.UrlReferrer!=null)
+            {
+                var previousURL = Request.UrlReferrer.AbsoluteUri;
+                Redirect(previousURL);
+            }
+            else
+            {
+                return View(Model);
+            }
+            return null;
         }
 
         public ActionResult About()
