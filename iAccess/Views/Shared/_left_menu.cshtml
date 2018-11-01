@@ -16,8 +16,7 @@
         <div class="sidebar-form">
             <div class="input-group">
 
-                <select ID="ddlImpersonator" runat="server" class="form-control select2" Style="width: 100%">
-                </select>
+                <select ID="ddlImpersonator" runat="server" class="form-control select2" Style="width: 100%"></select>
                 <div class="input-group-addon">
                     <a ID="test" runat="server" class="btn-xs btn-flat pull-right">
                         <i class="fa fa-search"></i>
@@ -41,9 +40,9 @@
                 </a>
             </li>
             <li>
-                <a href="profile.aspx">
-                    <i class="fa fa-user-plus"></i><span>My Profile</span>
-                </a>
+
+                <span><i class="fa fa-user-plus"></i>@Html.ActionLink("Profile", "Index", "Profile")</span>
+
             </li>
             <li>
                 <a href="team.aspx">

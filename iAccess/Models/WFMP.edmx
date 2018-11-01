@@ -5,129 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="RosterMst">
-          <Key>
-            <PropertyRef Name="RosterID" />
-          </Key>
-          <Property Name="RosterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmpCode" Type="int" Nullable="false" />
-          <Property Name="WeekID" Type="int" Nullable="false" />
-          <Property Name="rDate" Type="smalldatetime" Nullable="false" />
-          <Property Name="ShiftID" Type="int" />
-          <Property Name="RepMgrCode" Type="int" Nullable="false" />
-          <Property Name="UpdatedBy" Type="int" Nullable="false" />
-          <Property Name="updatedOn" Type="datetime" Nullable="false" />
-          <Property Name="SwapID" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.RosterMstLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="RosterMstLog">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="RosterID" />
-            <PropertyRef Name="EmpCode" />
-            <PropertyRef Name="WeekID" />
-            <PropertyRef Name="rDate" />
-            <PropertyRef Name="RepMgrCode" />
-            <PropertyRef Name="UpdatedBy" />
-            <PropertyRef Name="updatedOn" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RosterID" Type="int" Nullable="false" />
-          <Property Name="EmpCode" Type="int" Nullable="false" />
-          <Property Name="WeekID" Type="int" Nullable="false" />
-          <Property Name="rDate" Type="smalldatetime" Nullable="false" />
-          <Property Name="ShiftID" Type="int" />
-          <Property Name="RepMgrCode" Type="int" Nullable="false" />
-          <Property Name="UpdatedBy" Type="int" Nullable="false" />
-          <Property Name="updatedOn" Type="datetime" Nullable="false" />
-          <Property Name="SwapID" Type="int" />
-          <Property Name="LoggedOn" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.RosterOptimization' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="RosterOptimization">
-          <Key>
-            <PropertyRef Name="TransID" />
-            <PropertyRef Name="EmpCode" />
-            <PropertyRef Name="Active" />
-          </Key>
-          <Property Name="TransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmpCode" Type="int" Nullable="false" />
-          <Property Name="Active" Type="bit" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tbl_datewise_leave' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tbl_datewise_leave">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="LeaveDate" />
-            <PropertyRef Name="leave_type" />
-            <PropertyRef Name="leave_batch_id" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LeaveDate" Type="date" Nullable="false" />
-          <Property Name="leave_type" Type="int" Nullable="false" />
-          <Property Name="roster" Type="int" />
-          <Property Name="leave_batch_id" Type="int" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tbl_leave_request' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tbl_leave_request">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="ecn" />
-            <PropertyRef Name="from_date" />
-            <PropertyRef Name="to_date" />
-            <PropertyRef Name="leave_reason" />
-            <PropertyRef Name="applied_on" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ecn" Type="int" Nullable="false" />
-          <Property Name="from_date" Type="date" Nullable="false" />
-          <Property Name="to_date" Type="date" Nullable="false" />
-          <Property Name="leave_reason" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="applied_on" Type="datetime" Nullable="false" />
-          <Property Name="Level1_Action" Type="tinyint" />
-          <Property Name="Level1_actioned_by" Type="int" />
-          <Property Name="Level1_comments" Type="nvarchar(max)" />
-          <Property Name="Level1_actioned_on" Type="datetime" />
-          <Property Name="Level2_Action" Type="tinyint" />
-          <Property Name="Level2_actioned_by" Type="int" />
-          <Property Name="Level2_comments" Type="nvarchar(max)" />
-          <Property Name="Level2_actioned_on" Type="datetime" />
-          <Property Name="CancelDate" Type="datetime" />
-          <Property Name="cancel_reason" Type="nvarchar(max)" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tbl_leave_request_Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tbl_leave_request_Log">
-          <Key>
-            <PropertyRef Name="Transid" />
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="Transid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="Level1_Action" Type="tinyint" />
-          <Property Name="Level1_actioned_by" Type="int" />
-          <Property Name="Level1_comments" Type="nvarchar(max)" />
-          <Property Name="Level1_actioned_on" Type="datetime" />
-          <Property Name="Level2_Action" Type="tinyint" />
-          <Property Name="Level2_actioned_by" Type="int" />
-          <Property Name="Level2_comments" Type="nvarchar(max)" />
-          <Property Name="Level2_actioned_on" Type="datetime" />
-          <Property Name="CancelDate" Type="datetime" />
-          <Property Name="cancel_reason" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="tbl_Master_Approver">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="EmployeeID" Type="int" />
-          <Property Name="LevelID" Type="int" />
-          <Property Name="Active" Type="tinyint" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblCountry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblCountry">
@@ -204,19 +81,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblEmpStatus' does not have a prim
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmpStatus" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="tblEnableDisable">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="MinLevel" Type="int" />
-          <Property Name="MaxLevel" Type="int" />
-          <Property Name="RepMgrAction" Type="int" />
-          <Property Name="RevMgrAction" Type="int" />
-          <Property Name="Result" Type="int" />
-          <Property Name="RepMgrCan" Type="int" />
-          <Property Name="RevMgrCan" Type="int" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblFunction' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblFunction">
@@ -239,26 +103,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblGender' does not have a primary
           <Property Name="Gender" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblIntervalTracker' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tblIntervalTracker">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="date" />
-          <Property Name="Interval" Type="time" Precision="7" />
-          <Property Name="Account" Type="nvarchar" MaxLength="50" />
-          <Property Name="LOB" Type="nvarchar" MaxLength="50" />
-          <Property Name="Sites" Type="nvarchar(max)" />
-          <Property Name="Issue" Type="nvarchar(max)" />
-          <Property Name="IncidentType" Type="nvarchar" MaxLength="50" />
-          <Property Name="ClientTicket" Type="nchar" MaxLength="10" />
-          <Property Name="SitelTicket" Type="nchar" MaxLength="10" />
-          <Property Name="Attachment" Type="nvarchar(max)" />
-          <Property Name="ActionBy" Type="int" />
-          <Property Name="ActionOn" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblJob_Type' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="tblJob_Type">
           <Key>
@@ -266,15 +110,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblJob_Type' does not have a prima
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Type" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="tblLeaveType">
-          <Key>
-            <PropertyRef Name="LeaveID" />
-          </Key>
-          <Property Name="LeaveID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LeaveText" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="ShiftCode" Type="int" Nullable="false" />
-          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblLevel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -310,22 +145,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblLocation' does not have a prima
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Location" Type="nvarchar" MaxLength="255" />
           <Property Name="Active" Type="bit" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMappingMst' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tblMappingMst">
-          <Key>
-            <PropertyRef Name="TransID" />
-            <PropertyRef Name="CountryID" />
-            <PropertyRef Name="MarketID" />
-            <PropertyRef Name="SiteID" />
-            <PropertyRef Name="Active" />
-          </Key>
-          <Property Name="TransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CountryID" Type="int" Nullable="false" />
-          <Property Name="MarketID" Type="int" Nullable="false" />
-          <Property Name="SiteID" Type="int" Nullable="false" />
-          <Property Name="Active" Type="bit" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMaritalStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -364,33 +183,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMaritalStatus' does not have a 
           <Property Name="BusinessID" Type="int" />
           <Property Name="Email_Office" Type="varchar" MaxLength="255" />
           <Property Name="IsReportingManager" Type="bit" />
-        </EntityType>
-        <EntityType Name="tblMasterApprover">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EmployeeID" Type="int" />
-          <Property Name="LevelID" Type="int" />
-          <Property Name="Active" Type="tinyint" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMovementState' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tblMovementState">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="State" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CWFM_UMANG.WFMP.tblMovementTypes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="tblMovementTypes">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Type" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblPincode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -444,28 +236,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblQualification' does not have a 
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Qualification" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="tblRstWeeks">
-          <Key>
-            <PropertyRef Name="WeekId" />
-          </Key>
-          <Property Name="WeekId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="rYear" Type="int" Nullable="false" />
-          <Property Name="rWeek" Type="int" Nullable="false" />
-          <Property Name="FrDate" Type="datetime" Nullable="false" />
-          <Property Name="ToDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblShiftCode">
-          <Key>
-            <PropertyRef Name="ShiftCode" />
-          </Key>
-          <Property Name="ShiftID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ShiftCode" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="StartTime" Type="datetime" Nullable="false" />
-          <Property Name="EndTime" Type="datetime" Nullable="false" />
-          <Property Name="ShiftType" Type="tinyint" Nullable="false" />
-          <Property Name="Exception" Type="bit" />
-          <Property Name="Active" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'CWFM_UMANG.WFMP.tblSite' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -522,24 +292,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="TransID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TrngStatus" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Active" Type="bit" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbltrans_Movement">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FromDptLinkMstId" Type="int" />
-          <Property Name="ToDptLinkMstId" Type="int" />
-          <Property Name="FromMgr" Type="int" />
-          <Property Name="ToMgr" Type="int" />
-          <Property Name="EmpId" Type="int" />
-          <Property Name="Type" Type="int" />
-          <Property Name="State" Type="tinyint" Nullable="false" />
-          <Property Name="InitBy" Type="int" />
-          <Property Name="InitOn" Type="datetime" Nullable="false" />
-          <Property Name="EffectiveDate" Type="datetime" />
-          <Property Name="UpdaterID" Type="int" />
-          <Property Name="UpdatedOn" Type="datetime" />
         </EntityType>
         <Function Name="CompareProcedure" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="CompareTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -1095,83 +847,8 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Parameter Name="bit" Type="varchar" Mode="InOut" />
         </Function>
         <EntityContainer Name="DevModelStoreContainer">
-          <EntitySet Name="RosterMst" EntityType="Self.RosterMst" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tbl_Master_Approver" EntityType="Self.tbl_Master_Approver" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tblEnableDisable" EntityType="Self.tblEnableDisable" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tblLeaveType" EntityType="Self.tblLeaveType" Schema="WFMP" store:Type="Tables" />
           <EntitySet Name="tblMaster" EntityType="Self.tblMaster" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tblMasterApprover" EntityType="Self.tblMasterApprover" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tblRstWeeks" EntityType="Self.tblRstWeeks" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tblShiftCode" EntityType="Self.tblShiftCode" Schema="WFMP" store:Type="Tables" />
           <EntitySet Name="tblSkillSet" EntityType="Self.tblSkillSet" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="tbltrans_Movement" EntityType="Self.tbltrans_Movement" Schema="WFMP" store:Type="Tables" />
-          <EntitySet Name="RosterMstLog" EntityType="Self.RosterMstLog" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [RosterMstLog].[Id] AS [Id], 
-    [RosterMstLog].[RosterID] AS [RosterID], 
-    [RosterMstLog].[EmpCode] AS [EmpCode], 
-    [RosterMstLog].[WeekID] AS [WeekID], 
-    [RosterMstLog].[rDate] AS [rDate], 
-    [RosterMstLog].[ShiftID] AS [ShiftID], 
-    [RosterMstLog].[RepMgrCode] AS [RepMgrCode], 
-    [RosterMstLog].[UpdatedBy] AS [UpdatedBy], 
-    [RosterMstLog].[updatedOn] AS [updatedOn], 
-    [RosterMstLog].[SwapID] AS [SwapID], 
-    [RosterMstLog].[LoggedOn] AS [LoggedOn]
-    FROM [WFMP].[RosterMstLog] AS [RosterMstLog]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="RosterOptimization" EntityType="Self.RosterOptimization" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [RosterOptimization].[TransID] AS [TransID], 
-    [RosterOptimization].[EmpCode] AS [EmpCode], 
-    [RosterOptimization].[Active] AS [Active]
-    FROM [WFMP].[RosterOptimization] AS [RosterOptimization]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tbl_datewise_leave" EntityType="Self.tbl_datewise_leave" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tbl_datewise_leave].[ID] AS [ID], 
-    [tbl_datewise_leave].[LeaveDate] AS [LeaveDate], 
-    [tbl_datewise_leave].[leave_type] AS [leave_type], 
-    [tbl_datewise_leave].[roster] AS [roster], 
-    [tbl_datewise_leave].[leave_batch_id] AS [leave_batch_id]
-    FROM [WFMP].[tbl_datewise_leave] AS [tbl_datewise_leave]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tbl_leave_request" EntityType="Self.tbl_leave_request" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tbl_leave_request].[id] AS [id], 
-    [tbl_leave_request].[ecn] AS [ecn], 
-    [tbl_leave_request].[from_date] AS [from_date], 
-    [tbl_leave_request].[to_date] AS [to_date], 
-    [tbl_leave_request].[leave_reason] AS [leave_reason], 
-    [tbl_leave_request].[applied_on] AS [applied_on], 
-    [tbl_leave_request].[Level1_Action] AS [Level1_Action], 
-    [tbl_leave_request].[Level1_actioned_by] AS [Level1_actioned_by], 
-    [tbl_leave_request].[Level1_comments] AS [Level1_comments], 
-    [tbl_leave_request].[Level1_actioned_on] AS [Level1_actioned_on], 
-    [tbl_leave_request].[Level2_Action] AS [Level2_Action], 
-    [tbl_leave_request].[Level2_actioned_by] AS [Level2_actioned_by], 
-    [tbl_leave_request].[Level2_comments] AS [Level2_comments], 
-    [tbl_leave_request].[Level2_actioned_on] AS [Level2_actioned_on], 
-    [tbl_leave_request].[CancelDate] AS [CancelDate], 
-    [tbl_leave_request].[cancel_reason] AS [cancel_reason]
-    FROM [WFMP].[tbl_leave_request] AS [tbl_leave_request]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tbl_leave_request_Log" EntityType="Self.tbl_leave_request_Log" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tbl_leave_request_Log].[Transid] AS [Transid], 
-    [tbl_leave_request_Log].[id] AS [id], 
-    [tbl_leave_request_Log].[Level1_Action] AS [Level1_Action], 
-    [tbl_leave_request_Log].[Level1_actioned_by] AS [Level1_actioned_by], 
-    [tbl_leave_request_Log].[Level1_comments] AS [Level1_comments], 
-    [tbl_leave_request_Log].[Level1_actioned_on] AS [Level1_actioned_on], 
-    [tbl_leave_request_Log].[Level2_Action] AS [Level2_Action], 
-    [tbl_leave_request_Log].[Level2_actioned_by] AS [Level2_actioned_by], 
-    [tbl_leave_request_Log].[Level2_comments] AS [Level2_comments], 
-    [tbl_leave_request_Log].[Level2_actioned_on] AS [Level2_actioned_on], 
-    [tbl_leave_request_Log].[CancelDate] AS [CancelDate], 
-    [tbl_leave_request_Log].[cancel_reason] AS [cancel_reason]
-    FROM [WFMP].[tbl_leave_request_Log] AS [tbl_leave_request_Log]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tblCountry" EntityType="Self.tblCountry" store:Type="Tables" store:Schema="WFMP">
             <DefiningQuery>SELECT 
     [tblCountry].[TransID] AS [TransID], 
@@ -1230,23 +907,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
     [tblGender].[Gender] AS [Gender]
     FROM [WFMP].[tblGender] AS [tblGender]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tblIntervalTracker" EntityType="Self.tblIntervalTracker" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tblIntervalTracker].[ID] AS [ID], 
-    [tblIntervalTracker].[Date] AS [Date], 
-    [tblIntervalTracker].[Interval] AS [Interval], 
-    [tblIntervalTracker].[Account] AS [Account], 
-    [tblIntervalTracker].[LOB] AS [LOB], 
-    [tblIntervalTracker].[Sites] AS [Sites], 
-    [tblIntervalTracker].[Issue] AS [Issue], 
-    [tblIntervalTracker].[IncidentType] AS [IncidentType], 
-    [tblIntervalTracker].[ClientTicket] AS [ClientTicket], 
-    [tblIntervalTracker].[SitelTicket] AS [SitelTicket], 
-    [tblIntervalTracker].[Attachment] AS [Attachment], 
-    [tblIntervalTracker].[ActionBy] AS [ActionBy], 
-    [tblIntervalTracker].[ActionOn] AS [ActionOn]
-    FROM [WFMP].[tblIntervalTracker] AS [tblIntervalTracker]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tblJob_Type" EntityType="Self.tblJob_Type" store:Type="Tables" store:Schema="WFMP">
             <DefiningQuery>SELECT 
     [tblJob_Type].[Id] AS [Id], 
@@ -1275,32 +935,11 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
     [tblLocation].[Active] AS [Active]
     FROM [WFMP].[tblLocation] AS [tblLocation]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="tblMappingMst" EntityType="Self.tblMappingMst" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tblMappingMst].[TransID] AS [TransID], 
-    [tblMappingMst].[CountryID] AS [CountryID], 
-    [tblMappingMst].[MarketID] AS [MarketID], 
-    [tblMappingMst].[SiteID] AS [SiteID], 
-    [tblMappingMst].[Active] AS [Active]
-    FROM [WFMP].[tblMappingMst] AS [tblMappingMst]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="tblMaritalStatus" EntityType="Self.tblMaritalStatus" store:Type="Tables" store:Schema="WFMP">
             <DefiningQuery>SELECT 
     [tblMaritalStatus].[Id] AS [Id], 
     [tblMaritalStatus].[MaritalStatus] AS [MaritalStatus]
     FROM [WFMP].[tblMaritalStatus] AS [tblMaritalStatus]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tblMovementState" EntityType="Self.tblMovementState" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tblMovementState].[Id] AS [Id], 
-    [tblMovementState].[State] AS [State]
-    FROM [WFMP].[tblMovementState] AS [tblMovementState]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="tblMovementTypes" EntityType="Self.tblMovementTypes" store:Type="Tables" store:Schema="WFMP">
-            <DefiningQuery>SELECT 
-    [tblMovementTypes].[Id] AS [Id], 
-    [tblMovementTypes].[Type] AS [Type]
-    FROM [WFMP].[tblMovementTypes] AS [tblMovementTypes]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="tblPincode" EntityType="Self.tblPincode" store:Type="Tables" store:Schema="WFMP">
             <DefiningQuery>SELECT 
@@ -1418,51 +1057,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="weekStart" Type="DateTime" />
           <Property Name="weekEnd" Type="DateTime" />
         </ComplexType>
-        <EntityType Name="RosterMst">
-          <Key>
-            <PropertyRef Name="RosterID" />
-          </Key>
-          <Property Name="RosterID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmpCode" Type="Int32" Nullable="false" />
-          <Property Name="WeekID" Type="Int32" Nullable="false" />
-          <Property Name="rDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ShiftID" Type="Int32" />
-          <Property Name="RepMgrCode" Type="Int32" Nullable="false" />
-          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
-          <Property Name="updatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SwapID" Type="Int32" />
-        </EntityType>
-        <EntityType Name="tbl_Master_Approver">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeID" Type="Int32" />
-          <Property Name="LevelID" Type="Int32" />
-          <Property Name="Active" Type="Byte" />
-        </EntityType>
-        <EntityType Name="tblEnableDisable">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="MinLevel" Type="Int32" />
-          <Property Name="MaxLevel" Type="Int32" />
-          <Property Name="RepMgrAction" Type="Int32" />
-          <Property Name="RevMgrAction" Type="Int32" />
-          <Property Name="Result" Type="Int32" />
-          <Property Name="RepMgrCan" Type="Int32" />
-          <Property Name="RevMgrCan" Type="Int32" />
-        </EntityType>
-        <EntityType Name="tblLeaveType">
-          <Key>
-            <PropertyRef Name="LeaveID" />
-          </Key>
-          <Property Name="LeaveID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LeaveText" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ShiftCode" Type="Int32" Nullable="false" />
-          <Property Name="Active" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="tblMaster">
           <Key>
             <PropertyRef Name="Employee_ID" />
@@ -1492,37 +1086,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Email_Office" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="IsReportingManager" Type="Boolean" />
         </EntityType>
-        <EntityType Name="tblMasterApprover">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmployeeID" Type="Int32" />
-          <Property Name="LevelID" Type="Int32" />
-          <Property Name="Active" Type="Byte" />
-        </EntityType>
-        <EntityType Name="tblRstWeek">
-          <Key>
-            <PropertyRef Name="WeekId" />
-          </Key>
-          <Property Name="WeekId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="rYear" Type="Int32" Nullable="false" />
-          <Property Name="rWeek" Type="Int32" Nullable="false" />
-          <Property Name="FrDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ToDate" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="tblShiftCode">
-          <Key>
-            <PropertyRef Name="ShiftCode" />
-          </Key>
-          <Property Name="ShiftID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ShiftCode" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ShiftType" Type="Byte" Nullable="false" />
-          <Property Name="Exception" Type="Boolean" />
-          <Property Name="Active" Type="Boolean" />
-        </EntityType>
         <EntityType Name="tblSkillSet">
           <Key>
             <PropertyRef Name="ID" />
@@ -1532,114 +1095,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="SkillSet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
           <Property Name="SkillSetID" Type="Int32" />
-        </EntityType>
-        <EntityType Name="tbltrans_Movement">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FromDptLinkMstId" Type="Int32" />
-          <Property Name="ToDptLinkMstId" Type="Int32" />
-          <Property Name="FromMgr" Type="Int32" />
-          <Property Name="ToMgr" Type="Int32" />
-          <Property Name="EmpId" Type="Int32" />
-          <Property Name="Type" Type="Int32" />
-          <Property Name="State" Type="Byte" Nullable="false" />
-          <Property Name="InitBy" Type="Int32" />
-          <Property Name="InitOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
-          <Property Name="UpdaterID" Type="Int32" />
-          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="RosterMstLog">
-          <Key>
-            <PropertyRef Name="Id" />
-            <PropertyRef Name="RosterID" />
-            <PropertyRef Name="EmpCode" />
-            <PropertyRef Name="WeekID" />
-            <PropertyRef Name="rDate" />
-            <PropertyRef Name="RepMgrCode" />
-            <PropertyRef Name="UpdatedBy" />
-            <PropertyRef Name="updatedOn" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RosterID" Type="Int32" Nullable="false" />
-          <Property Name="EmpCode" Type="Int32" Nullable="false" />
-          <Property Name="WeekID" Type="Int32" Nullable="false" />
-          <Property Name="rDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="ShiftID" Type="Int32" />
-          <Property Name="RepMgrCode" Type="Int32" Nullable="false" />
-          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
-          <Property Name="updatedOn" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SwapID" Type="Int32" />
-          <Property Name="LoggedOn" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="RosterOptimization">
-          <Key>
-            <PropertyRef Name="TransID" />
-            <PropertyRef Name="EmpCode" />
-            <PropertyRef Name="Active" />
-          </Key>
-          <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EmpCode" Type="Int32" Nullable="false" />
-          <Property Name="Active" Type="Boolean" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_datewise_leave">
-          <Key>
-            <PropertyRef Name="ID" />
-            <PropertyRef Name="LeaveDate" />
-            <PropertyRef Name="leave_type" />
-            <PropertyRef Name="leave_batch_id" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LeaveDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="leave_type" Type="Int32" Nullable="false" />
-          <Property Name="roster" Type="Int32" />
-          <Property Name="leave_batch_id" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tbl_leave_request">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="ecn" />
-            <PropertyRef Name="from_date" />
-            <PropertyRef Name="to_date" />
-            <PropertyRef Name="leave_reason" />
-            <PropertyRef Name="applied_on" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ecn" Type="Int32" Nullable="false" />
-          <Property Name="from_date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="to_date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="leave_reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="applied_on" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Level1_Action" Type="Byte" />
-          <Property Name="Level1_actioned_by" Type="Int32" />
-          <Property Name="Level1_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Level1_actioned_on" Type="DateTime" Precision="3" />
-          <Property Name="Level2_Action" Type="Byte" />
-          <Property Name="Level2_actioned_by" Type="Int32" />
-          <Property Name="Level2_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Level2_actioned_on" Type="DateTime" Precision="3" />
-          <Property Name="CancelDate" Type="DateTime" Precision="3" />
-          <Property Name="cancel_reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tbl_leave_request_Log">
-          <Key>
-            <PropertyRef Name="Transid" />
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="Transid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="Level1_Action" Type="Byte" />
-          <Property Name="Level1_actioned_by" Type="Int32" />
-          <Property Name="Level1_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Level1_actioned_on" Type="DateTime" Precision="3" />
-          <Property Name="Level2_Action" Type="Byte" />
-          <Property Name="Level2_actioned_by" Type="Int32" />
-          <Property Name="Level2_comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Level2_actioned_on" Type="DateTime" Precision="3" />
-          <Property Name="CancelDate" Type="DateTime" Precision="3" />
-          <Property Name="cancel_reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblCountry">
           <Key>
@@ -1724,24 +1179,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tblIntervalTracker">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="0" />
-          <Property Name="Interval" Type="Time" Precision="7" />
-          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Sites" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Issue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IncidentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ClientTicket" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="SitelTicket" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Attachment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ActionBy" Type="Int32" />
-          <Property Name="ActionOn" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="tblJob_Type">
           <Key>
             <PropertyRef Name="Id" />
@@ -1770,40 +1207,12 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="LOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="tblMappingMst">
-          <Key>
-            <PropertyRef Name="TransID" />
-            <PropertyRef Name="CountryID" />
-            <PropertyRef Name="MarketID" />
-            <PropertyRef Name="SiteID" />
-            <PropertyRef Name="Active" />
-          </Key>
-          <Property Name="TransID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CountryID" Type="Int32" Nullable="false" />
-          <Property Name="MarketID" Type="Int32" Nullable="false" />
-          <Property Name="SiteID" Type="Int32" Nullable="false" />
-          <Property Name="Active" Type="Boolean" Nullable="false" />
-        </EntityType>
         <EntityType Name="tblMaritalStatu">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaritalStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tblMovementState">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="tblMovementType">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="tblPincode">
           <Key>
@@ -1813,37 +1222,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Pincode" Type="Int32" />
           <Property Name="PostOffice" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
-        </EntityType>
-        <EntityType Name="tblProfile">
-          <Key>
-            <PropertyRef Name="Employee_ID" />
-          </Key>
-          <Property Name="Employee_ID" Type="Int32" Nullable="false" />
-          <Property Name="Date_of_Birth" Type="DateTime" Precision="3" />
-          <Property Name="Gender" Type="Int32" />
-          <Property Name="Email_Personal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Contact_Number" Type="Int64" />
-          <Property Name="MaritalStatus" Type="Int32" />
-          <Property Name="AnniversaryDate" Type="DateTime" Precision="3" />
-          <Property Name="Qualification" Type="Int32" />
-          <Property Name="Transport" Type="Boolean" />
-          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Landmark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Location" Type="Int32" />
-          <Property Name="SubLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pincode" Type="Int32" />
-          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Total_Work_Experience" Type="Int32" />
-          <Property Name="Skill1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Skill2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Skill3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Alternate_Contact" Type="Int64" />
-          <Property Name="EmergencyContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="EmergencyContactNo" Type="Int64" />
-          <Property Name="UserImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Update_Date" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tblQualification">
           <Key>
@@ -1880,7 +1258,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="SubSkillSet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityType Name="tblTrainingStatu">
+        <EntityType Name="tblTrainingStatus">
           <Key>
             <PropertyRef Name="TransID" />
             <PropertyRef Name="TrngStatus" />
@@ -1891,21 +1269,8 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Active" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="RosterMsts" EntityType="Self.RosterMst" />
-          <EntitySet Name="tbl_Master_Approver" EntityType="Self.tbl_Master_Approver" />
-          <EntitySet Name="tblEnableDisables" EntityType="Self.tblEnableDisable" />
-          <EntitySet Name="tblLeaveTypes" EntityType="Self.tblLeaveType" />
           <EntitySet Name="tblMasters" EntityType="Self.tblMaster" />
-          <EntitySet Name="tblMasterApprovers" EntityType="Self.tblMasterApprover" />
-          <EntitySet Name="tblRstWeeks" EntityType="Self.tblRstWeek" />
-          <EntitySet Name="tblShiftCodes" EntityType="Self.tblShiftCode" />
           <EntitySet Name="tblSkillSets" EntityType="Self.tblSkillSet" />
-          <EntitySet Name="tbltrans_Movement" EntityType="Self.tbltrans_Movement" />
-          <EntitySet Name="RosterMstLogs" EntityType="Self.RosterMstLog" />
-          <EntitySet Name="RosterOptimizations" EntityType="Self.RosterOptimization" />
-          <EntitySet Name="tbl_datewise_leave" EntityType="Self.tbl_datewise_leave" />
-          <EntitySet Name="tbl_leave_request" EntityType="Self.tbl_leave_request" />
-          <EntitySet Name="tbl_leave_request_Log" EntityType="Self.tbl_leave_request_Log" />
           <EntitySet Name="tblCountries" EntityType="Self.tblCountry" />
           <EntitySet Name="tblDepartments" EntityType="Self.tblDepartment" />
           <EntitySet Name="tblDepartmentLinkMsts" EntityType="Self.tblDepartmentLinkMst" />
@@ -1913,21 +1278,16 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <EntitySet Name="tblEmpStatus" EntityType="Self.tblEmpStatu" />
           <EntitySet Name="tblFunctions" EntityType="Self.tblFunction" />
           <EntitySet Name="tblGenders" EntityType="Self.tblGender" />
-          <EntitySet Name="tblIntervalTrackers" EntityType="Self.tblIntervalTracker" />
           <EntitySet Name="tblJob_Type" EntityType="Self.tblJob_Type" />
           <EntitySet Name="tblLevels" EntityType="Self.tblLevel" />
           <EntitySet Name="tblLOBs" EntityType="Self.tblLOB" />
-          <EntitySet Name="tblMappingMsts" EntityType="Self.tblMappingMst" />
           <EntitySet Name="tblMaritalStatus" EntityType="Self.tblMaritalStatu" />
-          <EntitySet Name="tblMovementStates" EntityType="Self.tblMovementState" />
-          <EntitySet Name="tblMovementTypes" EntityType="Self.tblMovementType" />
           <EntitySet Name="tblPincodes" EntityType="Self.tblPincode" />
-          <EntitySet Name="tblProfiles" EntityType="Self.tblProfile" />
           <EntitySet Name="tblQualifications" EntityType="Self.tblQualification" />
           <EntitySet Name="tblSites" EntityType="Self.tblSite" />
           <EntitySet Name="tblSkills" EntityType="Self.tblSkill" />
           <EntitySet Name="tblSubSkillSets" EntityType="Self.tblSubSkillSet" />
-          <EntitySet Name="tblTrainingStatus" EntityType="Self.tblTrainingStatu" />
+          <EntitySet Name="tblTrainingStatus" EntityType="DBModel.tblTrainingStatus" />
           <FunctionImport Name="fn_delimitedtotable" IsComposable="true" ReturnType="Collection(DBModel.fn_delimitedtotable_Result)">
           <Parameter Name="DelimitedString" Mode="In" Type="String" />
           </FunctionImport>
@@ -2373,6 +1733,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Parameter Name="NT_ID" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="tblLocations" EntityType="DBModel.tblLocation" />
+          <EntitySet Name="tblProfiles" EntityType="DBModel.tblProfile" />
         </EntityContainer>
         <ComplexType Name="FillChart9box_Result">
           <Property Type="Int32" Name="empcode" Nullable="true" />
@@ -3020,61 +2381,43 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
           <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Active" Type="Boolean" />
         </EntityType>
+        <EntityType Name="tblProfile">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date_of_Birth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Email_Personal" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_Number" Type="Int64" />
+          <Property Name="MaritalStatus" Type="Int32" />
+          <Property Name="AnniversaryDate" Type="DateTime" Precision="3" />
+          <Property Name="Qualification" Type="Int32" />
+          <Property Name="Transport" Type="Boolean" />
+          <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Landmark" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="SubLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="Int32" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Total_Work_Experience" Type="Int32" />
+          <Property Name="Skill1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Skill2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Skill3" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Alternate_Contact" Type="Int64" />
+          <Property Name="EmergencyContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmergencyContactNo" Type="Int64" />
+          <Property Name="UserImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Update_Date" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DevModelStoreContainer" CdmEntityContainer="DB">
-          <EntitySetMapping Name="RosterMsts">
-            <EntityTypeMapping TypeName="DBModel.RosterMst">
-              <MappingFragment StoreEntitySet="RosterMst">
-                <ScalarProperty Name="RosterID" ColumnName="RosterID" />
-                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
-                <ScalarProperty Name="WeekID" ColumnName="WeekID" />
-                <ScalarProperty Name="rDate" ColumnName="rDate" />
-                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
-                <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="updatedOn" ColumnName="updatedOn" />
-                <ScalarProperty Name="SwapID" ColumnName="SwapID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_Master_Approver">
-            <EntityTypeMapping TypeName="DBModel.tbl_Master_Approver">
-              <MappingFragment StoreEntitySet="tbl_Master_Approver">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblEnableDisables">
-            <EntityTypeMapping TypeName="DBModel.tblEnableDisable">
-              <MappingFragment StoreEntitySet="tblEnableDisable">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="MinLevel" ColumnName="MinLevel" />
-                <ScalarProperty Name="MaxLevel" ColumnName="MaxLevel" />
-                <ScalarProperty Name="RepMgrAction" ColumnName="RepMgrAction" />
-                <ScalarProperty Name="RevMgrAction" ColumnName="RevMgrAction" />
-                <ScalarProperty Name="Result" ColumnName="Result" />
-                <ScalarProperty Name="RepMgrCan" ColumnName="RepMgrCan" />
-                <ScalarProperty Name="RevMgrCan" ColumnName="RevMgrCan" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblLeaveTypes">
-            <EntityTypeMapping TypeName="DBModel.tblLeaveType">
-              <MappingFragment StoreEntitySet="tblLeaveType">
-                <ScalarProperty Name="LeaveID" ColumnName="LeaveID" />
-                <ScalarProperty Name="LeaveText" ColumnName="LeaveText" />
-                <ScalarProperty Name="ShiftCode" ColumnName="ShiftCode" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblMasters">
             <EntityTypeMapping TypeName="DBModel.tblMaster">
               <MappingFragment StoreEntitySet="tblMaster">
@@ -3105,40 +2448,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblMasterApprovers">
-            <EntityTypeMapping TypeName="DBModel.tblMasterApprover">
-              <MappingFragment StoreEntitySet="tblMasterApprover">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="LevelID" ColumnName="LevelID" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblRstWeeks">
-            <EntityTypeMapping TypeName="DBModel.tblRstWeek">
-              <MappingFragment StoreEntitySet="tblRstWeeks">
-                <ScalarProperty Name="WeekId" ColumnName="WeekId" />
-                <ScalarProperty Name="rYear" ColumnName="rYear" />
-                <ScalarProperty Name="rWeek" ColumnName="rWeek" />
-                <ScalarProperty Name="FrDate" ColumnName="FrDate" />
-                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblShiftCodes">
-            <EntityTypeMapping TypeName="DBModel.tblShiftCode">
-              <MappingFragment StoreEntitySet="tblShiftCode">
-                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
-                <ScalarProperty Name="ShiftCode" ColumnName="ShiftCode" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="ShiftType" ColumnName="ShiftType" />
-                <ScalarProperty Name="Exception" ColumnName="Exception" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblSkillSets">
             <EntityTypeMapping TypeName="DBModel.tblSkillSet">
               <MappingFragment StoreEntitySet="tblSkillSet">
@@ -3147,102 +2456,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
                 <ScalarProperty Name="SkillSet" ColumnName="SkillSet" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="SkillSetID" ColumnName="SkillSetID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbltrans_Movement">
-            <EntityTypeMapping TypeName="DBModel.tbltrans_Movement">
-              <MappingFragment StoreEntitySet="tbltrans_Movement">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FromDptLinkMstId" ColumnName="FromDptLinkMstId" />
-                <ScalarProperty Name="ToDptLinkMstId" ColumnName="ToDptLinkMstId" />
-                <ScalarProperty Name="FromMgr" ColumnName="FromMgr" />
-                <ScalarProperty Name="ToMgr" ColumnName="ToMgr" />
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="InitBy" ColumnName="InitBy" />
-                <ScalarProperty Name="InitOn" ColumnName="InitOn" />
-                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
-                <ScalarProperty Name="UpdaterID" ColumnName="UpdaterID" />
-                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RosterMstLogs">
-            <EntityTypeMapping TypeName="DBModel.RosterMstLog">
-              <MappingFragment StoreEntitySet="RosterMstLog">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="RosterID" ColumnName="RosterID" />
-                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
-                <ScalarProperty Name="WeekID" ColumnName="WeekID" />
-                <ScalarProperty Name="rDate" ColumnName="rDate" />
-                <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
-                <ScalarProperty Name="RepMgrCode" ColumnName="RepMgrCode" />
-                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
-                <ScalarProperty Name="updatedOn" ColumnName="updatedOn" />
-                <ScalarProperty Name="SwapID" ColumnName="SwapID" />
-                <ScalarProperty Name="LoggedOn" ColumnName="LoggedOn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RosterOptimizations">
-            <EntityTypeMapping TypeName="DBModel.RosterOptimization">
-              <MappingFragment StoreEntitySet="RosterOptimization">
-                <ScalarProperty Name="TransID" ColumnName="TransID" />
-                <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_datewise_leave">
-            <EntityTypeMapping TypeName="DBModel.tbl_datewise_leave">
-              <MappingFragment StoreEntitySet="tbl_datewise_leave">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="LeaveDate" ColumnName="LeaveDate" />
-                <ScalarProperty Name="leave_type" ColumnName="leave_type" />
-                <ScalarProperty Name="roster" ColumnName="roster" />
-                <ScalarProperty Name="leave_batch_id" ColumnName="leave_batch_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_leave_request">
-            <EntityTypeMapping TypeName="DBModel.tbl_leave_request">
-              <MappingFragment StoreEntitySet="tbl_leave_request">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ecn" ColumnName="ecn" />
-                <ScalarProperty Name="from_date" ColumnName="from_date" />
-                <ScalarProperty Name="to_date" ColumnName="to_date" />
-                <ScalarProperty Name="leave_reason" ColumnName="leave_reason" />
-                <ScalarProperty Name="applied_on" ColumnName="applied_on" />
-                <ScalarProperty Name="Level1_Action" ColumnName="Level1_Action" />
-                <ScalarProperty Name="Level1_actioned_by" ColumnName="Level1_actioned_by" />
-                <ScalarProperty Name="Level1_comments" ColumnName="Level1_comments" />
-                <ScalarProperty Name="Level1_actioned_on" ColumnName="Level1_actioned_on" />
-                <ScalarProperty Name="Level2_Action" ColumnName="Level2_Action" />
-                <ScalarProperty Name="Level2_actioned_by" ColumnName="Level2_actioned_by" />
-                <ScalarProperty Name="Level2_comments" ColumnName="Level2_comments" />
-                <ScalarProperty Name="Level2_actioned_on" ColumnName="Level2_actioned_on" />
-                <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
-                <ScalarProperty Name="cancel_reason" ColumnName="cancel_reason" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tbl_leave_request_Log">
-            <EntityTypeMapping TypeName="DBModel.tbl_leave_request_Log">
-              <MappingFragment StoreEntitySet="tbl_leave_request_Log">
-                <ScalarProperty Name="Transid" ColumnName="Transid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Level1_Action" ColumnName="Level1_Action" />
-                <ScalarProperty Name="Level1_actioned_by" ColumnName="Level1_actioned_by" />
-                <ScalarProperty Name="Level1_comments" ColumnName="Level1_comments" />
-                <ScalarProperty Name="Level1_actioned_on" ColumnName="Level1_actioned_on" />
-                <ScalarProperty Name="Level2_Action" ColumnName="Level2_Action" />
-                <ScalarProperty Name="Level2_actioned_by" ColumnName="Level2_actioned_by" />
-                <ScalarProperty Name="Level2_comments" ColumnName="Level2_comments" />
-                <ScalarProperty Name="Level2_actioned_on" ColumnName="Level2_actioned_on" />
-                <ScalarProperty Name="CancelDate" ColumnName="CancelDate" />
-                <ScalarProperty Name="cancel_reason" ColumnName="cancel_reason" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3310,33 +2523,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblGenders">
-            <EntityTypeMapping TypeName="DBModel.tblGender">
-              <MappingFragment StoreEntitySet="tblGender">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblIntervalTrackers">
-            <EntityTypeMapping TypeName="DBModel.tblIntervalTracker">
-              <MappingFragment StoreEntitySet="tblIntervalTracker">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Interval" ColumnName="Interval" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
-                <ScalarProperty Name="LOB" ColumnName="LOB" />
-                <ScalarProperty Name="Sites" ColumnName="Sites" />
-                <ScalarProperty Name="Issue" ColumnName="Issue" />
-                <ScalarProperty Name="IncidentType" ColumnName="IncidentType" />
-                <ScalarProperty Name="ClientTicket" ColumnName="ClientTicket" />
-                <ScalarProperty Name="SitelTicket" ColumnName="SitelTicket" />
-                <ScalarProperty Name="Attachment" ColumnName="Attachment" />
-                <ScalarProperty Name="ActionBy" ColumnName="ActionBy" />
-                <ScalarProperty Name="ActionOn" ColumnName="ActionOn" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblJob_Type">
             <EntityTypeMapping TypeName="DBModel.tblJob_Type">
               <MappingFragment StoreEntitySet="tblJob_Type">
@@ -3364,109 +2550,6 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblMappingMsts">
-            <EntityTypeMapping TypeName="DBModel.tblMappingMst">
-              <MappingFragment StoreEntitySet="tblMappingMst">
-                <ScalarProperty Name="TransID" ColumnName="TransID" />
-                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
-                <ScalarProperty Name="MarketID" ColumnName="MarketID" />
-                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMaritalStatus">
-            <EntityTypeMapping TypeName="DBModel.tblMaritalStatu">
-              <MappingFragment StoreEntitySet="tblMaritalStatus">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMovementStates">
-            <EntityTypeMapping TypeName="DBModel.tblMovementState">
-              <MappingFragment StoreEntitySet="tblMovementState">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="State" ColumnName="State" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMovementTypes">
-            <EntityTypeMapping TypeName="DBModel.tblMovementType">
-              <MappingFragment StoreEntitySet="tblMovementTypes">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblPincodes">
-            <EntityTypeMapping TypeName="DBModel.tblPincode">
-              <MappingFragment StoreEntitySet="tblPincode">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
-                <ScalarProperty Name="PostOffice" ColumnName="PostOffice" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblProfiles">
-            <EntityTypeMapping TypeName="DBModel.tblProfile">
-              <MappingFragment StoreEntitySet="tblProfile">
-                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
-                <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
-                <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Email_Personal" ColumnName="Email_Personal" />
-                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
-                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
-                <ScalarProperty Name="AnniversaryDate" ColumnName="AnniversaryDate" />
-                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-                <ScalarProperty Name="Transport" ColumnName="Transport" />
-                <ScalarProperty Name="Address1" ColumnName="Address1" />
-                <ScalarProperty Name="Address2" ColumnName="Address2" />
-                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="SubLocation" ColumnName="SubLocation" />
-                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="Total_Work_Experience" ColumnName="Total_Work_Experience" />
-                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
-                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
-                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
-                <ScalarProperty Name="Alternate_Contact" ColumnName="Alternate_Contact" />
-                <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
-                <ScalarProperty Name="EmergencyContactNo" ColumnName="EmergencyContactNo" />
-                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
-                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
-                <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblQualifications">
-            <EntityTypeMapping TypeName="DBModel.tblQualification">
-              <MappingFragment StoreEntitySet="tblQualification">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSites">
-            <EntityTypeMapping TypeName="DBModel.tblSite">
-              <MappingFragment StoreEntitySet="tblSite">
-                <ScalarProperty Name="TransID" ColumnName="TransID" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Site" ColumnName="Site" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSkills">
-            <EntityTypeMapping TypeName="DBModel.tblSkill">
-              <MappingFragment StoreEntitySet="tblSkills">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Skill" ColumnName="Skill" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblSubSkillSets">
             <EntityTypeMapping TypeName="DBModel.tblSubSkillSet">
               <MappingFragment StoreEntitySet="tblSubSkillSet">
@@ -3477,7 +2560,7 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tblTrainingStatus">
-            <EntityTypeMapping TypeName="DBModel.tblTrainingStatu">
+            <EntityTypeMapping TypeName="DBModel.tblTrainingStatus">
               <MappingFragment StoreEntitySet="tblTrainingStatus">
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
                 <ScalarProperty Name="TrngStatus" ColumnName="TrngStatus" />
@@ -4443,6 +3526,90 @@ warning 6002: The table/view 'CWFM_UMANG.WFMP.tblTrainingStatus' does not have a
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGenders">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblGender)">
+              <MappingFragment StoreEntitySet="tblGender">
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMaritalStatus">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblMaritalStatu)">
+              <MappingFragment StoreEntitySet="tblMaritalStatus">
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPincodes">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblPincode)">
+              <MappingFragment StoreEntitySet="tblPincode">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PostOffice" ColumnName="PostOffice" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblQualifications">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblQualification)">
+              <MappingFragment StoreEntitySet="tblQualification">
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSites">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblSite)">
+              <MappingFragment StoreEntitySet="tblSite">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSkills">
+            <EntityTypeMapping TypeName="IsTypeOf(DBModel.tblSkill)">
+              <MappingFragment StoreEntitySet="tblSkills">
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProfiles">
+            <EntityTypeMapping TypeName="DBModel.tblProfile">
+              <MappingFragment StoreEntitySet="tblProfile">
+                <ScalarProperty Name="Update_Date" ColumnName="Update_Date" />
+                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="EmergencyContactNo" ColumnName="EmergencyContactNo" />
+                <ScalarProperty Name="EmergencyContactPerson" ColumnName="EmergencyContactPerson" />
+                <ScalarProperty Name="Alternate_Contact" ColumnName="Alternate_Contact" />
+                <ScalarProperty Name="Skill3" ColumnName="Skill3" />
+                <ScalarProperty Name="Skill2" ColumnName="Skill2" />
+                <ScalarProperty Name="Skill1" ColumnName="Skill1" />
+                <ScalarProperty Name="Total_Work_Experience" ColumnName="Total_Work_Experience" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="SubLocation" ColumnName="SubLocation" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Transport" ColumnName="Transport" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="AnniversaryDate" ColumnName="AnniversaryDate" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+                <ScalarProperty Name="Email_Personal" ColumnName="Email_Personal" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

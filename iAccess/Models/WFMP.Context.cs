@@ -27,21 +27,8 @@ namespace iAccess.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<RosterMst> RosterMsts { get; set; }
-        public virtual DbSet<tbl_Master_Approver> tbl_Master_Approver { get; set; }
-        public virtual DbSet<tblEnableDisable> tblEnableDisables { get; set; }
-        public virtual DbSet<tblLeaveType> tblLeaveTypes { get; set; }
         public virtual DbSet<tblMaster> tblMasters { get; set; }
-        public virtual DbSet<tblMasterApprover> tblMasterApprovers { get; set; }
-        public virtual DbSet<tblRstWeek> tblRstWeeks { get; set; }
-        public virtual DbSet<tblShiftCode> tblShiftCodes { get; set; }
         public virtual DbSet<tblSkillSet> tblSkillSets { get; set; }
-        public virtual DbSet<tbltrans_Movement> tbltrans_Movement { get; set; }
-        public virtual DbSet<RosterMstLog> RosterMstLogs { get; set; }
-        public virtual DbSet<RosterOptimization> RosterOptimizations { get; set; }
-        public virtual DbSet<tbl_datewise_leave> tbl_datewise_leave { get; set; }
-        public virtual DbSet<tbl_leave_request> tbl_leave_request { get; set; }
-        public virtual DbSet<tbl_leave_request_Log> tbl_leave_request_Log { get; set; }
         public virtual DbSet<tblCountry> tblCountries { get; set; }
         public virtual DbSet<tblDepartment> tblDepartments { get; set; }
         public virtual DbSet<tblDepartmentLinkMst> tblDepartmentLinkMsts { get; set; }
@@ -49,22 +36,18 @@ namespace iAccess.Models
         public virtual DbSet<tblEmpStatu> tblEmpStatus { get; set; }
         public virtual DbSet<tblFunction> tblFunctions { get; set; }
         public virtual DbSet<tblGender> tblGenders { get; set; }
-        public virtual DbSet<tblIntervalTracker> tblIntervalTrackers { get; set; }
         public virtual DbSet<tblJob_Type> tblJob_Type { get; set; }
         public virtual DbSet<tblLevel> tblLevels { get; set; }
         public virtual DbSet<tblLOB> tblLOBs { get; set; }
-        public virtual DbSet<tblMappingMst> tblMappingMsts { get; set; }
         public virtual DbSet<tblMaritalStatu> tblMaritalStatus { get; set; }
-        public virtual DbSet<tblMovementState> tblMovementStates { get; set; }
-        public virtual DbSet<tblMovementType> tblMovementTypes { get; set; }
         public virtual DbSet<tblPincode> tblPincodes { get; set; }
-        public virtual DbSet<tblProfile> tblProfiles { get; set; }
         public virtual DbSet<tblQualification> tblQualifications { get; set; }
         public virtual DbSet<tblSite> tblSites { get; set; }
         public virtual DbSet<tblSkill> tblSkills { get; set; }
         public virtual DbSet<tblSubSkillSet> tblSubSkillSets { get; set; }
-        public virtual DbSet<tblTrainingStatu> tblTrainingStatus { get; set; }
+        public virtual DbSet<tblTrainingStatus> tblTrainingStatus { get; set; }
         public virtual DbSet<tblLocation> tblLocations { get; set; }
+        public virtual DbSet<tblProfile> tblProfiles { get; set; }
     
         [DbFunction("DB", "fn_delimitedtotable")]
         public virtual IQueryable<fn_delimitedtotable_Result> fn_delimitedtotable(string delimitedString)

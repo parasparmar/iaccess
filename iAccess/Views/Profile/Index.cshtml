@@ -125,17 +125,23 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-genderless"></i></span>
-                                        @{var i = new SelectList(my.tblQualifications.AsEnumerable(), "Id", "Qualification", Model.Qualification);}
-                                        @Html.DropDownList("Qualification", i, new { @class = "form-control" })
+                                        @{
+                                            var gender = my.tblGenders.AsEnumerable();
+                                            var i = new SelectList(gender, "Id", "Gender", gender.Where(g => g.Gender == Model.Gender).FirstOrDefault().Id);
+                                        }
+                                        @Html.DropDownList("ddlGender", i, new { @class = "form-control select2" })
                                     </div>
+
                                 </div>
+
                             </div>
+
                             <div class="form-group">
                                 <label for="tbDate_of_Birth" class="col-sm-2 control-label">Date of Birth</label>
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
-                                        <input type="text" id="tbDate_of_Birth" class="form-control datepicker" />
+                                        @Html.TextBox("tbDate_of_Birth", Model.Date_of_Birth.ToDateTime().ToString("dd-MMM-yyyy"), new { @class = "form-control datepicker" })
                                     </div>
                                 </div>
                             </div>
@@ -144,14 +150,10 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-university"></i></span>
-
-                                        @*@{
-                                                var qualification = my.tblQualifications.Distinct().ToList<tblQualification>();
-                                                selected = qualification.Where(m => m.Qualification == Model.Qualification).FirstOrDefault().Id.ToString();
-                                                SelectList q = new SelectList(qualification, "Id", "Qualification", selected);
-                                                htmlAttributes = new { @class = "form-control select2", @id = "tbQualification", };
-                                            }
-                                            @Html.DropDownList("Qualification",q, htmlAttributes)*@
+                                        @{
+                                            var qualification = my.tblQualifications.AsEnumerable();
+                                            var q = new SelectList(qualification, "Id", "Qualification", qualification.Where(Q => Q.Qualification == Model.Qualification).FirstOrDefault().Id.ToString());}
+                                        @Html.DropDownList("ddlQualification", q, new { @class = "form-control select2" })
                                     </div>
                                 </div>
                             </div>
@@ -160,16 +162,17 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user-plus"></i></span>
-
-
-                                        <select class="form-control select2" id="tbMaritalStatus"></select>
+                                        @{
+                                            var maritialStatus = my.tblMaritalStatus.AsEnumerable();
+                                            var m = new SelectList(maritialStatus, "Id", "MaritalStatus", maritialStatus.Where(M => M.MaritalStatus == Model.MaritalStatus).FirstOrDefault().Id.ToString());}
+                                        @Html.DropDownList("tbMaritalStatus", m, new { @class = "form-control select2" })
                                     </div>
                                 </div>
                                 <label for="inputSkills" class="col-sm-2 control-label">Anniversary Date</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-calendar-check-o"></i></span>
-                                        <input type="text" id="tbAnniversaryDate" class="form-control datepicker" />
+                                        @Html.TextBox("tbAnniversaryDate", Model.AnniversaryDate.ToDateTime().ToString("dd-MMM-yyyy"), new { @class = "form-control datepicker" })
                                     </div>
                                 </div>
                             </div>
@@ -179,14 +182,14 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
-                                        <input type="text" id="tbContact_Number" class="form-control" />
+                                        @Html.TextBox("tbContact_Number", Model.Contact_Number.ToString(), new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <label for="tbAlternate_Contact" class="col-sm-2 control-label">Alternate Number</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
-                                        <input type="text" id="tbAlternate_Contact" class="form-control" />
+                                        @Html.TextBox("tbAlternate_Contact", Model.Alternate_Contact.ToString(), new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -195,14 +198,14 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <input type="text" id="tbEmergencyContactPerson" class="form-control" />
+                                        @Html.TextBox("tbEmergencyContactPerson", Model.EmergencyContactPerson.ToString(), new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <label for="tbEmergencyContactNumber" class="col-sm-2 control-label">Emergency Contact Number</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                        <input type="text" id="tbEmergencyContactNo" class="form-control" />
+                                        @Html.TextBox("tbEmergencyContactNo", Model.EmergencyContactNo.ToString(), new { @class = "form-control" })
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +214,7 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                        <input type="text" id="tbEmail_id" class="form-control" type="email" placeholder="Email" />
+                                        @Html.TextBox("tbEmail_id", Model.Email_Personal.ToString(), new { @class = "form-control", placeholder = "Personal Email", type = "email" })
                                     </div>
                                 </div>
                             </div>
@@ -225,11 +228,12 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-automobile"></i></span>
-                                        <select class="form-control select" id="tbTransport_User">
-                                            <option Text="Yes" value="1"></option>
-                                            <option Text="No" value="0"></option>
-                                            <option Text="Not Specified" value="0"></option>
-                                        </select>
+                                        @{
+                                            var transportUsed = my.tblProfiles.Select(trn => trn.Transport).Distinct();
+                                            var t = new SelectList(transportUsed, transportUsed.Where(trns => trns.Value == Model.Transport).FirstOrDefault().Value);
+                                        }
+                                        @Html.DropDownList("ddlTransport", t, new { @class = "form-control select2", placeholder = "Please Select your Transport Preference", style = "width:100%" })
+
                                     </div>
                                 </div>
                             </div>
@@ -238,7 +242,7 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                        <input type="text" id="tbAddress_Line_1" class="form-control" />
+                                        @Html.TextBox("tbAddress_Line_1", Model.Address1, new { @class = "form-control", placeholder = "Address" })
                                     </div>
                                 </div>
                             </div>
@@ -247,7 +251,7 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                        <input type="text" id="tbAddress_Line_2" class="form-control" />
+                                        @Html.TextBox("tbAddress_Line_2", Model.Address2, new { @class = "form-control", placeholder = "Address Line 2" })
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +260,8 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-hotel"></i></span>
-                                        <input type="text" id="tbAddress_Landmark" class="form-control" />
+
+                                        @Html.TextBox("tbAddress_Landmark", Model.Landmark, new { @class = "form-control", placeholder = "Landmark Nearby" })
                                     </div>
                                 </div>
                             </div>
@@ -266,16 +271,18 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                        <select id="ddlAddress_Location" class="form-control select2" Style="width: 100%">
-                                            <option value="0" Text=""></option>
-                                        </select>
+                                        @{
+                                            var Location = my.tblLocations.AsEnumerable();
+                                            var loc = new SelectList(Location, "Id", "Location", Location.Where(locn => locn.Id == Model.Location).FirstOrDefault());
+                                        }
+                                        @Html.DropDownList("ddlAddress_Location", loc, new { @class = "form-control select2", placeholder = "Location", style = "width:100%" })
                                     </div>
                                 </div>
                                 <label for="ddlAddress_SubLocation" class="col-sm-2 control-label">Sub Location</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                        <select id="ddlAddress_SubLocation" class="form-control select2" Style="width: 100%">
+                                        <select id="subLocation" name="subLocation" class="form-control select2" Style="width: 100%">
                                             <option value="">Please Select</option>
                                             <option value="West">West</option>
                                             <option value="East">East</option>
@@ -288,20 +295,19 @@
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                        <input type="text" id="tbAddress_City" class="form-control" />
+                                        @Html.TextBox("tbAddress_City", Model.City, new { @class = "form-control" })
                                     </div>
                                 </div>
                                 <label for="ddlAddress_Pincode" class="col-sm-2 control-label">Pincode</label>
                                 <div class="col-sm-4">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                        <select id="ddlAddress_Pincode" class="form-control select2" Style="width: 100%">
-                                            <option value="0" Text=""></option>
-                                        </select>
+                                        @{
+                                            var pincode = my.tblPincodes.AsEnumerable();
+                                            var pc = new SelectList(pincode, "Pincode", "PostOffice", pincode.Where(pcn => pcn.Pincode == Model.Pincode).FirstOrDefault());
+                                        }
+                                        @Html.DropDownList("ddlAddress_Pincode", pc, new { @class = "form-control select2", Style = "width: 100%" });
                                     </div>
-                                    <asp:RequiredFieldValidator id="reqval" ControlToValidate="ddlAddress_Pincode" ErrorMessage="" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    <p id="pAddress_Pincode" class="link-muted">
-                                    </p>
                                 </div>
                             </div>
 
@@ -315,8 +321,7 @@
                                 <div class="col-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
-
-                                        <input type="text" id="tbTotal_Work_Experience" class="form-control" />
+                                        @Html.TextBox("tbTotal_Work_Experience", Model.Total_Work_Experience, new { @class = "form-control", type = "text" })
                                     </div>
                                 </div>
                             </div>
@@ -325,10 +330,15 @@
                             <div class="form-group">
                                 <label for="tbSkill_Set_1" class="col-sm-2 control-label">Primary Skill Set</label>
                                 <div class="col-sm-10">
-
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-rocket"></i></span>
-                                        <select id="tbSkill_Set_1" class="form-control select2" selectionmode="multiple" multiple="true" style="width: 100%"></select>
+                                        @{ 
+                                            var skills = my.tblSkills.AsEnumerable();
+                                            var skills1 = new SelectList(skills, "Id", "Skill"); 
+                                            var mySkills1 = Model.Skill1.Split(',').ToArray();
+                                        }
+                                        @Html.DropDownList("tbSkill_Set_1", skills1, "Id",new {@class = "form-control select2", selectionmode = "multiple", multiple = "true", style = "width: 100%" })
+                                        
                                     </div>
                                 </div>
                             </div>

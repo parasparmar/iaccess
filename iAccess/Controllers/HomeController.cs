@@ -21,7 +21,7 @@ namespace iAccess.Controllers
             
             DB my = new DB();
             string myNTID = PageExtensionMethods.getMyWindowsID().ToString();            
-            myNTID = "ktriv003";
+            //myNTID = "ktriv003";
             getEmployeeData_Result Model = my.getEmployeeData(myNTID).FirstOrDefault();
             Session["Me"] = Model;
             ViewData.Model = Model;

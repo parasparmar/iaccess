@@ -27,7 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,6 +37,31 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="constr-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="RGF0YSBTb3VyY2U9MTAuMjUyLjI1Mi4xMjI7UGVyc2lzdCBTZWN1cml0eSBJbmZvPVRydWU7VXNlciBJRD1TUUxEZXY7UGFzc3dvcmQ9RGV2U1FMOyBEYXRhYmFzZT1jd2ZtX3VtYW5n" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\constr-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="constrProd-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="RGF0YSBTb3VyY2U9MTAuMjUyLjI1Mi4xMjE7UGVyc2lzdCBTZWN1cml0eSBJbmZvPVRydWU7VXNlciBJRD1TT0w7UGFzc3dvcmQ9UzBsOyBEYXRhYmFzZT1jd2ZtX3VtYW5n" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\constrProd-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="DB-Deployment" Order="3">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=10.252.252.122%3bInitial Catalog=CWFM_UMANG%3bPersist Security Info=True%3bUser ID=sqldev%3bPassword=DevSQL%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DB-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -274,15 +299,6 @@
     <Compile Include="Models\ProdHrsChk_Result.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RosterMst.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RosterMstLog.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\RosterOptimization.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Roster_GetAdminFormatRoster_Result.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
@@ -340,22 +356,13 @@
     <Compile Include="Models\tblEmpStatu.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblEnableDisable.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblFunction.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblGender.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblIntervalTracker.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblJob_Type.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblLeaveType.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblLevel.cs">
@@ -367,22 +374,10 @@
     <Compile Include="Models\tblLocation.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblMappingMst.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tblMaritalStatu.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblMaster.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMasterApprover.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMovementState.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblMovementType.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblPincode.cs">
@@ -392,12 +387,6 @@
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblQualification.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblRstWeek.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tblShiftCode.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblSite.cs">
@@ -412,22 +401,7 @@
     <Compile Include="Models\tblSubSkillSet.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tblTrainingStatu.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbltrans_Movement.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_datewise_leave.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_leave_request.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_leave_request_Log.cs">
-      <DependentUpon>WFMP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tbl_Master_Approver.cs">
+    <Compile Include="Models\tblTrainingStatus.cs">
       <DependentUpon>WFMP.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TeamList_Result.cs">

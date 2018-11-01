@@ -12,15 +12,10 @@ namespace iAccess.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblEnableDisable
+    public partial class tblTrainingStatus
     {
-        public int id { get; set; }
-        public Nullable<int> MinLevel { get; set; }
-        public Nullable<int> MaxLevel { get; set; }
-        public Nullable<int> RepMgrAction { get; set; }
-        public Nullable<int> RevMgrAction { get; set; }
-        public Nullable<int> Result { get; set; }
-        public Nullable<int> RepMgrCan { get; set; }
-        public Nullable<int> RevMgrCan { get; set; }
+        public int TransID { get; set; }
+        public string TrngStatus { get; set; }
+        public bool Active { get; set; }
     }
 }

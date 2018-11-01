@@ -5,44 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3defb5a2b6ce46d4a294703933e4b8db" Name="Diagram1" ZoomLevel="77">
-        <EntityTypeShape EntityType="DBModel.RosterMst" Width="1.5" PointX="7.75" PointY="1.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tbl_Master_Approver" Width="1.5" PointX="7.75" PointY="2.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblEnableDisable" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblLeaveType" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblMaster" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.tblMasterApprover" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblRstWeek" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblShiftCode" Width="1.5" PointX="9.75" PointY="1.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblSkillSet" Width="1.5" PointX="5.75" PointY="12.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tbltrans_Movement" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.RosterMstLog" Width="1.5" PointX="7.75" PointY="4.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.RosterOptimization" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tbl_datewise_leave" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tbl_leave_request" Width="1.5" PointX="9.75" PointY="3.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tbl_leave_request_Log" Width="1.5" PointX="7.75" PointY="2.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblCountry" Width="1.5" PointX="5.75" PointY="15.125" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblDepartment" Width="1.5" PointX="5.75" PointY="13.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblDepartmentLinkMst" Width="1.5" PointX="2.875" PointY="12" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblDesignation" Width="1.5" PointX="2.875" PointY="10.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblEmpStatu" Width="1.5" PointX="2.875" PointY="11" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblFunction" Width="1.5" PointX="5.75" PointY="14.625" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblGender" Width="1.5" PointX="8.125" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.tblIntervalTracker" Width="1.5" PointX="9.75" PointY="2.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblJob_Type" Width="1.5" PointX="2.875" PointY="11.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblLevel" Width="1.5" PointX="2.875" PointY="9.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblLOB" Width="1.5" PointX="5.75" PointY="14.125" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblMappingMst" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblMaritalStatu" Width="1.5" PointX="5.75" PointY="6" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblMovementState" Width="1.5" PointX="7.75" PointY="3.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblMovementType" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblPincode" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblProfile" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBModel.tblQualification" Width="1.5" PointX="5.75" PointY="6.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblSite" Width="1.5" PointX="2.875" PointY="9" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblSkill" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblSubSkillSet" Width="1.5" PointX="5.75" PointY="13" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblTrainingStatu" Width="1.5" PointX="2.875" PointY="10" IsExpanded="false" />
-        <EntityTypeShape EntityType="DBModel.tblLocation" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DBModel.tblMaster" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblSkillSet" Width="1.5" PointX="8.375" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblCountry" Width="1.5" PointX="4.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblDepartment" Width="1.5" PointX="6.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblDepartmentLinkMst" Width="1.5" PointX="6.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblDesignation" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblEmpStatu" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblFunction" Width="1.5" PointX="6.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblGender" Width="1.5" PointX="0.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblJob_Type" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblLevel" Width="1.5" PointX="10.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblLOB" Width="1.5" PointX="10.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblMaritalStatu" Width="1.5" PointX="4.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblPincode" Width="1.5" PointX="4.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblQualification" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblSite" Width="1.5" PointX="12.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblSkill" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblSubSkillSet" Width="1.5" PointX="12.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblTrainingStatus" Width="1.5" PointX="10.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.tblLocation" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DBModel.tblProfile" Width="1.5" PointX="2.5" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
